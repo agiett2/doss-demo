@@ -1,0 +1,33 @@
+.form-wrapper {
+    .preapproved {
+        margin-bottom: 2rem;
+        .preapproved-controls {
+            display: flex;
+            justify-content: left;
+            padding-bottom: 2rem;
+            .custom-control {
+                margin-right: 2rem;
+            }
+        }
+        .preapproved-letter {
+            input {
+                display: flex;
+                flex-direction: row-reverse;
+                border: solid .05rem #000;
+            }
+        }
+    }
+    .looking-to-buy {
+        .options {
+            display: flex;
+            .custom-control {
+                margin-right: 2rem;
+            }
+        }
+    }
+    .dreamhome {
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

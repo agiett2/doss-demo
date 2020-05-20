@@ -1,0 +1,15 @@
+<div class="wrapper text-center" [style.background-color]="contentService.getColor('white')" [style.color]="contentService.getColor(textColor)" >
+  <div class="container">
+    <div class="heading">
+      <ng-content select="[heading]"></ng-content>
+    </div>
+    <div class="card-deck mb-3 text-center">
+        <ng-content select="[text-left]"></ng-content>
+        <ng-content select="[text-center]"></ng-content>
+        <ng-content select="[text-right]"></ng-content>
+    </div>
+    <div class="footer ">
+      <ng-content select="[footer]"></ng-content>
+    </div>
+  </div>
+</div>

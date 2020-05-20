@@ -1,0 +1,140 @@
+
+.wrapper {
+    
+    #advertising {
+        margin: 0 auto;
+        max-width: 1300px;
+        padding: 10rem 1rem;
+        .heading {
+            padding: 1rem 0 3rem 0;
+            font-size: 2.5rem;
+            color: #164f8c;
+            font-weight: 700;
+            text-align: center;
+            .sub-heading {
+                text-align: center;
+                color: #000;
+                font-weight: 300;
+                font-size: 1.7rem;
+            }
+        }
+        @media (min-width: 768px) {
+            .heading {
+                font-size: 4rem;
+            }
+        }
+        .pics {
+            display: flex;
+            justify-content: space-between;            
+        }
+        .left, .right {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+        .pic {
+            text-align: center;
+            color: #f06e42;
+            font-size: .5rem;
+            @media (min-width: 768px) {
+                font-size: 1rem;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+#money {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+    height: 90vh;
+    background-position: center;
+    background-size: cover;
+    background-image: url('../../../assets/images/money.png');
+    padding: 6rem 10%;
+    
+    .heading{
+        font-size: 5rem;
+    }
+    .text {
+        font-size: 1.7rem;
+        font-weight: 500;
+        width: 50%;
+    }
+}
+#power { 
+    background-color: #f5f6fa;
+    .wrapper {
+        text-align: center;
+        .heading {
+            padding-top: 3rem;
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            text-transform: uppercase;
+            font-weight: 700 !important;
+            color: #164f8c;
+            
+        }
+        .sub-heading {
+            color: grey;
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .services {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .service {
+                img {
+                    width: 75%;
+                }
+                margin-bottom: 2rem;
+                width: 30rem;
+                .service-title {
+                    font-weight: 700;
+                    font-size: 2rem;
+                }
+                .price {
+                    font-size: 2rem;
+                    color: #f06e42;
+                    font-weight: 500;
+                }
+                .service-btn {
+                    margin-top: 5%;
+                    padding: 0 25%;
+                    button {
+                        padding: 1rem;
+                    }
+                }
+            }
+            
+            
+        }
+        @media (min-width: 768px) {
+            .services {
+                flex-direction: row;
+            }
+        }
+        .footer {
+            margin-top: 5rem;
+            line-height: .5;
+            padding-bottom: 6rem;
+        }
+    }
+}
+
+#compare {
+    padding: 1rem;
+    background-color: #f06e42;
+    color: #fff;
+    table {
+        color: #fff !important;
+        border: solid .02rem #fff !important;
+    }
+    .disclaimer {
+        color: #fff;
+    }
+}

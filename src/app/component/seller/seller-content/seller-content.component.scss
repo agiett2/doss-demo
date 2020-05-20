@@ -1,0 +1,54 @@
+#advertising {
+    .heading  {
+        font-size: 3rem;
+    }
+    .message {
+        font-size: 1.7rem;
+        font-weight: 200;
+    }
+
+    img {
+        padding-top: 3rem;
+        height: 25rem;
+    }
+}
+#money {
+    .heading{
+        font-size: 3rem;
+    }
+    .message {
+        font-size: 1.7rem;
+        font-weight: 300;
+        width: 60%;
+    }
+}
+
+#power { 
+    padding: 5rem 0;
+    background-color: #164f8c;
+    color: #fff;
+    .heading {
+        font-size: 3rem;
+        .sub-heading {
+            font-size: 1.7rem;
+            font-weight: 300;
+        }
+    }
+    .power-card {
+        padding: 3rem 0;
+        .title {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        .price {
+            font-size: 2rem;
+        }
+        button {
+            // width: 50%;
+        }
+    }
+    .disclaimer {
+        padding: 5rem 0;
+        line-height: .5;
+    }
+}

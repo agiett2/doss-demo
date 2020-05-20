@@ -1,0 +1,22 @@
+
+
+.wrapper {
+    position: relative; 
+    z-index: 2;    
+    opacity: 1; 
+    overflow: hidden;
+    #compare-table {
+        padding: 1rem;
+        background-color: #f06e42;
+        color: #fff;
+        table {
+            color: #fff !important;
+            border: solid .02rem #fff !important;
+        }
+    }
+    @media (min-width: 768px){
+        #compare-table {
+            padding: 3rem;
+        }
+    }
+}   

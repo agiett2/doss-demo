@@ -1,0 +1,25 @@
+.wrapper {
+    .card {
+        border: 1px solid #f06e42 !important;
+        color: #000 !important;
+        font-size: 1.2rem;
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f06e42 !important;
+            h2 {
+                flex: 0 2 75%;
+            }
+            i {
+                color: #fff;
+            }
+        }
+        .card-body {
+            padding: 1.5rem;
+            @media (min-width: 768px) {
+                padding: 2.5rem;
+            }
+        }
+    }
+}
+

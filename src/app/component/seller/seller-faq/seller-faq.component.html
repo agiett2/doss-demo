@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <section id="header">
+        <div class="text-center">
+            <p class="heading">Seller Faq</p>
+        </div>
+    </section>
+    <section id="body">
+        <div class="container my-5">
+            <ng-container *ngIf="faqList">
+                <app-faq [faqs]="faqList"  [faqId]="'buyer'" [textColor]="'black'">
+                </app-faq>
+            </ng-container>
+        </div>
+    </section>
+    
+</div>
+<section id="mission" class="text-center">
+    <div class="heading">
+        <p>{{ missionHeadding}}</p>
+    </div>
+    <div class="message">
+        <p>{{ missionMessage }}</p>
+    </div>
+</section>

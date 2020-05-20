@@ -1,0 +1,15 @@
+<div class="wrapper py-5">
+    <div class="heading text-center">
+        <p>Tenant FAQ</p>
+    </div>
+
+    <div class="mb-3" id="faq" *ngFor="let faq of faqList">
+        <app-faq [textColor]="'blue'">
+            {{ faq.question}}
+            <div question>{{faq.question}}</div>
+            <div answer>{{faq.answer}}</div>
+        </app-faq>
+    </div>
+
+
+</div>

@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <div class="heading text-center">
+        <p>Landlord FAQ</p>
+    </div>
+    <section id="faq">
+        <div class="container my-5">
+            <ng-container *ngIf="faqList">
+                <app-faq [faqs]="faqList" [faqId]="'landLord'">
+                </app-faq>
+            </ng-container>
+        </div>
+    </section>
+</div>

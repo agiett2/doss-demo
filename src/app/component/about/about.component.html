@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <section id="story">
+        <div class="py-5">
+            <div class="container  text-center py-5">
+                <div class="heading">
+                    <p>{{heading}}</p>
+                    <p class="sub-heading">{{subHeading}}</p>
+                </div>
+                <div class="message" *ngFor="let message of messages index as i" [ngClass]="{'doss': i === 4}">
+                    {{ message }}
+                </div>
+                <div class="signed">
+                    <p>-by Bobby Bryant, CEO/Co-Founder</p>
+                    <img class="pt-3" src="assets/images/bobby.png" alt="bobby">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="call">
+        <app-contact-number></app-contact-number>
+    </section>
+
+</div>

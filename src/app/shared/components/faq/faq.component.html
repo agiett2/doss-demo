@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <div class="container">
+        <div class="accordion" id="{{faqId}}">
+            <div class="card mb-5" *ngFor="let faq of faqs; let index = index; let first = first">
+                <div class="card-header" id="headingOne">
+                    <h4 class="mb-0">
+                        <p>{{faq.question}}</p>
+
+                    </h4>
+                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                        [attr.data-target]="setQuestionAriaControl(faqId, index)" aria-expanded="false"
+                        [attr.aria-controls]="setQuestionAriaControl(faqId, index)">
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div id="{{ setAnswerId(faqId, index) }}" class="collapse multi-collapse" [ngClass]="{'show': first}" aria-labelledby="headingOne">
+                    <div class="card-body">
+                        <p>{{faq.answer}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

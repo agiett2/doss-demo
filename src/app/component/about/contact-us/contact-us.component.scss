@@ -1,0 +1,9 @@
+.form-wrapper {
+    @media (min-width: 768px) {
+        height: 82.1vh;
+    }
+    .help {
+        display: flex;
+        flex-direction: column;
+    }
+}

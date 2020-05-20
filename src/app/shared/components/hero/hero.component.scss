@@ -1,0 +1,49 @@
+.main {
+  background-color: initial;
+  // position: relative;
+  overflow: hidden;
+  pointer-events: none;
+  // position: fixed;
+  width: 100%;
+  height: calc(100vh - 5rem);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+
+  font-family: "Source Sans Pro", sans-serif;
+  
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 10%;
+    margin-top: 30vh;
+    color: #fff;;
+    text-transform: capitalize;
+   
+    .heading {
+      font-size: 2rem;
+      font-weight: 500;
+      line-height: 90%;
+  }
+  .sub-heading {
+    font-size: 1rem;
+  }
+  @media (min-width: 1024px) {
+  
+    .heading {
+      width: 50%;
+      font-size: 5rem;
+    }
+    .sub-heading {
+      font-size: 1.5rem;
+    }
+  }
+  text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+  }
+
+  
+}
+
+

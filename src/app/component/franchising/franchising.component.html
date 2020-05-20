@@ -1,0 +1,15 @@
+<section id="hero-section">
+  <app-hero [heading]="heading" [text]="subHeading" [backgroundImage]="'franchise.png'"></app-hero>
+</section>
+<div class="wrapper">
+  <section id="quote">
+    <p class="quote">{{ quote }} </p>
+    <p class="signature">{{ signature }}</p>
+  </section>
+  <section id="request-form">
+    <app-franchising-request-form></app-franchising-request-form>
+  </section>
+  <section id="contact-us">
+    <app-contact-number></app-contact-number>
+  </section>
+</div>

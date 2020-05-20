@@ -1,0 +1,40 @@
+<section class="hero-section">
+    <app-hero [heading]="heading" [text]="subHeading" [backgroundImage]="'rent_hero.png'"></app-hero>
+    <!-- <app-header [heading]="heading" [subHeading]="subHeading"></app-header> -->
+</section>
+<div class="wrapper">
+    <section id="new-space">
+        <app-right-align [textColor]="'blue'">
+            <div heading>
+                {{ newSpaceHeading }}
+            </div>
+            <div text>
+                <p> {{ newSpaceText }}</p>
+            </div>
+            <div pic>
+                <img src="assets/images/new_space.png">
+            </div>
+        </app-right-align>
+    </section>
+    <section id="leasing">
+        <app-left-align [textColor]="'blue'">
+            <div heading>
+                {{ leasingHeading }}
+            </div>
+            <div text>
+                <p> {{ leasingText }}</p>
+            </div>
+            <div pic>
+                <img src="assets/images/help_leasing.png">
+            </div>
+        </app-left-align>
+    </section>
+    <section id="experience">
+        <div class="heading">
+            <p>It's all about the experience....</p>
+        </div>
+    </section>
+    <section id="call-us">
+        <app-contact-number></app-contact-number>
+    </section>
+</div>

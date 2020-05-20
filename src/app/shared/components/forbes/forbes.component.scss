@@ -1,0 +1,28 @@
+.wrapper {
+    padding: 5rem;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    .text {
+        text-transform: capitalize;
+    }
+    img {
+        text-align: center;
+    }
+
+    @media (min-width: 768px) {
+        padding: 10rem;
+        .text {
+            font-weight: 500;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        img {
+            width: 38%;
+            margin-left: 32%;
+        }
+    }
+   
+}

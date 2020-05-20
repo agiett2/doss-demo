@@ -1,0 +1,172 @@
+<div class="form-wrapper">
+    <p class="heading text-center">Schedule a Seller Consultation, TODAY!</p>
+    <div class="container form-container">
+        <form [formGroup]="sellerForm" (ngSubmit)="submitForm(sellerForm)" novalidate="">
+            <div class="mb-4">
+                <label for="sellerName">Seller</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" id="sellerName" placeholder="Seller Name" name="sellerName"
+                        formControlName="sellerName" required />
+                </div>
+                <div class="text-center" *ngIf="sf.sellerName.touched && sf.sellerName.errors?.required">
+                    <div class="text-danger py-1">Seller name is required.</div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="coSellerName">Co-Seller <span class="text-muted">(If Applicable)</span>
+                </label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" id="coSellerName" placeholder="Co-Seller Name"
+                        name="coSellerName" formControlName="coSellerName" />
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="sellerEmail">Seller Email</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="email" class="form-control" id="sellerEmail" placeholder="you@example.com" name="email"
+                        formControlName="sellerEmail" required />
+                </div>
+                <div class="text-center" *ngIf="sf.sellerEmail.touched && sf.sellerEmail.errors?.required">
+                    <div class="text-danger py-1">Seller email is required.</div>
+                </div>
+                <div class="text-center" *ngIf="sf.sellerEmail.dirty">
+                    <div class="text-danger py-1" *ngIf="sf.sellerEmail.invalid">
+                        Please enter a valid email address
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="coSellerEmail">Co-Seller Email
+                    <span class="text-muted">(If Applicable)</span></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="email" class="form-control" id="coSellerEmail" placeholder="you@example.com"
+                        name="coSellerEmail" formControlName="coSellerEmail" />
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="sellerPhoneNumber">Seller Phone Number</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="number" class="form-control" id="sellerPhoneNumber" placeholder="713-555-5555"
+                        name="sellerPhoneNumber" formControlName="sellerPhoneNumber" required />
+                </div>
+                <div class="text-center" *ngIf="sf.sellerPhoneNumber.touched && sf.sellerPhoneNumber.errors?.required">
+                    <div class="text-danger py-1">Phone number is required.</div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="coSellerPhoneNumber">Co-Seller Phone Number
+                    <span class="text-muted">(If Applicable)</span></label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" id="coSellerPhoneNumber" placeholder="713-555-5555"
+                        name="coSellerPhoneNumber" formControlName="coSellerPhoneNumber" />
+                </div>
+            </div>
+            <section id="address">
+                <div class="address my-4">
+                    <p>Adrress of the property you want to sell? </p>
+                    <textarea id="same-address" rows="4" cols="95%" name="address" formControlName="address"></textarea>
+                </div>
+            </section>
+            <section id="whenToSell" class="mb-4">
+                <p>When do you wnt to sell?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="now" name="whenToSell" value="now" type="radio" class="custom-control-input"
+                            formControlName="whenToSell">
+                        <label class="custom-control-label" for="now">Now</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="oneToThreeMonths" name="whenToSell" value="0-3 Months" type="radio"
+                            class="custom-control-input" formControlName="whenToSell">
+                        <label class="custom-control-label" for="oneToThreeMonths">0-3 Months</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="threeToSixMonths" name="whenToSell" value="3-6 Months" type="radio"
+                            class="custom-control-input" formControlName="whenToSell">
+                        <label class="custom-control-label" for="threeToSixMonths">3-6 Months</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="sixToTwelveMonths" name="whenToSell" value="6-12 Months" type="radio"
+                            class="custom-control-input" formControlName="whenToSell">
+                        <label class="custom-control-label" for="sixToTwelveMonths">6-12 Months</label>
+                    </div>
+                </div>
+            </section>
+            <div class="price-listing my-4">
+                <label for="priceListing">What do you think should be the list price of your house?</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">$</div>
+                    </div>
+                    <input type="text" class="form-control" id="priceListing" placeholder=""
+                        formControlName="priceListing" required />
+                </div>
+                <div class="text-center" *ngIf="sf.priceListing.touched && sf.priceListing.errors?.required">
+                    <div class="text-danger py-1">Price listing is required.</div>
+                </div>
+            </div>
+            <section id="pets" class="mb-4">
+                <p>Do you have any pets that will be living with you? If so, what kind of pet?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="yes" name="isbuyingNewHome" value="yes" type="radio" class="custom-control-input"
+                            formControlName="isbuyingNewHome">
+                        <label class="custom-control-label" for="yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="no" name="isbuyingNewHome" value="no" type="radio" class="custom-control-input"
+                            formControlName="isbuyingNewHome">
+                        <label class="custom-control-label" for="no">No</label>
+                    </div>
+                </div>
+            </section>
+            <ng-container *ngIf="sf.isbuyingNewHome.value === 'yes'">
+                <section id="budget" class="mb-4">
+                    <p>If so, what's your budget?</p>
+                    <textarea id="budget" rows="4" cols="95%" name="budget" formControlName="budget"></textarea>
+                </section>
+            </ng-container>
+            <ng-container *ngIf="sf.isbuyingNewHome.value === 'yes'">
+                <section id="nexthome" class="mb-4">
+                    <p>If so, where would you like to purchase your next home?</p>
+                    <textarea id="nextHome" rows="4" cols="95%" name="nextHome" formControlName="nextHome"></textarea>
+                </section>
+            </ng-container>
+            <div class="whySelling mb-3">
+                <p>Whay are you selling?</p>
+                <input id="whySelling" type="text" class="form-control" name="whySelling" formControlName="whySelling"
+                    required />
+                <div class="text-center" *ngIf="sf.whySelling.touched && sf.whySelling.errors?.required">
+                    <div class="text-danger py-1">Selling reason is required.</div>
+                </div>
+            </div>
+            <hr class="mb-4" />
+            <div class="submit-btn">
+                <button [disabled]="!sellerForm.valid" class="btn btn-primary btn-lg btn-block" type="submit">
+                    Send
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<section id="call-us">
+    <app-contact-number></app-contact-number>
+</section>

@@ -1,0 +1,29 @@
+.wrapper {
+    background-image: url('../../../../assets/images/callus_bg.png');
+    background-size: cover;
+    .call-us {
+        padding: 18% 5%;
+        text-align: center;
+        .questions {
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        .phone-number {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .questions {
+                font-size: 2rem;
+            }
+            .phone-number {
+                font-size: 4.5rem;
+            }
+        }
+    }
+    @media (min-width: 768px) {
+        .call-us {
+            padding: 10% 5%;
+        }
+    }
+}

@@ -1,0 +1,294 @@
+<div class="form-wrapper">
+    <section id="heading">
+        <p class="heading text-center">{{ heading }}</p>
+        <p class="sub-heading text-center">{{ subHeading }}</p>
+    </section>
+    <div class="container form-container">
+        <form [formGroup]="ltForm" (ngSubmit)="submitForm(ltForm)">
+            <div class="mb-4">
+                <label for="landLordTenant">Landlord/Tenant</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" id="landLordTenant" placeholder="Ladlord/Tenant name"
+                        name="landLordTenant" formControlName="landLordTenant" required />
+                </div>
+                <div class="text-center" *ngIf="f.landLordTenant.touched && f.landLordTenant.errors?.required">
+                    <div class="text-danger py-1">Ladlord/Tenant name is required.</div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="coLandLordTenant">Landlord/Tenant (If Applicable)</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" id="coLandLordTenant" placeholder="Ladlord/Tenant name"
+                        name="coLandLordTenant" formControlName="coLandLordTenant" />
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="landlordTenantEmail">Landlord/Tenant Email</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" id="landlordTenantEmail" placeholder="Landlord/Tenant email"
+                        name="landlordTenantEmail" formControlName="landlordTenantEmail" required />
+                </div>
+                <div class="text-center"
+                    *ngIf="f.landlordTenantEmail.touched && f.landlordTenantEmail.errors?.required">
+                    <div class="text-danger py-1">Landlord/Tenant email is required.</div>
+                </div>
+                <div class="text-center" *ngIf="f.landlordTenantEmail.dirty">
+                    <div class="text-danger py-1" *ngIf="f.landlordTenantEmail.invalid">
+                        Please enter a valid email address
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="coLandlordTenantEmail">Co-Landlord/Tenant Email (If Applicable)</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="text" class="form-control" id="coLandlordTenantEmail"
+                        placeholder="Co-Landlord/Tenant email" name="coLandlordTenantEmail"
+                        formControlName="coLandlordTenantEmail" />
+                </div>
+                <div class="text-center" *ngIf="f.coLandlordTenantEmail.dirty">
+                    <div class="text-danger py-1" *ngIf="f.coLandlordTenantEmail.invalid">
+                        Please enter a valid email address
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="landlordTeantPhoneNumber">Landlord/Tenant Phone Number</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="number" class="form-control" id="landlordTeantPhoneNumber"
+                        placeholder="Ladlord/Tenant phpne number" name="landlordTeantPhoneNumber"
+                        formControlName="landlordTeantPhoneNumber" required />
+                </div>
+                <div class="text-center"
+                    *ngIf="f.landlordTeantPhoneNumber.touched && f.landlordTeantPhoneNumber.errors?.required">
+                    <div class="text-danger py-1">Ladlord/Tenant phone number is required.</div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="coLandLoardTenantPhoneNumber">Co-Landlord/Tenant Phone Number</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">@</div>
+                    </div>
+                    <input type="number" class="form-control" id="coLandLoardTenantPhoneNumber"
+                        placeholder="Co-Landlord/Tenant phone number" name="coLandLoardTenantPhoneNumber"
+                        formControlName="coLandLoardTenantPhoneNumber" />
+                </div>
+            </div>
+            <h2 class="text-uppercase my-5">landlord</h2>
+            <section id="why-looking" class="mb-4">
+                <p>When are you looking to lease your property?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="now" name="landLordlookingToLease" value="now" type="radio"
+                            class="custom-control-input" checked="" formControlName="landLordlookingToLease">
+                        <label class="custom-control-label" for="now">Now</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="oneToThreeMonths" name="landLordlookingToLease" value="3months" type="radio"
+                            class="custom-control-input" checked="" formControlName="landLordlookingToLease">
+                        <label class="custom-control-label" for="oneToThreeMonths">0-3 Months</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="threeToSixMonths" name="landLordlookingToLease" value="6months" type="radio"
+                            class="custom-control-input" checked="" formControlName="landLordlookingToLease">
+                        <label class="custom-control-label" for="threeToSixMonths">3-6 Months</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="sixToTwelveMonths" name="landLordlookingToLease" value="12months" type="radio"
+                            class="custom-control-input" checked="" formControlName="landLordlookingToLease">
+                        <label class="custom-control-label" for="sixToTwelveMonths">6-12 Months</label>
+                    </div>
+                </div>
+            </section>
+            <section id="rented">
+                <p>Have you rented this property before? If so, how much did it rent for?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="yes" name="rentedProperty" value="yes" type="radio" class="custom-control-input"
+                            formControlName="rentedProperty">
+                        <label class="custom-control-label" for="yes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="no" name="rentedProperty" value="no" type="radio" class="custom-control-input"
+                            formControlName="rentedProperty">
+                        <label class="custom-control-label" for="no">No</label>
+                    </div>
+                </div>
+                <textarea *ngIf="f.rentedProperty.value === 'yes'" id="rentedPropertyPrice" rows="4" cols="95%"
+                    name="rentedPropertyPrice" formControlName="rentedPropertyPrice"></textarea>
+            </section>
+            <section id="proposal" class="mb-4">
+                <p for="proposal">What are you proposing to list your property for on the MLS?</p>
+                <textarea id="proposal" rows="4" cols="95%" name="help" required
+                    formControlName="mlsProposal"></textarea>
+                <div class="text-center" *ngIf="f.mlsProposal.touched && f.mlsProposal.errors?.required">
+                    <div class="text-danger py-1">Proposal is required.</div>
+                </div>
+            </section>
+            <section id="current-tenant">
+                <p>Do you currently have a tenant in the property? If so, when does their lease expire?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="tenatOnPropertyYes" name="tenatOnProperty" value="yes" type="radio"
+                            class="custom-control-input" formControlName="tenatOnProperty">
+                        <label class="custom-control-label" for="tenatOnPropertyYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="tenatOnPropertyNo" name="tenatOnProperty" value="no" type="radio"
+                            class="custom-control-input" formControlName="tenatOnProperty">
+                        <label class="custom-control-label" for="tenatOnPropertyNo">No</label>
+                    </div>
+                </div>
+                <textarea *ngIf="f.tenatOnProperty.value === 'yes'" id="whenTeneatLeaseExpire" rows="4" cols="95%"
+                    name="whenTeneatLeaseExpire" formControlName="whenTeneatLeaseExpire"></textarea>
+            </section>
+            <section id="pmc" class="mb-4">
+                <p>Are you using a Property Management Company?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="isUsingPMCYes" name="isUsingPMC" value="yes" type="radio"
+                            class="custom-control-input" formControlName="isUsingPMC">
+                        <label class="custom-control-label" for="isUsingPMCYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="isUsingPMCNo" name="isUsingPMC" value="no" type="radio" class="custom-control-input"
+                            formControlName="isUsingPMC">
+                        <label class="custom-control-label" for="isUsingPMCNo">No</label>
+                    </div>
+                </div>
+            </section>
+            <section id="pmc" class="mb-4">
+                <p>Are you interested in someone managing your property?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="isInterestedInSomeOneManagingYes" name="isInterestedInSomeOneManaging" value="yes"
+                            type="radio" class="custom-control-input" formControlName="isInterestedInSomeOneManaging">
+                        <label class="custom-control-label" for="isInterestedInSomeOneManagingYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="isInterestedInSomeOneManagingNo" name="isInterestedInSomeOneManaging" value="no"
+                            type="radio" class="custom-control-input" formControlName="isInterestedInSomeOneManaging">
+                        <label class="custom-control-label" for="isInterestedInSomeOneManagingNo">No</label>
+                    </div>
+                </div>
+            </section>
+            <h2 class="text-uppercase my-5">tenant</h2>
+            <section id="tenantLeases" class="mb-4">
+                <p>When are you looking to lease your property?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="tenatLookingToLeaseNow" name="tenatLookingToLease" value="now" type="radio"
+                            class="custom-control-input" checked="" formControlName="tenatLookingToLease">
+                        <label class="custom-control-label" for="tenatLookingToLeaseNow">Now</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="tenatLookingToLeaseOneToThreeMonths" name="tenatLookingToLease" value="3months"
+                            type="radio" class="custom-control-input" checked="" formControlName="tenatLookingToLease">
+                        <label class="custom-control-label" for="tenatLookingToLeaseOneToThreeMonths">0-3 Months</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="tenatLookingToLeaseThreeToSixMonths" name="tenatLookingToLease" value="6months"
+                            type="radio" class="custom-control-input" checked="" formControlName="tenatLookingToLease">
+                        <label class="custom-control-label" for="tenatLookingToLeaseThreeToSixMonths">3-6 Months</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="tenatLookingToLeaseSixToTwelveMonths" name="tenatLookingToLease" value="12months"
+                            type="radio" class="custom-control-input" checked="" formControlName="tenatLookingToLease">
+                        <label class="custom-control-label" for="tenatLookingToLeaseSixToTwelveMonths">6-12
+                            Months</label>
+                    </div>
+                </div>
+            </section>
+            <div class="mb-4">
+                <label for="monthlyBudget">What is your monthly budget?</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">$</div>
+                    </div>
+                    <input type="text" class="form-control" id="monthlyBudget" placeholder="0.00" name="monthlyBudget"
+                        formControlName="monthlyBudget" required />
+                </div>
+                <div class="text-center" *ngIf="f.monthlyBudget.touched && f.monthlyBudget.errors?.required">
+                    <div class="text-danger py-1">Monthly budget is required.</div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="monthlyBudget">What area do you want to live in?</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <input type="text" class="form-control" id="areaToLive" placeholder="ex: Downtown" name="areaToLive"
+                        formControlName="areaToLive" required />
+                </div>
+                <div class="text-center" *ngIf="f.areaToLive.touched && f.areaToLive.errors?.required">
+                    <div class="text-danger py-1">Area is required.</div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label for="monthlyBudget">How many parking spots do you need?</label>
+                <div class="input-group mb-2 mr-sm-2">
+                    <input type="number" class="form-control" id="howManyParkingSpots" placeholder="ex: 4"
+                        name="howManyParkingSpots" formControlName="howManyParkingSpots" required />
+                </div>
+                <div class="text-center"
+                    *ngIf="f.howManyParkingSpots.touched && f.howManyParkingSpots.errors?.required">
+                    <div class="text-danger py-1">Number of parking spots are required.</div>
+                </div>
+            </div>
+            <section id="pets" class="mb-4">
+                <p>Do you have any pets that will be living with you? If so, what kind of pet?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="havePetsYes" name="havePets" value="yes" type="radio" class="custom-control-input"
+                            formControlName="havePets">
+                        <label class="custom-control-label" for="havePetsYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="havePetsNo" name="havePets" value="no" type="radio" class="custom-control-input"
+                            formControlName="havePets">
+                        <label class="custom-control-label" for="havePetsNo">No</label>
+                    </div>
+                </div>
+                <textarea *ngIf="f.havePets.value === 'yes'" id="kindOfPets" rows="4" cols="95%" name="kindOfPets"
+                    formControlName="kindOfPets"></textarea>
+            </section>
+            <section id="broken-lease" class="mb-4">
+                <p>Have you broken a lease in the last 36 months?</p>
+                <div class="radio-delections my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="haveBrokenLeaseYes" name="haveBrokenLease" value="yes" type="radio" class="custom-control-input"
+                            formControlName="haveBrokenLease">
+                        <label class="custom-control-label" for="haveBrokenLeaseYes">Yes</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="haveBrokenLeaseNo" name="haveBrokenLease" value="no" type="radio" class="custom-control-input"
+                            formControlName="haveBrokenLease">
+                        <label class="custom-control-label" for="haveBrokenLeaseNo">No</label>
+                    </div>
+                </div>
+            </section>
+            <hr class="mb-4" />
+            <div class="submit-btn">
+                <button [disabled]="!ltForm.valid" class="btn btn-primary btn-lg btn-block" type="submit">
+                    Send
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<section id="call-us">
+    <app-contact-number></app-contact-number>
+</section>

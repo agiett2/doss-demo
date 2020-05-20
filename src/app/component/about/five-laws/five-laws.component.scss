@@ -1,0 +1,30 @@
+
+.wrapper {
+    background-color: #f5f6fa;
+    .container {
+        max-width: 957px;
+        margin: 0 auto;
+    }
+    .heading {
+        padding: 5rem 0 1rem 0;
+        font-size: 1.5rem;
+        color: #164f8c;
+        font-weight: 700;
+        text-align: center;
+        text-transform: capitalize;
+        .sub-heading {
+            text-align: center;
+            color: #000;
+            font-weight: 300;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+        }
+    }
+    @media (min-width: 768px) {
+        .heading {
+            font-size: 4rem;
+            padding: 7rem 1rem 3rem 1rem;
+        }
+    } 
+}
+

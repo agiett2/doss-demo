@@ -1,0 +1,34 @@
+
+.wrapper {
+    background-color: #f5f6fa;
+    padding: 6rem 0;
+    .heading {
+        font-size: 3rem;    
+        font-weight: 500;
+        margin-bottom: 2rem;
+        color: #164f8c;
+        text-transform: uppercase;
+    }
+}
+#mission {
+    padding: 2rem;
+    .heading {
+        margin-top: 6rem;  
+        font-size: 3rem;    
+        font-weight: 500;
+        margin-bottom: 2rem;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .message {
+        font-size: 2rem;
+        color: #fff;
+        font-weight: 300;
+        width: 50%;
+        margin: 0 auto;
+    }
+    background-size: cover;
+    height: 60vh;
+    background-image: url('../../../../assets/images/our_mission.png');
+    background-position: center;
+}

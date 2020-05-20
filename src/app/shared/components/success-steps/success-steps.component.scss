@@ -1,0 +1,41 @@
+.wrapper {
+    height: 100%;
+    padding-top: 4vh;
+    padding-bottom: 22.85vh;
+    .accordion {
+        > .card {
+            border: 1px solid #f06e42 !important;
+            color: #000 !important;
+            font-size: 1.2rem;
+            .card-header {
+                display: flex;
+                justify-content: space-between;
+                background-color: #f06e42 !important;
+                span {
+                    color: #fff;
+                    flex: 0 2 10%;
+                    font-size: 2rem;
+                    margin-left: .8rem;
+                }
+                button {
+                    flex: 0 0 96%;
+                    text-decoration: none;
+                    color: #fff;
+                    text-align: left;
+                }
+            }
+            &:not(:last-of-type) {
+                margin-bottom: 2rem;
+            }
+
+            .card-body {
+                padding: 1.5rem;
+                @media (min-width: 768px) {
+                    padding: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+
