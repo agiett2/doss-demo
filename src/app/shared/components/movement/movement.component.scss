@@ -3,22 +3,28 @@
     background-color: #fff;
     padding: 2rem;
     height: 32vh;
-    background-image: url('../../../../assets/images/join_the_movement.png');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    .heading {
-        padding-top: .5rem;
-        font-size: 1rem;
-        font-weight: 500;
-        color: #fff;
-        text-align: center;
+    display: flex;
+    background: linear-gradient(180deg, rgba(23, 78, 138, 0) 45.83%, rgba(0, 0, 0, 0.7) 100%), url('../../../../assets/images/join_the_movement.png');
+    .text {
+        align-self: flex-end;
+        padding-left: 8rem;
+        padding-bottom: 3rem;
+        .heading {
+            font-size: 4rem;
+            font-weight: 500;
+            color: #fff;        
+            width: 45%; 
+            text-transform: uppercase;
+        }
+        .caption {
+            text-align: left;
+            color: #fff;
+            font-size: 1.2rem;
+        }
     }
-    .caption {
-        height: 25vh;
-        text-align: left;
-        color: #fff;
-    }
+    
 }
 @media (min-width: 768px) {
     .wrapper {

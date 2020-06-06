@@ -33,11 +33,36 @@
   @media (min-width: 1024px) {
   
     .heading {
-      width: 50%;
-      font-size: 5rem;
+      position: absolute;
+width: 787px;
+height: 231px;
+left: 326px;
+top: 396px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: bold;
+font-size: 64px;
+line-height: 77px;
+
+color: #FFFFFF;
     }
     .sub-heading {
-      font-size: 1.5rem;
+      position: absolute;
+width: 817px;
+height: 29px;
+left: 326px;
+top: 650px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+
+color: #E8E8E8;
     }
   }
   text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);

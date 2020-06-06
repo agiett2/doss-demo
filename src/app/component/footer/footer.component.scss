@@ -2,9 +2,9 @@
   height: 100%;
   z-index: 2;
   opacity: 1;
-  background-color: #f06e42;
   position: relative;
-  color: #fff;
+  color: #164f8c ;
+  border-top: solid #164f8c .1rem;
   .footer {
     display: flex;
     justify-content: space-between;
@@ -40,7 +40,7 @@
       }
     }
     a {
-      color: #fff;
+      color: #164f8c;
       text-decoration: none;
     }
     

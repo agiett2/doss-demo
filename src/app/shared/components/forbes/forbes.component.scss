@@ -1,12 +1,14 @@
 .wrapper {
     padding: 5rem;
     background-color: #fff;
-    text-align: center;
+    text-align: left;
     display: flex;
     justify-content: center;
     flex-direction: column;
     .text {
         text-transform: capitalize;
+        margin-left: 32%;
+        color: #164f8c;
     }
     img {
         text-align: center;

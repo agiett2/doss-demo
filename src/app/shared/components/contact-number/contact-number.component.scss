@@ -1,9 +1,12 @@
 .wrapper {
-    background-image: url('../../../../assets/images/callus_bg.png');
-    background-size: cover;
+    background-color: #F8F9FB;
+    display: flex;
+    justify-content: center;
+  background-size: cover;
+  color: #164f8c;
     .call-us {
         padding: 18% 5%;
-        text-align: center;
+    
         .questions {
             font-size: 1rem;
             text-transform: uppercase;

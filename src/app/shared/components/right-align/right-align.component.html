@@ -4,16 +4,17 @@
   [style.color]="contentService.getColor(textColor)"
 >
   <div class="container">
-    <div class="col-md-12">
-      <div class="text-center heading">
-        <ng-content select="[heading]"></ng-content>
-      </div>
-    </div>
     <div class="align-content-right">
       <div class="pic">
         <ng-content select="[pic]"></ng-content>
       </div>
       <div class="text">
+        <div class="heading">
+          <ng-content select="[heading]"></ng-content>
+          <div class="sub-heading">
+            <ng-content select="[sub-heading]"></ng-content>
+          </div>
+        </div>
         <ng-content select="[text]"></ng-content>
       </div>
     </div>

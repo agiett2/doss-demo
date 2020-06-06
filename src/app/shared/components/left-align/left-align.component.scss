@@ -1,18 +1,30 @@
 .wrapper {
   // height: calc(100vh - 8rem);
+  .container {
+    max-width: 1440px;
+  }
   color: #fff;
   padding: 5rem 0;
   padding-top: 5rem;
   .heading {
-    padding: 2rem 0;
     margin-bottom: 2rem;
-    font-size: 3rem;
+    font-size: 4.5rem;
     text-transform: uppercase;
     font-weight: 700 !important;
+    width: 67%;
+    color:#174D89;
   }
   .sub-heading  {
     color: #000;
     font-size: 1.2rem;
+  }
+  .text {
+    width: 559px;
+    color:#174D89;
+  }
+  .pic {
+    width: 43%;
+    margin-top: -3rem;
   }
 }
 

@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     this.heroHeadig = 'Making homeownership in America more affordable!';
     this.heroText = `Full Service. Experienced Agents. Modern Technology. Save Thousands`;
     this.fullServiceSubHeading = 'Hire a TECH Company!';
-    this.movementHeading = 'JOIN The MOVEMENT';
+    this.movementHeading = 'JOIN The MOVEMENT!';
     this.movementCaption = 'Therea O. sold a property for a Flat Fee with DOSS. SHe received Full-Service and saved over $7,000.';
   }
 

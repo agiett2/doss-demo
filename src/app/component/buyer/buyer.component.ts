@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BuyerFaqComponent } from './buyer-faq/buyer-faq.component';
 import { BuyerConsultationComponent } from './buyer-consultation/buyer-consultation.component';
 import { BuyerStepsComponent } from './buyer-steps/buyer-steps.component';
-import { BuyerContentComponent } from './buyer-conent/buyer-content.component';
 import { AgentCompareTableRowDataInterface } from 'src/app/shared/interfaces/agent-compare-table-row-data.interface';
 import { TableDataInterface } from 'src/app/shared/interfaces/table-data.interface';
 
@@ -23,11 +22,10 @@ export class BuyerComponent implements OnInit {
   public tableRowDate: AgentCompareTableRowDataInterface[];
 
   // public agents: ServiceOfferings[]; create model and list of service for table
-public component: any;
+  public component: any;
   constructor() { }
 
   ngOnInit(): void {
-    this.component = BuyerContentComponent;
     this.heading = 'Find a HOUSE, make it your HOME…';
     this.subHeading = 'Together, lets find a place to create beautiful memories!';
     this.tableHeadingData = ['Service', 'Traditional Agent', 'TechAgent'];
@@ -38,9 +36,9 @@ public component: any;
         istechAgent: true
       },
       {
-       service: 'Help BUYER get Pre-Approved(If Applicable)',
-       isTraditionalAgent: true,
-       istechAgent: false
+        service: 'Help BUYER get Pre-Approved(If Applicable)',
+        isTraditionalAgent: true,
+        istechAgent: false
       },
       {
         service: 'Help BUYER find the perfect home',
@@ -94,24 +92,5 @@ public component: any;
       }
     ];
     this.compareTableData = { heading: this.tableHeadingData, row: this.tableRowDate };
-  }
-
-  public showComponent = (component: string): void => {
-    switch (component) {
-      case 'faq':
-        this.component = BuyerFaqComponent;
-        break;
-      case 'consultation':
-        this.component = BuyerConsultationComponent;
-        break;
-        case 'steps':
-          this.component = BuyerStepsComponent;
-          break;
-          case 'content':
-          this.component = BuyerStepsComponent;
-          break;
-      default:
-        this.component = BuyerContentComponent;
-    }
   }
 }

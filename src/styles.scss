@@ -4,6 +4,10 @@ body {
   // font-family: "-apple-system", sans-serif !important;
 }
 
+.container {
+  max-width: 1440px !important;
+}
+
 .span-link {
   text-transform: capitalize;
   &:hover {
@@ -46,10 +50,10 @@ body {
   }
   &-inline-primary, &-primary {
     color: #fff !important;
-    border-color:  #f06e42 !important;
-    background-color:  #f06e42 !important;
+    border-color:  #164f8c !important;
+    background-color:  #164f8c!important;
     &:hover {
-        color:  #f06e42 !important;
+        color:  #164f8c !important;
         background-color: #fff !important;
     }
     &:disabled {
@@ -105,17 +109,18 @@ img{
 .align-content {
    &-right, &-left {
      display: flex;
-     justify-content: center;
+     justify-content: space-between;
      flex-direction: column;
-     align-items: center;
+     align-items: left;
      .text {
-       flex: 2 0 53%;
+      width: 559px;
        font-size: 1rem;
        color: #000;
       }
       @media (min-width: 768px) {
         .text {
           font-size: 1.5rem;
+          width: 45%;
         }
       }
     }

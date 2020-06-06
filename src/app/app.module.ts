@@ -41,7 +41,6 @@ import { FranchisingFaqComponent } from './component/franchising/franchising-faq
 import { FranchisingRequestFormComponent } from './component/franchising/franchising-request-form/franchising-request-form.component';
 import { SendEmailServiceAbstract } from './core/services/abstract/send-email.service.abstract';
 import { SendEmailService } from './core/services/send-email/send-email.service';
-import { BuyerContentComponent } from './component/buyer/buyer-conent/buyer-content.component';
 import { RentContentComponent } from './component/rent/rent-content/rent-content.component';
 import { SellerContentComponent } from './component/seller/seller-content/seller-content.component';
 import { ForbesComponent } from './shared/components/forbes/forbes.component';
@@ -117,7 +116,6 @@ const appRoutes: Routes = [
     TenatFaqComponent,
     FranchisingFaqComponent,
     FranchisingRequestFormComponent,
-    BuyerContentComponent,
     RentContentComponent,
     SellerContentComponent,
     ForbesComponent,
