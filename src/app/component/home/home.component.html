@@ -184,18 +184,19 @@
             </p>
           </div>
         </div>
-        <div class="steps text-center">
-          <div class="buyer">
-            <img class="pb-1" src="assets/images/im_a_buyer.png" alt="">
-            <p class="btn btn-md  btn-inline-primary" (click)="buyerPageRedirect()">I’m a Buyer</p>
+        <div class="steps text-left">
+       
+          <div class="buyer" (click)="buyerPageRedirect()">
+            <img class="" src="assets/images/im_a_buyer.png" alt="">
+            <p>I am a buyer</p>
           </div>
-          <div class="seller">
+          <div class="seller" (click)="sellPageRedirect()">
             <img class="pb-1" src="assets/images/im_a_seller.png" alt="">
-            <p class="btn btn-md  btn-inline-primary" (click)="sellPageRedirect()">I’m a Seller</p>
+            <p>I am a seller</p>
           </div>
-          <div class="renter">
+          <div class="renter" (click)="rentPageRedirect()">
             <img class="pb-1" src="assets/images/im_a_renter.png" alt="">
-            <p class="btn btn-md  btn-inline-primary" (click)="rentPageRedirect()">I’m a Renter</p>
+            <p>I am a renter</p>
           </div>
         </div>
       </div>

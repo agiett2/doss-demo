@@ -31,8 +31,8 @@ export class FooterComponent implements OnInit {
     ];
 
     this.brandLinks = [
-      { title: 'www.socialaents.com', path: 'www.socialaents.com'},
-      { title: 'www.shopdoss.com', path: 'www.shopdoss.com'}
+      { title: 'www.socialaents.com', path: 'https://www.socialaents.com/'},
+      { title: 'www.shopdoss.com', path: 'https://www.shopdoss.com/'}
     ];
   }
 }

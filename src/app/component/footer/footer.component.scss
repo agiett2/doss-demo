@@ -1,10 +1,12 @@
+hr {
+  width: 66%;
+}
 .wrapper {
   height: 100%;
   z-index: 2;
   opacity: 1;
   position: relative;
-  color: #164f8c ;
-  border-top: solid #164f8c .1rem;
+  color: #164f8c;
   .footer {
     display: flex;
     justify-content: space-between;

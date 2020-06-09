@@ -1,3 +1,4 @@
+<hr>
 <div class="wrapper">
     <section id="footer" class="footer  container">
         <div class="logo">
@@ -6,6 +7,12 @@
                 <i class="fa fa-twitter" aria-hidden="true"></i>
                 <i class="fa fa-linkedin" aria-hidden="true"></i>
                 <i class="fa fa-facebook" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="doss-brand">
+            <div class="heading">doss brand</div>
+            <div class="links" *ngFor=" let link of brandLinks">
+                <a  class="p-2 span-link" href="{{link.path}}">{{link.title}}</a>
             </div>
         </div>
         <div class="learn-more">
@@ -20,11 +27,6 @@
                 <a  class="p-2 span-link" href="{{link.path}}" target="_blank">{{link.title}}</a>
             </div>
         </div>
-        <div class="doss-brand">
-            <div class="heading">doss brand</div>
-            <div class="links" *ngFor=" let link of brandLinks">
-                <link  class="p-2 span-link" href="{{link.path}}">{{link.title}}
-            </div>
-        </div>
+        
     </section>
 </div>
