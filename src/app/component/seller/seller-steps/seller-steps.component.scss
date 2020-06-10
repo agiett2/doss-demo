@@ -15,7 +15,7 @@
             font-size: 1.7rem;
         }
     }
-    @media (min-width: 768px) {
+    @media only screen and  (min-width: 768px) {
         .heading {
             font-size: 4rem;
         }

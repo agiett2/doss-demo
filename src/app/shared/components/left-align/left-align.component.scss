@@ -7,29 +7,32 @@
   padding: 10rem 0;
   .heading {
     margin-bottom: 2rem;
-    font-size: 4.5rem;
+    font-size: 3rem;
     text-transform: uppercase;
     font-weight: 700 !important;
     width: 67%;
     color:#174D89;
-    line-height: 5rem;
+    line-height: 3rem;
+    @media only screen and (min-width: 768px) {
+      font-size: 4.5rem;
+      line-height: 5rem;
+    }
   }
   .sub-heading  {
     color: #000;
     font-size: 1.2rem;
   }
   .text {
-    width: 559px;
+    width: 100%;
     color:#174D89;
   }
   .pic {
-    width: 43%;
+    @media only screen and (min-width: 768px) {
+      width: 43%;
+    }
     margin-top: -3rem;
   }
 }
-
-
-
 .content-body {
   margin: 1rem 0;
   display: flex;

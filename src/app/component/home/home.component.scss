@@ -9,7 +9,9 @@
   background-size: cover;
   background-position: 50% 50%;
   .btn-block {
-    width: 40%;
+    @media only screen and (min-width: 768px) {
+      width: 40%;
+    }
     text-transform: capitalize;
   }
 }
@@ -23,12 +25,16 @@
     .heading {
       padding-top: 3rem;
       margin-bottom: 1rem;
-      font-size: 4.5rem;
+      font-size: 2.5rem;
       text-transform: uppercase;
       font-weight: 700 !important;
       color: #164f8c;
-      width: 41%;
-      line-height: 5rem;
+      line-height: 3rem;
+      @media only screen and (min-width: 768px) {
+        font-size: 4.5rem;
+        line-height: 5rem;
+        width: 41%;
+      }
     }
     .sub-heading {
       color: grey;
@@ -43,7 +49,7 @@
       justify-content: space-between;
       .service {
         margin-bottom: 6rem;
-        @media (min-width: 768px) {
+        @media only screen and (min-width: 768px) {
           margin-bottom: 2rem;
         }
         img {
@@ -75,7 +81,7 @@
         }
       }
     }
-    @media (min-width: 768px) {
+    @media only screen and  (min-width: 768px) {
       .services {
         flex-direction: row;
       }
@@ -85,7 +91,7 @@
       line-height: 0.5;
       padding-bottom: 6rem;
       text-align: right;
-      @media (min-width: 768px) {
+      @media only screen and (min-width: 768px) {
         margin-top: 5rem;
         font-size: 1rem;
       }
@@ -97,11 +103,17 @@
   height: 65rem;
   padding: 7rem 0;
   ul {
+    width: 60%;
+    margin-left: -1rem;
+    @media only screen and (min-width: 768px) {
+      margin-left: unset;
+      width: unset;
+    }
     li {
       font-size: 1rem;
       margin-bottom: 2rem;
     }
-    @media (min-width: 768px) {
+    @media only screen and  (min-width: 768px) {
       li {
         font-size: 1.3rem;
       }
@@ -135,9 +147,12 @@
     font-size: 24px;
     .heading {
       font-weight: 700;
-      font-size: 4.5rem;
+      font-size: 2.5rem;
       line-height: 5rem;
       margin-bottom: 0.5rem;
+      @media only screen and (min-width: 768px) {
+        font-size: 4.5rem;
+      }
     }
   }
 
@@ -190,7 +205,7 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media only screen and  (min-width: 768px) {
     .join-us {
       flex-direction: row;
       .tech-agent,
@@ -224,23 +239,66 @@
     flex-direction: column;
     .buyer, .seller, .renter {  
       flex: 0 2 30%;
-      &:hover {
-        transform: scaleY(1.1);
-        transform: scaleX(1.1);
-      }
+      border-radius: 10px;
+      height: 18rem;
+      display: flex;
       p {
-        margin-top: -3rem;
         z-index: 5;
         align-self: flex-end;
-        
         font-size: 1.2rem;
         padding-left: 1rem;
+        
       }
-     
+      
     }
+    .buyer {
+      background: linear-gradient(0deg, rgba(23, 77, 137, 0.65), rgba(23, 77, 137, 0.65)), url('../../../assets/images/im_a_buyer.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:hover {
+        background: linear-gradient(0deg, rgba(23, 77, 137, 0.65), rgba(23, 77, 137, 0.2)),  url('../../../assets/images/im_a_buyer.png');
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: scaleY(1.1);
+        transform: scaleX(1.1);
+        transition: all .3s;
+      }
+
+    }
+    .seller {
+      background: linear-gradient(0deg, rgba(23, 77, 137, 0.65), rgba(23, 77, 137, 0.65)), url('../../../assets/images/im_a_seller.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:hover {
+        background: linear-gradient(0deg, rgba(23, 77, 137, 0.65), rgba(23, 77, 137, 0.2)),  url('../../../assets/images/im_a_seller.png');
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: scaleY(1.1);
+        transform: scaleX(1.1);
+        transition: all .3s;
+      }
+    }
+
+    .renter {
+      background: linear-gradient(0deg, rgba(23, 77, 137, 0.65), rgba(23, 77, 137, 0.65)), url('../../../assets/images/im_a_renter.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      &:hover {
+        background: linear-gradient(0deg, rgba(23, 77, 137, 0.65), rgba(23, 77, 137, 0.2)),  url('../../../assets/images/im_a_renter.png');
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: scaleY(1.1);
+        transform: scaleX(1.1);
+        transition: all .3s;
+      }
+    }
+
   }
 
-  @media (min-width: 768px) {
+  @media only screen and  (min-width: 768px) {
     .steps {
       flex-direction: row;
     }
@@ -252,13 +310,16 @@
       font-weight: 700 !important;
       width: 32%;
       font-weight: 700;
-      font-size: 4.5rem;
+      font-size: 2.5rem;
       line-height: 5rem;
       margin-bottom: 0.5rem;
+      @media only screen and(min-width: 768px) {
+        font-size: 4.5rem;
+      }
     }
     .sub-heading {
       font-size: 1.5rem;
-      font-weight: 300;
+      font-weight: 300;   
       margin: 1rem 0 5rem 0;
       width: 43%;
     }
@@ -282,7 +343,7 @@
       font-weight: 700;
       font-size: 1rem;
     }
-    @media (min-width: 768px) {
+    @media only screen and  (min-width: 768px) {
       .questions {
         font-size: 2rem;
       }
@@ -310,7 +371,7 @@
       font-size: 3rem;
       text-transform: uppercase;
       font-weight: 700 !important;
-      @media (min-width: 768px) {
+      @media only screen and  (min-width: 768px) {
         padding: 0;
       }
     }
@@ -339,7 +400,7 @@
     }
   }
 
-  @media (min-width: 768px) {
+  @media only screen and  (min-width: 768px) {
     .section-wrapper {
       flex-direction: row;
       .top {

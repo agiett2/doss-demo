@@ -65,7 +65,7 @@
                     }
                 }
             }
-            @media (min-width: 768px) {
+            @media only screen and  (min-width: 768px) {
                 .services {
                     flex-direction: row;
                 }
@@ -98,7 +98,7 @@
                 font-size: 1.7rem;
             }
         }
-        @media (min-width: 768px) {
+        @media only screen and  (min-width: 768px) {
             .heading {
                 font-size: 4rem;
             }
@@ -116,7 +116,7 @@
             text-align: center;
             color: #f06e42;
             font-size: .5rem;
-            @media (min-width: 768px) {
+            @media only screen and  (min-width: 768px) {
                 font-size: 1rem;
                 font-weight: 700;
             }

@@ -16,7 +16,7 @@
     .heading {
         font-size: 1.3rem;
         color: #fff;
-        @media (min-width: 768px) {
+        @media only screen and  (min-width: 768px) {
             font-size: 4rem;
         }
     }

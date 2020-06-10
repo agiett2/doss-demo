@@ -53,8 +53,8 @@ body {
     border-color:  #164f8c !important;
     background-color:  #164f8c!important;
     &:hover {
-        color:  #164f8c !important;
-        background-color: #fff !important;
+        color:  #fff !important;
+        background-color: #124072 !important;
     }
     &:disabled {
       color: #fff !important;
@@ -107,30 +107,41 @@ img{
 }
 
 .align-content {
-   &-right, &-left {
-     display: flex;
-     justify-content: space-between;
-     flex-direction: column;
-     align-items: left;
-     .text {
+  &-right, &-left {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: left;
+    .text {
       width: 559px;
-       font-size: 1rem;
-       color: #000;
-      }
-      @media (min-width: 768px) {
-        .text {
-          font-size: 1.5rem;
-          width: 45%;
-        }
+      font-size: 1rem;
+      color: #000;
+      @media only screen and  (min-width: 768px) {
+        font-size: 1.5rem;
+        width: 45%;
       }
     }
+    .pic {
+      @media only screen and (min-width: 768px) {
+          order: unset;
+        }
+      }
   }
-  @media (min-width: 768px) {
+  
+  &-left {
+    flex-direction: column-reverse;
+    .heading {
+      padding-top: 3rem;
+    }
+  }
+  }
+  @media only screen and  (min-width: 768px) {
   .align-content  {
     &-right, &-left {
       flex-direction: row;
     }
    &-right {
+  
     .pic {
       padding-right: 2rem;
     }

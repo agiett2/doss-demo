@@ -14,7 +14,7 @@
             border: solid .02rem #fff !important;
         }
     }
-    @media (min-width: 768px){
+    @media only screen and  (min-width: 768px){
         #compare-table {
             padding: 3rem;
         }
