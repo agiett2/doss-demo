@@ -11,46 +11,56 @@
   background-repeat: no-repeat;
   background-position: center;
 
-  font-family: "Source Sans Pro", sans-serif;
-
+  font-family: 'Inter', sans-serif;
   .wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 30%;
-    margin-top: 30vh;
+    padding: 10%;
+    margin-top: 25vh;
     color: #fff;
     text-transform: capitalize;
+    @media only screen and (min-width: 768px) {
+      margin-top: 40vh;
+      padding: 0 18%;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      margin-top: 32vh;
+    }
 
     .heading {
+      font-size: 32px;
       font-weight: 500;
       line-height: 90%;
+      font-weight: bold;
+      line-height: 39px;
+      margin-bottom: .5rem;
     }
     .sub-heading {
       font-size: 1rem;
     }
-    .down-arrow{
-      width: 5%;
-      margin-top: 20%;
-      margin-left: 25%;
+    .down-arrow {
       display: flex;
+      width: 5%;
+      margin: 0 auto;
+      margin-top: 43%;
+      @media only screen and (min-width: 360px) {
+        margin-top: 70%;
+      }
       img {
         align-self: flex-end;
       }
       
     }
-    @media (min-width: 1024px) {
+    @media only screen and (min-width: 1024px) {
       .heading {
-        font-family: Inter;
-        font-style: normal;
-        font-weight: bold;
+        line-height: 77px;
         font-size: 64px;
         line-height: 77px;
-        width: 57%;
       }
       .sub-heading {
         height: 29px;
-
         font-family: Inter;
         font-style: normal;
         font-weight: normal;

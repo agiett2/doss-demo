@@ -17,7 +17,10 @@
 }
 
 #full-service {
-  padding: 10rem 0;
+  padding: 5rem 0;
+  @media only screen and (min-width: 768px) {
+    padding: 10rem 0;
+  }
   background-color: #f5f6fa;
   .wrapper,
   .container {
@@ -39,6 +42,7 @@
     .sub-heading {
       color: grey;
       font-size: 1.5rem;
+      font-size: 14px;
       text-align: left;
       padding-bottom: 6rem;
       color: #164f8c;
@@ -74,9 +78,6 @@
         }
         .service-btn {
           width: 70%;
-          button {
-            padding: 1rem;
-          }
           margin-left: 12%;
         }
       }
@@ -100,10 +101,10 @@
 }
 
 #tech-agents {
-  height: 65rem;
-  padding: 7rem 0;
+  // height: 65rem;
+  // padding: 7rem 0;
   ul {
-    width: 60%;
+    width: 54%;
     margin-left: -1rem;
     @media only screen and (min-width: 768px) {
       margin-left: unset;
@@ -122,9 +123,12 @@
 }
 
 #join-us {
-  padding: 10rem 1rem;
+  padding: 5rem 1rem;
+  @media only screen and (min-width: 768px) {
+    padding: 10rem 1rem;
+  }
   background: #f8f9fb;
-  height: 63rem;
+  // height: 63rem;
   .elipse-bg {
     width: 20%;
     height: 2rem;
@@ -154,24 +158,36 @@
         font-size: 4.5rem;
       }
     }
+    .sub-heading {
+      font-size: 14px;
+    }
   }
 
   .content {
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    flex-direction: column;
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+    }
     .tech-agent,
     .franchise {
       padding-top: 3rem;
       background-size: cover;
-      width: 45%;
+      @media only screen and (min-width: 768px) {
+        width: 45%;
+      }
       background-color: #fff;
       color: #164f8c;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
       padding: 2rem;
       border-radius: 10px;
+      margin-bottom: 2rem;
       button {
-        width: 55%;
+        @media only screen and (min-width: 768px) {
+          width: 40%;
+        }
+        
       }
       .header {
         font-weight: 700;
@@ -181,7 +197,11 @@
       }
       .card-body {
         padding: 0 1.25rem;
-        margin-bottom: 3rem;
+        margin-bottom: 7rem;
+        @media only screen and (min-width: 768px) {
+          margin-bottom: 3rem;
+        }
+        
       }
     }
     .tech-agent {
@@ -229,7 +249,10 @@
 
 #first-step {
   background-color: #fff;
-  padding: 10rem 0;
+  padding: 5rem 0;
+  @media only screen and (min-width: 768px) {
+    padding: 10rem 0;
+  }
   color: #164f8c;
   
   .steps {
@@ -238,7 +261,16 @@
     justify-content: space-between;
     flex-direction: column;
     .buyer, .seller, .renter {  
-      flex: 0 2 30%;
+  
+      margin-bottom: 3rem;
+      &:last-child {
+        margin-bottom: 0;
+      };
+
+      @media only screen and (min-width: 768px) {
+        flex: 0 2 30%;
+        margin-bottom: unset;
+      }
       border-radius: 10px;
       height: 18rem;
       display: flex;
@@ -308,20 +340,26 @@
     .title {
       text-transform: uppercase;
       font-weight: 700 !important;
-      width: 32%;
+      width: 77%;
+      line-height: 3rem;
       font-weight: 700;
       font-size: 2.5rem;
-      line-height: 5rem;
+      
       margin-bottom: 0.5rem;
-      @media only screen and(min-width: 768px) {
+      @media only screen and (min-width: 768px) {
         font-size: 4.5rem;
+        width: 32%;
+        line-height: 5rem;
       }
     }
     .sub-heading {
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 300;   
       margin: 1rem 0 5rem 0;
+     @media only screen and (min-width: 768px) {
       width: 43%;
+      font-size: 1.5rem;
+     }
     }
   }
   img {
@@ -361,14 +399,23 @@
     flex-direction: column;
     .text {
       text-align: left;
-      padding: 7rem 5rem;
+      padding: 0rem 2rem;
+      @media only screen and (min-width: 768px) {
+        padding: 7rem 5rem;
+      }
+      
     }
     .pic {
       flex: 0 0 60%;
     }
     .heading {
       padding: 2rem 0;
-      font-size: 3rem;
+      font-size: 2rem;
+      line-height: 2.5rem;
+      @media only screen and (min-width: 768px) {
+        font-size: 3rem;
+        line-height: 5rem;
+      }
       text-transform: uppercase;
       font-weight: 700 !important;
       @media only screen and  (min-width: 768px) {
@@ -377,27 +424,34 @@
     }
     .message {
       height: 50%;
-      font-size: 1.7rem;
+      font-size: 1rem;
       font-weight: 300;
+      margin-bottom: 2rem;
+      @media only screen and  (min-width: 768px) {
+        font-size: 1.7rem;
+      }
     }
 
     background-color: #f06e42;
     color: #fff;
     
     background-repeat: no-repeat;
-    &::before {
-      content: ' ';
-      display: block;
-      position: absolute;
-      width: 100%;  
-      height: 9%;
-      left: -35%;
-      z-index: 1;
-      opacity: 0.2;
-      background-image: url('../../../assets/images/bg-logo.png');
-      background-repeat: no-repeat;
-      background-position: 50% 0;
+    @media only screen and (min-width: 768px) {
+      &::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        width: 100%;  
+        height: 9%;
+        left: -35%;
+        z-index: 1;
+        opacity: 0.2;
+        background-image: url('../../../assets/images/bg-logo.png');
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+      }
     }
+    
   }
 
   @media only screen and  (min-width: 768px) {
