@@ -22,10 +22,8 @@ import { BuyerFaqComponent } from './component/buyer/buyer-faq/buyer-faq.compone
 import { BuyerStepsComponent } from './component/buyer/buyer-steps/buyer-steps.component';
 import { RightAlignComponent } from './shared/components/right-align/right-align.component';
 import { LeftAlignComponent } from './shared/components/left-align/left-align.component';
-import { CardsSectionComponent } from './shared/components/cards-section/cards-section.component';
 import { CenterAlignComponent } from './shared/components/center-align/center-align.component';
 import { FaqComponent } from './shared/components/faq/faq.component';
-import { HeaderComponent } from './shared/components/header/header.component';
 import { SuccessStepsComponent } from './shared/components/success-steps/success-steps.component';
 import { CompareTableComponent } from './shared/components/compare-table/compare-table.component';
 import { ContactNumberComponent } from './shared/components/contact-number/contact-number.component';
@@ -41,8 +39,6 @@ import { FranchisingFaqComponent } from './component/franchising/franchising-faq
 import { FranchisingRequestFormComponent } from './component/franchising/franchising-request-form/franchising-request-form.component';
 import { SendEmailServiceAbstract } from './core/services/abstract/send-email.service.abstract';
 import { SendEmailService } from './core/services/send-email/send-email.service';
-import { RentContentComponent } from './component/rent/rent-content/rent-content.component';
-import { SellerContentComponent } from './component/seller/seller-content/seller-content.component';
 import { ForbesComponent } from './shared/components/forbes/forbes.component';
 import { MovementComponent } from './shared/components/movement/movement.component';
 import { ContactUsComponent } from './component/about/contact-us/contact-us.component';
@@ -90,7 +86,6 @@ const appRoutes: Routes = [
     HeroComponent,
     RightAlignComponent,
     LeftAlignComponent,
-    CardsSectionComponent,
     FooterComponent,
     CenterAlignComponent,
     BuyerComponent,
@@ -101,7 +96,6 @@ const appRoutes: Routes = [
     BuyerConsultationComponent,
     BuyerFaqComponent,
     FaqComponent,
-    HeaderComponent,
     SuccessStepsComponent,
     BuyerStepsComponent,
     CompareTableComponent,
@@ -116,8 +110,6 @@ const appRoutes: Routes = [
     TenatFaqComponent,
     FranchisingFaqComponent,
     FranchisingRequestFormComponent,
-    RentContentComponent,
-    SellerContentComponent,
     ForbesComponent,
     MovementComponent,
     ContactUsComponent,
@@ -142,7 +134,6 @@ const appRoutes: Routes = [
   entryComponents: [
     RightAlignComponent,
     LeftAlignComponent,
-    CardsSectionComponent,
     BuyerConsultationComponent,
     BuyerStepsComponent,
     BuyerFaqComponent,
