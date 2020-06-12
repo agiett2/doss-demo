@@ -9,8 +9,9 @@
   background-size: cover;
   background-position: 50% 50%;
   .btn-block {
+    font-size: 14px;
     @media only screen and (min-width: 768px) {
-      width: 40%;
+      width: 25%;
     }
     text-transform: capitalize;
   }
