@@ -58,7 +58,6 @@
 .section-3-card-title {
     border-left: 3px solid #EF6C40;
 }
-.section-3-card-text {}
 .section-3-card-button {
     padding-left: 30px;
 }
@@ -124,8 +123,6 @@
         flex-direction: column;
         justify-content: space-evenly;
     }
-    .section-6-card-icon {}
-    .section-6-card-text {}
 
     @media only screen and (max-width: 1169px) {
         .section-6-card {
@@ -153,3 +150,64 @@
         background-image: none;
     }
 }
+
+
+// SECTION-7
+.section-7-wrapper {
+    display: flex;
+    justify-content: center;
+    background: white;
+}
+
+.section-7-images {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 50px 0;
+}
+
+.section-7-images img {
+    width: 300px;
+    transition: 0.3s ease;
+}
+
+.section-7-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 1px 45px rgba(0,0,0,0.12);
+}
+
+@media only screen and (max-width: 1169px) {
+    .section-7-images {
+        flex-direction: column;
+        padding-top: 0;
+    }
+    .section-7-images a {
+        text-align: center;
+    }
+    .section-7-images img {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    
+}
+
+// SECTION-8
+.forbes-wrapper {
+    height: 25vh;
+    background: #F8F9FB;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.forbes-container img {
+    width: 250px;
+}
+@media only screen and (max-width: 767px) {
+    .forbes-container img {
+        width: 200px;
+    }
+}
+// SECTION-9
