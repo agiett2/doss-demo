@@ -36,6 +36,12 @@ body {
   color: #174D89;
   margin: 0;
 }
+.small-text-blue {
+  font-size: 18px;
+  font-weight: 400;
+  color: #174D89;
+  margin: 0;
+}
 
 @media only screen and (max-width: 1169px) {
   .large-text-white {
@@ -50,6 +56,9 @@ body {
   }
   .regular-text-blue {
     font-size: 18px;
+  }
+  .small-text-blue {
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -66,8 +75,45 @@ body {
   .regular-text-blue {
     font-size: 14px;
   }
+  .small-text-blue {
+    font-size: 12px;
+  }
 }
 
+
+// BUTTONS STYLES
+
+// wrap buttons with this container
+.button-container {
+  width: 100%;
+}
+
+.doss-button {
+  min-width: 150px;
+  height: 50px;
+
+  font-size: 14px;
+  color: white;
+  background: #174D89;
+
+  border:none;
+  border-radius: 5px;
+}
+.doss-button:hover {
+  background: #13457e;
+}
+
+
+@media only screen and (max-width: 1169px) {
+  .button-container {
+    width: 100%;
+    padding: 0 5%;
+  }
+  .doss-button {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {}
 
 
 
@@ -77,7 +123,7 @@ body {
 // typical container to use as needed
 .doss-container {
   width: 80vw;
-  min-height: 100vh;
+  min-height: 80vh;
   max-width: 1170px;
 }
 
@@ -130,9 +176,9 @@ body {
 }
 @media only screen and (max-width: 767px) {
   .doss-container {width: 90vw;}
- .info-container {width: 90vw;}
- .info-container-reverse {width: 90vw;}
+  .info-container {width: 90vw;}
+  .info-container-reverse {width: 90vw;}
 
- .text-box {width: 100%;}
- .image-box {width: 100%;}
+  .text-box {width: 100%;}
+  .image-box {width: 100%;}
 }
