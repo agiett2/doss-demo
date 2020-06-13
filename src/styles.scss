@@ -43,6 +43,12 @@ body {
   margin: 0;
 }
 
+.footnote {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
 @media only screen and (max-width: 1169px) {
   .large-text-white {
     font-size: 48px;
@@ -77,6 +83,9 @@ body {
   }
   .small-text-blue {
     font-size: 12px;
+  }
+  .footnote {
+    font-size: 8px;
   }
 }
 
@@ -118,7 +127,7 @@ body {
 
 
 
-//INFO-CONTAINER, DOSS-CONTAINER, SECTION-HEADER, TEXT BOX AND IMAGE BOX
+//INFO-CONTAINER, DOSS-CONTAINER, SECTION-HEADER, FOOTNOTE-CONTAINER, TEXT BOX AND IMAGE BOX
 
 // typical container to use as needed
 .doss-container {
@@ -149,6 +158,11 @@ body {
 
 //Header text for each sections. wrap it with doss-container
 .section-header {
+  margin: 50px 0;
+}
+
+.footnote-container {
+  text-align: right;
   margin: 50px 0;
 }
 
