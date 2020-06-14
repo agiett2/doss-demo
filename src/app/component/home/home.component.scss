@@ -167,6 +167,7 @@
 }
 
 .section-7-images img {
+    border-radius: 10px;
     width: 300px;
     transition: 0.3s ease;
 }
@@ -189,13 +190,9 @@
         margin-bottom: 20px;
     }
 }
-@media only screen and (max-width: 767px) {
-    
-}
-
 // SECTION-8
 .forbes-wrapper {
-    height: 25vh;
+    height: 35vh;
     background: #F8F9FB;
 
     display: flex;
@@ -211,3 +208,36 @@
     }
 }
 // SECTION-9
+.section-9-wrapper {
+    min-height: 45vh;
+    background: #EF6C40;
+
+    background-image: url(../../../assets/home/section_9/mic_logo.png);
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: left;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-9-text {
+    width: 60vw;
+    margin: 200px 0;
+}
+
+@media only screen and (max-width: 1169px) {
+    .section-9-wrapper {
+        min-height: 35vh;
+    }
+}
+@media only screen and (max-width: 767px) {
+   .section-9-wrapper {
+       background-image: none;
+   }
+    .section-9-text {
+        margin: 50px 0;
+    }
+}
