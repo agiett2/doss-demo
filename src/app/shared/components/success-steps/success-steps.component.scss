@@ -4,6 +4,7 @@
     padding-bottom: 22.85vh;
     .accordion {
         > .card {
+            position: static;
             border: 1px solid #f06e42 !important;
             color: #000 !important;
             font-size: 1.2rem;
