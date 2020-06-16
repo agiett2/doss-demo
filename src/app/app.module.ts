@@ -49,6 +49,7 @@ import { LearnDossComponent } from './component/about/learn-doss/learn-doss.comp
 import { RentConsultationComponent as RentConsultationComponent } from './component/rent/rent-consultation/rent-consultation.component';
 import { FullServiceFormComponent } from './component/seller/seller-full-service/full-service-form/full-service-form.component';
 import { SellerFaqComponent } from './component/seller/seller-faq/seller-faq.component';
+import { Hero2Component } from './shared/components/hero2/hero2.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -119,7 +120,8 @@ const appRoutes: Routes = [
     LearnDossComponent,
     RentConsultationComponent,
     FullServiceFormComponent,
-    SellerFaqComponent
+    SellerFaqComponent,
+    Hero2Component
   ],
   imports: [
     BrowserModule,

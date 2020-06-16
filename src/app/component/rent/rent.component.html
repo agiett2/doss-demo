@@ -1,39 +1,39 @@
-<section class="hero-section">
-    <app-hero [heading]="heading" [text]="subHeading" [backgroundImage]="'rent_hero.png'"></app-hero>
-</section>
-<div class="wrapper">
-    <section id="new-space">
-        <app-right-align [textColor]="'blue'">
-            <div heading>
-                {{ newSpaceHeading }}
-            </div>
-            <div text>
-                <p> {{ newSpaceText }}</p>
-            </div>
-            <div pic>
-                <img src="assets/images/new_space.png">
-            </div>
-        </app-right-align>
-    </section>
-    <section id="leasing">
-        <app-left-align [textColor]="'blue'">
-            <div heading>
-                {{ leasingHeading }}
-            </div>
-            <div text>
-                <p> {{ leasingText }}</p>
-            </div>
-            <div pic>
-                <img src="assets/images/help_leasing.png">
-            </div>
-        </app-left-align>
-    </section>
-    <section id="experience">
-        <div class="heading">
-            <p>It's all about the experience....</p>
+<section class="section-1">
+    <div class="hero-container">
+      <div class="hero-text-container">
+        <div class="hero-text">
+          <p class="large-text-white">LIVE ANYWHERE, <br> ONE YEAR AT A TIME</p>
+          <p class="regular-text-white" style="margin-top: 10px;">FAST. FLEXIBLE. FUN</p>
         </div>
-    </section>
-    <section id="call-us">
-        <app-contact-number></app-contact-number>
-    </section>
-</div>
+      </div>
+    </div>
+</section>
+
+<section class="section-2">
+    <div class="section-2-wrapper">
+      <div class="info-container">
+        <div class="image-box">
+          <img src="../../../assets/rent/new_space.png" alt="image of Doss Agent" style="width: 100%;">
+        </div>
+        <div class="text-box">
+          <p class="large-text-blue">DO YOU WANT A NEW SPACE?</p>
+          <p class="regular-text-blue" style="margin-top: 10px; color: #3A679A;">Today, more and more people are deciding to have a flexible lifestyle that empowers them to change their environment one year at a time. We have experienced TECH Agents that are ready to enhance your lifestyle!</p>
+        </div>
+        
+      </div>
+    </div>
+</section>
+
+<section class="section-3">
+    <div class="section-3-wrapper">
+      <div class="info-container-reverse">
+        <div class="text-box">
+          <p class="large-text-blue">WANT HELP LEASING YOUR PLACE?</p>
+          <p class="regular-text-blue" style="margin-top: 10px;">Leasing a property and getting the perfect tenant is both an ART and a SCIENCE. Our TECH Agents and MEDIA Team can give your property the exposure needed to select the right tenant every time!</p>
+        </div>
+        <div class="image-box">
+          <img src="../../../assets/rent/want_help.png" alt="image of Doss Phone" style="width: 100%;">
+        </div>
+      </div>
+    </div>
+</section>
