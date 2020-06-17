@@ -12,7 +12,7 @@ export class LandlordComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.heading = 'The Steps to finding the right Tenant…';
+    this.heading = 'The Steps to finding the right Tenant';
     // tslint:disable-next-line: max-line-length
     this.steps = [{ step: 'Landlord Consultation', detail: 'At DOSS, to ensure that we really understand your goals and objectives, we do a Landlord Consultation to learn more about you and to discuss how we plan to give you an awesome experience.' },
     // tslint:disable-next-line: max-line-length
