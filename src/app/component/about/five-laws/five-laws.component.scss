@@ -1,0 +1,21 @@
+.section-1-wrapper {
+    display: flex;
+    justify-content: center;
+    background: #F8F9FB;
+}
+
+.doss-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doss-container img {
+    width: 70%;
+}
+
+@media only screen and (max-width: 767px) {
+    .doss-container img {
+        width: 90%;
+    }
+}

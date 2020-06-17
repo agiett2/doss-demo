@@ -7,7 +7,7 @@ import { FaqInterface } from 'src/app/shared/interfaces/faq.interface';
   styleUrls: ['./franchising-faq.component.scss']
 })
 export class FranchisingFaqComponent implements OnInit {
-  public heading = 'franchise faq';
+  public heading = 'Franchise FAQ';
   public faqList: FaqInterface[];
   constructor() {}
 
