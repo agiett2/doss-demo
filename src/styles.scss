@@ -9,7 +9,13 @@ body {
   
 }
 
-
+//BOOTSTRAP OVERRIDES
+.text-danger {
+  color: #EF6C40 !important;
+}
+.required {
+  color: #EF6C40 !important;
+}
 // ALL TEXT STYLES
 .large-text-white {
   font-size: 64px;
@@ -195,4 +201,87 @@ body {
 
   .text-box {width: 100%;}
   .image-box {width: 100%;}
+}
+
+.consultation-form {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.form-input-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.form-input {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 50px;
+}
+
+.form-input input[type="text"], input[type="email"] {
+    height: 50px;
+    border: 1px solid #CFCFCF;
+    border-radius: 5px;
+    background: #F1F1F1;
+    padding: 0 20px;
+
+    color: #242528;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #CFCFCF;
+    border-radius: 5px;
+    background: #F1F1F1;
+    padding: 20px;
+    color: #242528;
+}
+.radio-input-group {
+    margin-bottom: 50px;
+}
+.radio-input-selections {
+    display: flex;
+}
+.radio-input {
+    margin-right: 20px;
+}
+
+.radio-input input[type="radio"] {
+    margin-right: 10px;
+}
+
+
+.submit {
+    min-width: 150px;
+    height: 50px;
+
+    font-size: 14px;
+    color: white;
+    background: #174D89;
+
+    border:none;
+    border-radius: 5px;
+
+    margin-bottom: 50px;
+    &:disabled {
+        cursor: no-drop;
+        background: #426d9e;
+    }
+}
+
+@media only screen and (max-width: 1169px) {
+    .submit{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .form-input {
+        width: 100%;
+    }
+}
 }

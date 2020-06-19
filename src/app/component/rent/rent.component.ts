@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RentStepsComponent } from './rent-steps/rent-steps.component';
-import { LandlordFaqComponent } from '../landlord/landlord-faq/landlord-faq.component';
 
 @Component({
   selector: 'app-rent',

@@ -35,7 +35,7 @@ export class RentConsultationComponent implements OnInit {
       tenatLookingToLease: ['', Validators.required],
       monthlyBudget: ['', Validators.required],
       areaToLive: ['', Validators.required],
-      howManyParkingSpots: ['', Validators.required],
+      howManyParkingSpots: [''],
       havePets: ['', Validators.required],
       kindOfPets: [''],
       haveBrokenLease: ['', Validators.required]

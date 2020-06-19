@@ -16,19 +16,16 @@ public buyerForm: FormGroup;
       buyerName: ['', Validators.required],
       coBuyerName: [''],
       buyerEmail: ['', [Validators.required, Validators.email]],
-      coBuyerEmail: [''],
-      preApproved: [''],
-      notPreApproved: [''],
-      buyerPhone: ['', Validators.required],
+      coBuyerEmail: ['', Validators.email],
+      preApproved: ['', Validators.required],
+      buyerPhone: ['',
+      Validators.compose([Validators.required, Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)])],
       coBuyerPhone: [''],
-      oneToThreeMonths: [false],
-      threeToSixMonths: [false],
-      sixToTwelveMonths: [false],
-      now: [false],
+      whenToBuy: ['', Validators.required],
       priceRange: ['', Validators.required],
       dreamHome: ['', Validators.required]
     });
-console.log(this.bf)
+
   }
   public submitForm(form: FormGroup): void {
 
