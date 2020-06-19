@@ -39,6 +39,17 @@ export class NavbarComponent implements OnInit {
     // );
 
     // window.onscroll = () => this.myFunction(navBar, sticky);
+
+    const burgerBtn = document.querySelector('.burger-icon');
+    burgerBtn.addEventListener('click', function() {
+      document.querySelector('.doss-mobile-navbar').classList.toggle('hide')
+    });
+
+    const buyBtn = document.querySelector('.buy-button');
+    buyBtn.addEventListener('click', function() {
+      document.querySelector('.buy-drop').classList.toggle('hide');
+    })
+
   }
 
   private myFunction = (navBar: HTMLElement, stickyLocation: number) => {
@@ -46,4 +57,7 @@ export class NavbarComponent implements OnInit {
       ? navBar.classList.add('sticky')
       : navBar.classList.remove('sticky');
   }
+
+    
+
 }
