@@ -58,6 +58,6 @@ export class NavbarComponent implements OnInit {
       : navBar.classList.remove('sticky');
   }
 
-    
+
 
 }

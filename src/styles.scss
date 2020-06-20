@@ -139,13 +139,15 @@ body {
 .doss-container {
   width: 80vw;
   min-height: 80vh;
+  // max-height: 1024px;
   max-width: 1170px;
 }
 
 //container for components with image and text
 .info-container {
   width: 80vw;
-  min-height: 80vh;
+  min-height: 75vh;
+  max-height: 1024px;
   max-width: 1170px;
 
   display: flex;
@@ -154,7 +156,8 @@ body {
 }
 .info-container-reverse {
   width: 80vw;
-  min-height: 80vh;
+  min-height: 75vh;
+  max-height: 1024px;
   max-width: 1170px;
 
   display: flex;
@@ -222,7 +225,7 @@ body {
     margin-bottom: 50px;
 }
 
-.form-input input[type="text"], input[type="email"] {
+.form-input input[type="text"], input[type="email"], input[type="number"] {
     height: 50px;
     border: 1px solid #CFCFCF;
     border-radius: 5px;

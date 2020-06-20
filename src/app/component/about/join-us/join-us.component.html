@@ -1,96 +1,151 @@
 <section class="section-1">
-    <div class="hero-container">
-      <div class="hero-text-container">
-        <div class="hero-text">
-          <p class="large-text-white">SUCCESS is a DECISION</p>
-          <p class="regular-text-white" style="margin-top: 10px;">And we are here to help you. Join Us Today!</p>
-        </div>
+  <div class="hero-container">
+    <div class="hero-text-container">
+      <div class="hero-text">
+        <p class="large-text-white">SUCCESS is a DECISION</p>
+        <p class="regular-text-white" style="margin-top: 10px;">And we are here to help you. Join Us Today!</p>
       </div>
     </div>
+  </div>
 </section>
 
 <section class="section-2">
-    <div class="section-2-wrapper">
-      <div class="info-container">
-        <div class="image-box">
-          <img src="../../../../assets/home/section_5/oval_agent.png" alt="image of Doss Agent" style="width: 100%;">
-        </div>
-        <div class="text-box">
-          <p class="large-text-blue">TECH Agent™</p>
-          <p class="regular-text-blue" style="margin-top: 10px; color: #3A679A;">Is your current Brokerage designed for the future? Are they structurally and technologically built to help you be competitive in your market? If not, it's tme to join a purpose driven tech brokerage. It's time for you to become a TECH Agent!</p>
-        </div>
-        
+  <div class="section-2-wrapper">
+    <div class="info-container">
+      <div class="image-box">
+        <img src="assets/images/home_oval_agent.png" alt="image of Doss Agent" style="width: 100%;">
       </div>
+      <div class="text-box">
+        <p class="large-text-blue">TECH Agent™</p>
+        <p class="regular-text-blue" style="margin-top: 10px; color: #3A679A;">Is your current Brokerage designed for
+          the future? Are they structurally and technologically built to help you be competitive in your market? If not,
+          it's tme to join a purpose driven tech brokerage. It's time for you to become a TECH Agent!</p>
+      </div>
+
     </div>
+  </div>
 </section>
 
 
 <section class="section-3">
-    <div class="section-3-wrapper">
-        <div class="doss-container">
-            <div class="section-header">
-                <p class="large-text-blue" style="text-align: center;">WHAT DO YOU GET AT DOSS?</p>
-            </div>
-            <img src="../../../../assets/about/doss_services_collage.png" alt="">
-        </div>
+  <div class="section-3-wrapper">
+    <div class="doss-container">
+      <div class="section-header">
+        <p class="large-text-blue" style="text-align: center;">WHAT DO YOU GET AT DOSS?</p>
+      </div>
+      <img src="assets/images/about_doss_services_collage.png" alt="">
     </div>
+  </div>
 </section>
 
-<section class="section-4">
-    <div class="section-4-wrapper">
-        <div class="doss-container">
-            <div class="section-header">
-              <p class="large-text-blue">Contact Us</p>
+<section class="consultation-form">
+  <div class="wrapper">
+    <div class="doss-container">
+      <div class="section-header">
+        <p class="large-text-blue">Contact Us</p>
+      </div>
+
+      <div class="section-4-form">
+        <form [formGroup]="signUpForm" (ngSubmit)="submitForm(signUpForm)">
+          <div class="form-input-group">
+            <div class="form-input">
+              <label for="firstName">
+                <p class="regular-text-blue">First Name <span class="required">*</span></p>
+              </label>
+              <input type="text" id="firstName" name="firstName" formControlName="firstName" class="form-control"
+                required />
+              <div *ngIf="sf.firstName.touched && sf.firstName.errors?.required">
+                <div class="text-danger py-1">First name is required.</div>
+              </div>
             </div>
 
-            <div class="section-4-form">
-                <form action="#">
-                  <div class="form-input-group">
-                      <div class="form-input">
-                          <label for=""><p class="regular-text-blue">First Name</p></label>
-                          <input type="text">
-                      </div>
-
-                      <div class="form-input">
-                        <label for=""><p class="regular-text-blue">Last Name</p></label>
-                        <input type="text">
-                      </div>
-
-                      <div class="form-input">
-                        <label for=""><p class="regular-text-blue">Phone Number</p></label>
-                        <input type="text">
-                      </div>
-
-                      <div class="form-input">
-                        <label for=""><p class="regular-text-blue">Email</p></label>
-                        <input type="text">
-                      </div>
-
-                      <div class="form-input">
-                        <label for=""><p class="regular-text-blue">Current Broker</p></label>
-                        <input type="text">
-                      </div>
-
-                      <div class="form-input">
-                        <label for=""><p class="regular-text-blue">Years Licensed</p></label>
-                        <input type="text">
-                      </div>
-
-                      <div class="form-input">
-                        <label for=""><p class="regular-text-blue">Number of Closing in 2018</p></label>
-                        <input type="text">
-                      </div>
-
-                      <div class="form-input">
-                        <label for=""><p class="regular-text-blue">Number of Closing in 2019</p></label>
-                        <input type="text">
-                      </div>
-                  </div>
-
-                  <input type="submit" value="Send">
-                      
-                </form>
+            <div class="form-input">
+              <label for="lastName">
+                <p class="regular-text-blue">Last Name <span class="required">*</span></p>
+              </label>
+              <input type="text" id="lastName" name="lastName" formControlName="lastName" class="form-control"
+                required />
+              <div *ngIf="sf.lastName.touched && sf.lastName.errors?.required">
+                <div class="text-danger py-1">Last name is required.</div>
+              </div>
             </div>
-        </div>
+
+            <div class="form-input">
+              <label for="phoneNumber">
+                <p class="regular-text-blue">Phone Number <span class="required">*</span></p>
+              </label>
+              <input type="text" name="phoneNumber" formControlName="phoneNumber" id="phoneNumber" required />
+              <div *ngIf="sf.phoneNumber.touched && sf.phoneNumber.errors?.required">
+                <div class="text-danger py-1">First name is required.</div>
+              </div>
+              <div *ngIf="sf.phoneNumber.dirty">
+                <div class="text-danger py-1" *ngIf="sf.phoneNumber.invalid">
+                  Please enter a valid phone number
+                </div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="email">
+                <p class="regular-text-blue">Email <span class="required">*</span></p>
+              </label>
+              <input type="email" id="email" name="email" formControlName="email" required />
+              <div *ngIf="sf.email.touched && sf.email.errors?.required">
+                <div class="text-danger py-1">Buyer email is required.</div>
+              </div>
+              <div *ngIf="sf.email.dirty">
+                <div class="text-danger py-1" *ngIf="sf.email.invalid">
+                  Please enter a valid email address
+                </div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="currentBroker">
+                <p class="regular-text-blue">Current Broker</p>
+              </label>
+              <input type="text" id="currentBroker" name="currentBroker" formControlName="currentBroker"
+                class="form-control" />
+            </div>
+
+            <div class="form-input">
+              <label for="yearsLicensed">
+                <p class="regular-text-blue">Years Licensed <span class="required">*</span></p>
+              </label>
+              <input type="number" name="yearsLicensed" id="yearsLicensed" formControlName="yearsLicensed"
+                class="form-control" required />
+              <div *ngIf="sf.yearsLicensed.touched && sf.yearsLicensed.errors?.required">
+                <div class="text-danger py-1">Years licensed is required.</div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="closing2018">
+                <p class="regular-text-blue">Number of Closing in 2018 <span class="required">*</span></p>
+              </label>
+              <input type="number" id="closing2018" name="closing2018" formControlName="closing2018"
+                class="form-control" required />
+              <div *ngIf="sf.closing2018.touched && sf.closing2018.errors?.required">
+                <div class="text-danger py-1">Number of Closing in 2018 is required.</div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="closing2019">
+                <p class="regular-text-blue">Number of Closing in 2019 <span class="required">*</span></p>
+              </label>
+              <input type="number" name="closing2019" formControlName="closing2019" id="closing2019"
+                class="form-control" required />
+                <div *ngIf="sf.closing2019.touched && sf.closing2019.errors?.required">
+                  <div class="text-danger py-1">Number of Closing in 2019 is required.</div>
+                </div>
+            </div>
+          </div>
+
+          <button class="submit" type="submit" [disabled]="!signUpForm.valid">Send</button>
+
+        </form>
+      </div>
     </div>
+  </div>
 </section>
