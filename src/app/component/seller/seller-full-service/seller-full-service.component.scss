@@ -95,11 +95,47 @@
     }
 }
 
-
 //SECTION-5
 .section-5-wrapper {
     display: flex;
     justify-content: center;
+}
+
+.list-container {
+    display: flex;
+    justify-content: space-around;
+
+    margin-bottom: 25px;
+}
+.list {
+
+}
+.item {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+.item img {
+    width: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .list-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    .list-container {
+        flex-direction: column;
+    }
+}
+
+
+//SECTION-6
+.section-6-wrapper {
+    display: flex;
+    justify-content: center;
+    background: #F8F9FB;
 }
 
 
