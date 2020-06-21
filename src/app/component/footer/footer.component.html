@@ -1,32 +1,71 @@
-<hr>
-<div class="wrapper">
-    <section id="footer" class="footer  container">
-        <div class="logo">
-            <img src="assets/images/logo.png" alt="">
-            <div class="social-platforms">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                <i class="fa fa-facebook" aria-hidden="true"></i>
-            </div>
+<footer>
+    <div class="footer-wrapper">
+        <div class="doss-footer-container">
+            <section class="section-1">
+                <div class="text-container">
+                    <div class="text">
+                        <p class="regular-text-blue">Have questions?</p>
+                        <p class="large-text-blue">Call us at 1-877-770-3677</p>
+                    </div>
+                </div>
+            </section>
+            
+            <hr>
+            
+            <section class="section-2">
+                <div class="footer-container">
+                    <div class="logos">
+                        <div class="doss-logo">
+                            <img src="assets/images/logo.svg" alt="logo of Doss" width="110px" style="margin-bottom: 30px;">
+                        </div>
+                        <div class="social-logo">
+                            <a href="https://www.facebook.com/askdoss" target="_blank"><img src="assets/images/facebook.png" alt="logo of facebook" width="25px" ></a>
+
+                            <a href="https://twitter.com/askdossnow" target="_blank"><img src="assets/images/twitter.png" alt="logo of twitter" width="25px"></a>
+
+                            <a href="https://www.linkedin.com/company/ask-doss2020/" target="_blank"><img src="assets/images/linkdin.png" alt="logo of linkedin" width="25px"></a>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <div class="footer-links">
+                            <p class="regular-text-blue" target="_blank" style="font-weight: 600;margin-bottom: 10px;">DOSS Brands</p>
+                            <a href="" target="_blank" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">www.shopdoss.com</p></a>
+
+                            <a href="" target="_blank" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">www.socialagents.com</p></a>
+
+                            <a href="" target="_blank" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">www.dosshomeloans.com</p></a>
+
+                            <a href="" target="_blank" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">www.dosshomewarranty.com</p></a>
+                        </div>
+
+                        <div class="footer-links">
+                            <p class="regular-text-blue" style="font-weight: 600;margin-bottom: 10px;">Learn more</p>
+                            <a href="" routerLink="/buyer" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">Buy</p></a>
+
+                            <a href="" routerLink="/seller" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">Sell</p></a>
+
+                            <a href="" routerLink="/rent" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">Rent</p></a>
+
+                            <a href="" routerLink="/about" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">About us</p></a>
+
+                            <a href="" routerLink="/franchising" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">Franchise</p></a>
+                        </div>
+
+                        <div class="footer-links">
+                            <p class="regular-text-blue" style="font-weight: 600;margin-bottom: 10px;">Legal</p>
+                            <a href="" target="_blank" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">Terms</p></a>
+
+                            <a href="" target="_blank" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">Privacy Policy</p></a>
+
+                            <a href="" target="_blank" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">TREC: Consumer Protection</p></a>
+
+                            <a href="" target="_blank" style="text-decoration: none;"><p class="small-text-blue" style="margin-bottom: 10px;">TREC: Information About Brokerage Service</p></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="doss-brand">
-            <div class="heading">doss brand</div>
-            <div class="links" *ngFor=" let link of brandLinks">
-                <a  class="p-2 span-link" href="{{link.path}}">{{link.title}}</a>
-            </div>
-        </div>
-        <div class="learn-more">
-            <div class="heading">learn more</div>
-            <div class="links" *ngFor=" let link of learnMoreLinks">
-                <span  class="p-2 span-link" routerLink="{{link.path}}">{{link.title}}</span>
-            </div>
-        </div>
-        <div class="legal">
-            <div class="heading">Legal</div>
-            <div class="links" *ngFor=" let link of legalLinks">
-                <a  class="p-2 span-link" href="{{link.path}}" target="_blank">{{link.title}}</a>
-            </div>
-        </div>
-        
-    </section>
-</div>
+    </div>
+    
+    
+</footer>

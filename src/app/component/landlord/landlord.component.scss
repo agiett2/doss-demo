@@ -1,21 +1,15 @@
-
 .wrapper {
-    background-color: #f5f6fa;
-    padding: 6rem 0;
-    .heading {
-        font-size: 3rem;    
-        font-weight: 500;
-        margin-bottom: 2rem;
-        color: #164f8c;
-        text-transform: uppercase;
-    }
-    @media only screen and  (min-width: 768px) {
-        .heading {
-            font-size: 4rem;
-        }
-    }
+    background-color: #F8F9FB;
 }
-
-.wrapper {
-    
+.heading {
+    padding: 5rem 1rem 3rem 1rem;
+    font-size: 2.5rem;
+    color: #174D89;
+    font-weight: 700;
+    text-align: center;
+}
+@media only screen and  (min-width: 768px) {
+    .heading {
+        font-size: 4rem;
+    }
 }

@@ -4,6 +4,7 @@ import { BuyerConsultationComponent } from './buyer-consultation/buyer-consultat
 import { BuyerStepsComponent } from './buyer-steps/buyer-steps.component';
 import { AgentCompareTableRowDataInterface } from 'src/app/shared/interfaces/agent-compare-table-row-data.interface';
 import { TableDataInterface } from 'src/app/shared/interfaces/table-data.interface';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-buyer',
@@ -23,7 +24,7 @@ export class BuyerComponent implements OnInit {
 
   // public agents: ServiceOfferings[]; create model and list of service for table
   public component: any;
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.heading = 'Find a HOUSE, make it your HOME…';

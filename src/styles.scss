@@ -1,194 +1,290 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  font-family: Inter;
+  line-height: 1.2;
+}
+
 body {
-  //   font-family: "Noto Sans TC", sans-serif;
-  // font-family: "-apple-system", sans-serif !important;
-}
-
-.container {
-  max-width: 1440px !important;
-}
-
-.span-link {
-  text-transform: capitalize;
-  &:hover {
-      cursor: pointer;
-  }
-  &:active, &:focus {
-      border: none !important;
-  }
-}
-
-.hero-section {
-  // height: calc(100vh - 5em);
-}
-
-.btn {
-  &.btn-checkout {
-    &:hover {
-      color: #fff;
-    }
-    background-color: #049c04;
-    color: #fff;
-    &:disabled {
-      cursor: not-allowed;
-      background-color: #799e79;
-    }
-  }
-  &-outline-primary {
-    color: #808080 !important;
-    font-weight: 800 !important;
-    border-color: lightgray !important;
-    background-color: lightgray  !important;
-    &:hover {
-        color: #fff !important;
-        background-color: #f06e42 !important;
-        border-color: #f06e42 !important;
-    }
-    &:disabled {
-      cursor: not-allowed;
-    }
-  }
-  &-inline-primary, &-primary {
-    color: #fff !important;
-    border-color:  #164f8c !important;
-    background-color:  #164f8c!important;
-    &:hover {
-        color:  #fff !important;
-        background-color: #124072 !important;
-    }
-    &:disabled {
-      color: #fff !important;
-        background-color: #f06e42 !important;
-        border-color: #f06e42 !important;
-      cursor: not-allowed;
-    }
-  }
-}
-
-.was-validated .custom-control-input:valid ~ .custom-control-label::before, .was-validated .custom-control-input:valid ~ .custom-control-label::before {
-  border-color: #164f8c !important;
-  &::after {
-    border-color: #164f8c !important;
-  background-color: #164f8c !important;
-  }
-}
-.was-validated .custom-control-input:valid:checked ~ .custom-control-label::before, .custom-control-input.is-valid:checked ~ .custom-control-label::before {
-  color: #164f8c !important;
-  border-color: #164f8c !important;
-  background-color: #164f8c !important;
-  &::after {
-    border-color: #164f8c !important;
-  background-color: #164f8c !important;
-  }
+  margin: 0;
   
 }
-.custom-control-label {
-  color: #164f8c !important;
+
+//BOOTSTRAP OVERRIDES
+.text-danger {
+  color: #EF6C40 !important;
 }
-.card {
-  border: 1px solid #054284 !important;
-  color: #054284 !important;
-  &-header {
-    color: #fff !important;
-    background-color: #164f8c !important;
-    
-  }
+.required {
+  color: #EF6C40 !important;
 }
-.navigation {
-  margin-top: -1.5rem;
-  color: #f06e42;
+// ALL TEXT STYLES
+.large-text-white {
+  font-size: 64px;
   font-weight: 700;
-  &:hover {
-      cursor: pointer;
+  color: white;
+  margin: 0;
+}
+.regular-text-white {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+
+.large-text-blue {
+  font-size: 64px;
+  font-weight: 700;
+  color: #174D89;
+  margin: 0;
+}
+.regular-text-blue {
+  font-size: 24px;
+  font-weight: 400;
+  color: #174D89;
+  margin: 0;
+}
+.small-text-blue {
+  font-size: 18px;
+  font-weight: 400;
+  color: #174D89;
+  margin: 0;
+}
+
+.footnote {
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1169px) {
+  .large-text-white {
+    font-size: 48px;
+  }
+  .regular-text-white {
+    font-size: 18px;
+  }
+  
+  .large-text-blue {
+    font-size: 48px;
+  }
+  .regular-text-blue {
+    font-size: 18px;
+  }
+  .small-text-blue {
+    font-size: 14px;
   }
 }
-img{
+@media only screen and (max-width: 767px) {
+  .large-text-white {
+    font-size: 32px;
+  }
+  .regular-text-white {
+    font-size: 14px;
+  }
+  
+  .large-text-blue {
+    font-size: 32px;
+  }
+  .regular-text-blue {
+    font-size: 14px;
+  }
+  .small-text-blue {
+    font-size: 12px;
+  }
+  .footnote {
+    font-size: 8px;
+  }
+}
+
+
+// BUTTONS STYLES
+
+// wrap buttons with this container
+.button-container {
   width: 100%;
 }
 
-.align-content {
-  &-right, &-left {
-    display: flex;
-    justify-content: space-between;
+.doss-button {
+  min-width: 150px;
+  height: 50px;
+
+  font-size: 14px;
+  color: white;
+  background: #174D89;
+
+  border:none;
+  border-radius: 5px;
+}
+.doss-button:hover {
+  background: #13457e;
+}
+
+
+@media only screen and (max-width: 1169px) {
+  .button-container {
+    width: 100%;
+    padding: 0 5%;
+  }
+  .doss-button {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 767px) {}
+
+
+
+
+//INFO-CONTAINER, DOSS-CONTAINER, SECTION-HEADER, FOOTNOTE-CONTAINER, TEXT BOX AND IMAGE BOX
+
+// typical container to use as needed
+.doss-container {
+  width: 80vw;
+  min-height: 80vh;
+  // max-height: 1024px;
+  max-width: 1170px;
+}
+
+//container for components with image and text
+.info-container {
+  width: 80vw;
+  min-height: 72vh;
+  max-height: 1024px;
+  max-width: 1170px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-container-reverse {
+  width: 80vw;
+  min-height: 72vh;
+  max-height: 1024px;
+  max-width: 1170px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//Header text for each sections. wrap it with doss-container
+.section-header {
+  margin: 50px 0;
+}
+
+.footnote-container {
+  text-align: right;
+  margin: 50px 0;
+}
+
+.text-box {
+  width: 500px;
+}
+.image-box {
+  width: 500px;
+}
+
+@media only screen and (max-width: 1169px) {
+  .info-container {
+    // flex-wrap: wrap;
     flex-direction: column;
-    align-items: left;
-    .text {
-      width: 559px;
-      font-size: 1rem;
-      color: #000;
-      @media only screen and  (min-width: 768px) {
-        font-size: 1.5rem;
-        width: 45%;
-      }
-    }
-    .pic {
-      @media only screen and (min-width: 768px) {
-          order: unset;
-        }
-      }
+    justify-content: center;
+    align-items: center;
   }
-  
-  &-left {
+  .info-container-reverse {
+    // flex-wrap: wrap;
     flex-direction: column-reverse;
-    .heading {
-      padding-top: 3rem;
-    }
+    justify-content: center;
+    align-items: center;
   }
-  }
-  @media only screen and  (min-width: 768px) {
-  .align-content  {
-    &-right, &-left {
-      flex-direction: row;
-    }
-   &-right {
-  
-    .pic {
-      padding-right: 2rem;
-    }
-   }
-   &-left {
-    .pic {
-      padding-left: 2rem;
-    }
-   }
-  
-  }
+  .text-box {margin: 50px 0;}
+}
+@media only screen and (max-width: 767px) {
+  .doss-container {width: 90vw;}
+  .info-container {width: 90vw;}
+  .info-container-reverse {width: 90vw;}
+
+  .text-box {width: 100%;}
+  .image-box {width: 100%;}
 }
 
-.form-wrapper {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 6rem 0;
-  background-color: #f5f6fa;
-  .form-container {
-      max-width: 800px;
-  }
-  #heading {
-    margin-bottom: 3rem;
-  }
-  .heading {
-      font-size: 3rem;    
-      font-weight: 500;
-      margin-bottom: 2rem;
-      color: #164f8c;
-  }
-  .sub-heading {
-    font-size: 2rem;
-    color: #808080;
-  }
-  .input-group-text {
-      background-color: #fff;
-      color: #f06e42;
-  }
-  .submit-btn {
+.consultation-form {
+  .wrapper {
     display: flex;
     justify-content: center;
-    button {
-        width: 30%;
-    }
+}
 
+.form-input-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.form-input {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 50px;
+}
+
+.form-input input[type="text"], input[type="email"], input[type="number"] {
+    height: 50px;
+    border: 1px solid #CFCFCF;
+    border-radius: 5px;
+    background: #F1F1F1;
+    padding: 0 20px;
+
+    color: #242528;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    border: 1px solid #CFCFCF;
+    border-radius: 5px;
+    background: #F1F1F1;
+    padding: 20px;
+    color: #242528;
+}
+.radio-input-group {
+    margin-bottom: 50px;
+}
+.radio-input-selections {
+    display: flex;
+}
+.radio-input {
+    margin-right: 20px;
+}
+
+.radio-input input[type="radio"] {
+    margin-right: 10px;
+}
+
+
+.submit {
+    min-width: 150px;
+    height: 50px;
+
+    font-size: 14px;
+    color: white;
+    background: #174D89;
+
+    border:none;
+    border-radius: 5px;
+
+    margin-bottom: 50px;
+    &:disabled {
+        cursor: no-drop;
+        background: #426d9e;
+    }
+}
+
+@media only screen and (max-width: 1169px) {
+    .submit{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .form-input {
+        width: 100%;
+    }
 }
 }

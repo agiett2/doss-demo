@@ -1,229 +1,228 @@
-<section class="hero-section">
-  <app-hero [heading]="heroHeadig" [text]="heroText" [backgroundImage]="'bg.png'"></app-hero>
+<section class="section-1">
+  <div class="hero-container">
+    <div class="hero-text-container">
+      <div class="hero-text">
+        <p class="large-text-white">Making <br /> Homeownership in <br /> America More Affordable</p>
+        <p class="regular-text-white" style="margin-top: 10px;">Full Service. Experienced Agents. Modern Technology. Save
+          Thousands</p>
+      </div>
+    </div>
+  </div>
 </section>
-<div class="wrapper">
-  <section id="better-faster-smarter">
-    <div class="wrapper">
-      <app-left-align [textColor]="'blue'">
-        <div heading>
-          Better. Faster. Smarter.
-        </div>
-        <div text>
-          <p class="mb-5">
-            DOSS is developing the best technology to radically evolve the way you search and transact property. This
-            approach improves transactional efficiencies and reduces transactional costs.
-          </p>
-          <button type="button" class="btn btn-lg btn-block btn-inline-primary">
-            Get Started
-          </button>
-        </div>
-        <div pic>
-          <img src="assets/images/better_faster_smarter.png">
-        </div>
-      </app-left-align>
+
+<section class="section-2">
+  <div class="section-2-wrapper">
+    <div class="info-container-reverse">
+      <div class="text-box">
+        <p class="large-text-blue">BETTER. <br>FASTER. <br>SMARTER.</p>
+        <p class="regular-text-blue" style="margin-top: 10px;">DOSS is developing the best technology to 
+          radically evolve the way you search and transact 
+          property. This approach improves transactional 
+          efficiencies and reduces transactional costs.</p>
+      </div>
+      <div class="image-box">
+        <img src="assets/images/home_oval_phone.png" alt="image of Doss Phone" style="width: 100%;">
+      </div>
     </div>
-  </section>
-  <section id="full-service">
-    <div class="wrapper container">
-      <div class="heading">
-        FULL SERVICE, at a fair price.
-      </div>
-      <div class="sub-heading"> {{ fullServiceSubHeading }}</div>
-      <div class="services">
-        <div class="service">
-          <img src="assets/images/buy_home.png" alt="">
-          <div class="service-title">
-            <p>Buy a Home</p>
-          </div>
-          <ul class="mt-3 mb-4">
-            <li>Get up to a $5,000* Buyer Rebate</li>
-            <li>Experienced Agents</li>
-            <li>Same day home-tours</li>
-          </ul>
-          <div class="service-btn text-center">
-            <button type="button" class="btn btn-lg btn-block btn-inline-primary" (click)="buyerPageRedirect()">START
-              NOW!
-            </button>
-          </div>
+  </div>
+</section>
 
-        </div>
-        <div class="service">
-          <img src="assets/images/sell_home.png" alt="sell a house">
-          <div class="service-title">
-            <p> Sell a House</p>
-          </div>
 
-          <ul class="mt-3 mb-4">
-            <li>$1,295 Flat Fee*</li>
-            <li>Experienced Agents</li>
-            <li>Professional Photos</li>
-            <li>3D Virtual Tour</li>
-          </ul>
-          <div class="service-btn text-center">
-            <button type="button" class="btn btn-lg btn-block btn-inline-primary" (click)="sellPageRedirect()">START
-              NOW!
-            </button>
+<section class="section-3">
+  <div class="section-3-wrapper">
+    <div class="doss-container">
+      <div class="section-header">
+        <p class="large-text-blue">FULL SERVICE,<br />AT A FARE PRICE</p>
+        <p class="regular-text-blue" style="margin-top: 10px;">Hire a tech company</p>
+      </div>
+      <div class="section-3-cards-container">
+        <div class="section-3-card">
+          <div class="section-3-card-image">
+            <img src="assets/images/home_1_buy.png" alt="picture of home" width="100%" style="border-radius: 5px;">
+          </div>
+          <div class="section-3-card-title">
+            <p class="regular-text-blue" style="font-size:18px; font-weight: 600;line-height: 1.5; color: #242528; padding-left: 30px;">Buy a home</p>
+          </div>
+          <div class="section-3-card-text">
+            <p class="small-text-blue" style="font-size:14px; color: #242528; line-height: 2; padding-left: 30px;">
+              •  Get up to $5000* buyer rebate <br>
+              •  Experienced agents <br>
+              •  Same day home-tours</p>
+          </div>
+          <div class="section-3-card-button">
+            <a href="" routerLink="/buyer"><button class="doss-button">Get started</button></a>
           </div>
         </div>
-        <div class="service">
-          <img src="assets/images/rent_home.png" alt="rent a property">
-          <div class="service-title">
-            <p> Rent a Property</p>
+
+        <div class="section-3-card">
+          <div class="section-3-card-image">
+            <img src="assets/images/home_2_sell.png" alt="picture of home" width="100%" style="border-radius: 5px;">
           </div>
-          <ul class="mt-3 mb-4">
-            <li>Get Local Market Expertise</li>
-            <li>Experienced Agents</li>
-            <li>Experienced Agents</li>
-            <li>Same day home-tours*</li>
-          </ul>
-          <div class="service-btn text-center">
-            <button type="button" class="btn btn-lg btn-block btn-inline-primary" (click)="rentPageRedirect()">START
-              NOW!
-            </button>
+          <div class="section-3-card-title">
+            <p class="regular-text-blue" style="font-size: 18px;font-weight: 600;line-height: 1.5; color: #242528; padding-left: 30px;">Sell a home</p>
+          </div>
+          <div class="section-3-card-text">
+            <p class="small-text-blue" style="font-size:14px; color: #242528; line-height: 2; padding-left: 30px;">
+              •  $1295 Flat fee* <br>
+              •  Experienced agents <br>
+              •  Professional photos <br>
+              •  3D virtual tour</p>
+          </div>
+          <div class="section-3-card-button">
+            <a href="" routerLink="/seller"><button class="doss-button">Get started</button></a>
+          </div>
+        </div>
+
+        <div class="section-3-card">
+          <div class="section-3-card-image">
+            <img src="assets/images/home_3_rent.png" alt="picture of home" width="100%" style="border-radius: 5px;">
+          </div>
+          <div class="section-3-card-title">
+            <p class="regular-text-blue" style="font-size: 18px;font-weight: 600;line-height: 1.5; color: #242528; padding-left: 30px;">Rent a home</p>
+          </div>
+          <div class="section-3-card-text">
+            <p class="small-text-blue" style="font-size:14px; color: #242528; line-height: 2; padding-left: 30px;">
+              •  Get local market expertise <br>
+              •  Experienced agents <br>
+              •  Same day home-tours*</p>
+          </div>
+          <div class="section-3-card-button">
+            <a href="" routerLink="/renter"><button class="doss-button">Get started</button></a>
           </div>
         </div>
       </div>
-      <div class="footer text-muted">
-        <p>
-          *Buyer Rebate is subject to lender approval and buyer agent commission.
+      <div class="footnote-container">
+        <p class="footnote" style="color: #9E9E9E; line-height: 2;">
+          *Buyer Rebate is subject to lender approval and buyer agent commission. <br>
+          *All home-tours scheduled before 3pm will be set for the same day(if approved).
+          <br>
+          *$1,295 Flat Fee for homes below 3,500 sqft. $1,995 Flat Fee for homes over 3,500 sqft.
         </p>
-        <p>*All home-tours scheduled before 3pm will be set for the same day(if approved).</p>
-        <p>*$1,295 Flat Fee for homes below 3,500 sqft. $1,995 Flat Fee for homes over 3,500 sqft.</p>
       </div>
     </div>
-  </section>
-  <section id="movement">
-    <app-movement [heading]="movementHeading" [caption]=""></app-movement>
-  </section>
-  <section id="tech-agents">
-    <app-right-align [textColor]="'blue'">
-      <div heading>TECH Agents™</div>
-      <div sub-heading>/tek ajent/</div>
-      <div pic>
-        <img src="assets/images/tech_agent.png" alt="tech agent">
+  </div>
+</section>
+
+<section class="section-4"></section>
+
+<section class="section-5">
+  <div class="section-5-wrapper">
+    <div class="info-container">
+      <div class="image-box">
+        <img src="assets/images/home_oval_agent.png" alt="image of Doss Agent" style="width: 100%;">
       </div>
-      <div text>
-        <p [style.font-weight]="'700'" class="ml-4">noun</p>
-        <ul>
-          <li>a Realtor® who proficiently leverages
-            technology to increase transactional efficiencies
-            that automate and streamline the real estate process
-            to reduce cost for the consumer without sacrificing service.
-          </li>
-          <li>a Realtor® that represents the NEXT ERA of real estate practitioners that are dedicated to a consumer
-            centric way of doing business.
-          </li>
-          <li>a Realtor® that subscribes to a proven system and teamwork that empowers everybody to function at their
-            highest and best value.
-          </li>
-        </ul>
+      <div class="text-box">
+        <p class="large-text-blue">TECH Agent</p>
+        <p class="regular-text-blue" style="margin-top: 10px; font-weight: 700; color: #3A679A;">/tek ajent/</p>
+        <p class="regular-text-blue" style="margin-top: 50px; font-weight: 700; color: #3A679A;">noun</p>
+        <p class="regular-text-blue" style="margin-top: 10px;font-size: 14px; font-weight: 400; color: #3A679A; line-height: 1.5;">•  a Realtor® who proficiently leverages technology to increase 
+          transactional efficiencies that automate and streamline the real 
+          estate process to reduce cost for the consumer without 
+          sacrificing service. 
+          <br> <br>
+          •  a Realtor® that represents the NEXT ERA of real estate 
+          practitioners that are dedicated to a consumer centric way of 
+          doing business.
+          <br> <br>
+          •  a Realtor® that subscribes to a proven system and teamwork 
+          that empowers everybody to function at their highest and 
+          best value.</p>
       </div>
-    </app-right-align>
-  </section>
-  <section id="join-us">
-    <div class="elipse-bg">
-      <img src="assets/images/elipse_bg.png" alt="">
+      
     </div>
-    <div class="container">
-      <div class="header">
-        <p class="heading">JOIN US!</p>
-        <div class="sub-heading">Become a TECH Agent™</div>
-        <div class="sub-heading">Open a DOSS Home Center</div>
+  </div>
+</section>
+
+<section class="section-6">
+  <div class="section-6-wrapper">
+    <div class="doss-container">
+      <div class="section-header">
+        <p class="large-text-blue">JOIN US</p>
+        <p class="regular-text-blue" style="margin-top: 10px;">Become an agent, <br>Open a DOSS Home Center</p>
       </div>
-      <div class="content">
-        <div class="tech-agent">
-          <div class="badge">
-            <img src="assets/images/user.svg" alt="user icon">
+      <div class="section-6-cards-container">
+        <div class="section-6-card" style="border-top: 5px solid #174D89;">
+          <div class="section-6-card-content">
+              <div class="section-6-card-icon">
+                <img src="assets/images/home_icon_user.svg" alt="icon of card">
+              </div>
+              <div class="section-6-card-text">
+                <p class="regular-text-blue" style="font-weight: 700;">Become an agent</p>
+                <p class="small-text-blue" style="margin-top: 20px; line-height: 1.5; color: #3A679A;">
+                  •  100% Commission (Flat Fee) <br>
+                  •  Real Innovative Technology <br>
+                  •  Mastery Training <br>
+                  •  A Structured Business Model! <br>
+                  •  DOSS provides signage and supras!</p>
+              </div>
+              <div class="button-container">
+                <a href="" routerLink="/join-us"><button class="doss-button">More info</button></a>
+                
+              </div>
           </div>
-          <div class="content-header">
-            <p>Become an Agent™</p>
-          </div>
-          <div class="card-body">
-            <ul class="mt-3">
-              <li>100% Commission(Flat Fee)</li>
-              <li>Real Innovative Technology</li>
-              <li>Mastery Training</li>
-              <li>A Structured Business Model!</li>
-              <li>DOSS provides signage and supras!</li>
-            </ul>
-          </div>
-          <button type="button" class="btn btn-lg btn-block btn-inline-primary">MORE INFO</button>
         </div>
 
-        <div class="franchise">
-          <div class="badge">
-            <img src="assets/images/home.svg" alt="user icon">
+        <div class="section-6-card" style="border-top: 5px solid #174D89;">
+          <div class="section-6-card-content">
+              <div class="section-6-card-icon">
+                <img src="assets/images/home_icon_home.svg" alt="icon of card">
+              </div>
+              <div class="section-6-card-text">
+                <p class="regular-text-blue" style="font-weight: 700;">Open a DOSS Home Center</p>
+                <p class="small-text-blue" style="margin-top: 20px; line-height: 1.5; color: #3A679A;">
+                  •  A Mission Driven Tech Brand <br>
+                  •  Buy an Exclusive Market Area <br>
+                  •  Get Exclusive Smart Leads <br>
+                  •  Support, Systems, and Training <br>
+                  •  DOSS Social Agents included!</p>
+              </div>
+              <div class="button-container">
+                <a href="" routerLink="/franchising"><button class="doss-button">More info</button></a>
+                
+              </div>
           </div>
-          <div class="content-header">
-            <p>Open a DOSS Home Center</p>
-          </div>
-          <div class="card-body">
-            <ul class="mt-3">
-              <li>A Mission Driven Tech Brand</li>
-              <li>Buy an Exclusive Market Area</li>
-              <li>Get Exclusive Smart Leads</li>
-              <li>Support, Systems, and Training</li>
-              <li>DOSS Social Agents included!</li>
-            </ul>
-          </div>
-          <button type="button" class="btn btn-lg btn-block btn-inline-primary">MORE INFO</button>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-    </div>
-  </section>
-
-  <section id="first-step">
-    <div class="section-wrapper">
-      <div class="container">
-        <div class="heading">
-          <div class="title">take the first step!</div>
-          <div class="sub-heading">
-            <p>Get started today by contacting one of our TECH Agents™ at DOSS
-              to successfully guide you through the process.
-            </p>
-          </div>
-        </div>
-        <div class="steps text-left">
-          <div class="buyer" (click)="buyerPageRedirect()">
-            <!-- <img class="" src="assets/images/im_a_buyer.png" alt="im am buyer image"> -->
-            <p>I am a buyer</p>
-          </div>
-          <div class="seller" (click)="sellPageRedirect()">
-            <!-- <img class="pb-1" src="assets/images/im_a_seller.png" alt="i am a seller image"> -->
-            <p>I am a seller</p>
-          </div>
-          <div class="renter" (click)="rentPageRedirect()">
-            <!-- <img class="pb-1" src="assets/images/im_a_renter.png" alt="i am a renter image"> -->
-            <p>I am a renter</p>
-          </div>
-        </div>
+<section class="section-7">
+  <div class="section-7-wrapper">
+    <div class="doss-container">
+      <div class="section-header">
+        <p class="large-text-blue">TAKE THE<br>FIRST STEP</p>
+        <p class="regular-text-blue" style="margin-top: 10px;">
+        Get started today by contacting one of our TECH Agents™ <br>
+        at DOSS to successfully guide you through the process.</p>
+      </div>
+      <div class="section-7-images">
+        <a href="" routerLink="/buyer"><img src="assets/images/home_buyer.png" alt="image of buyer" ></a>
+        <a href="" routerLink="/seller"><img src="assets/images/home_seller.png" alt="image of buyer" ></a>
+        <a href="" routerLink="/rent"><img src="assets/images/home_renter.png" alt="image of buyer" ></a>
       </div>
     </div>
-  </section>
-  <section id="call-us">
-    <app-contact-number></app-contact-number>
-  </section>
-  <section id="coming-soon">
-    <div class="section-wrapper">
-      <div class="text">
-        <div class="heading top">
-          <div>commig soon!</div>
-          <div>fall 2020</div>
-        </div>
-        <div class="message">
-          <p>A Voice-Activated Intelligent Assistant built into a proprietary real estate search portal to radically
-            evolve the way people search and transact property.
-          </p>
-        </div>
-      </div>
-      <div class="pic">
-        <img src="assets/images/comingsoon2.png" alt="">
-      </div>
+  </div>
+</section>
+<section class="section-8">
+  <div class="forbes-wrapper">
+    <div class="forbes-container">
+      <p class="regular-text-blue" style="color: #6689B1; padding-bottom: 10px;">As seen in</p>
+      <img src="assets/images/home_forbes_logo.png" alt="">
     </div>
-  </section>
-  <section id="forbes">
-    <app-forbes>
-    </app-forbes>
-  </section>
-</div>
+  </div>
+</section>
+<section class="section-9">
+  <div class="section-9-wrapper">
+    <div class="section-9-text">
+      <p class="large-text-white">ALSO COMING SOON <br> FALL 2020</p>
+        <p class="regular-text-white" style="margin-top: 10px;">
+          A Voice-Activated Intelligent Assistant 
+          built into a proprietary real estate 
+          search portal to radically evolve the 
+          way people search and transact 
+          property.
+        </p>
+    </div>
+  </div>
+</section>

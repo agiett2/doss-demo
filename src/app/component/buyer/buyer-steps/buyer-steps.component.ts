@@ -15,7 +15,7 @@ export class BuyerStepsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.heading = 'The Pathway to Homeownership…';
+    this.heading = 'The Pathway to Homeownership';
     this.subHeadinig = '10 Steps to ENSURE a smooth process';
     // tslint:disable-next-line: max-line-length
     this.steps = [

@@ -12,35 +12,26 @@ export class SellerConsultationComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
-    // this.addressForm = this.fb.group({
-    //   streetOne: ['', Validators.required],
-    //   streetTwo: [''],
-    //   city: ['', Validators.required],
-    //   state: ['', Validators.required],
-    //   zip: ['', Validators.required]
-    // });
     this.sellerForm = this.fb.group({
       sellerName: ['', Validators.required],
       coSellerName: [''],
-      sellerEmail: ['', Validators.required, Validators.email],
+      sellerEmail: ['', [Validators.required, Validators.email]],
       coSellerEmail: [''],
-      address: ['', Validators.required],
-      sellerPhoneNumber: ['', Validators.required],
+      sellerAddress: ['', Validators.required],
+      sellerPhoneNumber: ['',
+        Validators.compose([Validators.required, Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)])],
       coSellerPhoneNumber: [''],
       whenToSell: ['', Validators.required],
       priceListing: ['', Validators.required],
-      // preApproved: [false],
-      budget: [''],
-      isbuyingNewHome: ['', Validators.required],
-      nextHome: [''],
-      whySelling: ['', Validators.required]
+      havePets: [''],
+      whySelling: ['']
     });
   }
 
-  public get sf(): {[key: string]: AbstractControl} {
+  public get sf(): { [key: string]: AbstractControl } {
     return this.sellerForm.controls;
   }
 
-  public submitForm(sellerForm: FormGroup): void {}
+  public submitForm(sellerForm: FormGroup): void { }
 
 }

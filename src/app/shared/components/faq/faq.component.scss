@@ -1,7 +1,8 @@
 .wrapper {
     .card {
+        position: static;
         border: 1px solid #f06e42 !important;
-        color: #000 !important;
+        color: #242528 !important;
         font-size: 1.2rem;
         .card-header {
             display: flex;
@@ -13,6 +14,12 @@
             i {
                 color: #fff;
             }
+        }
+        button {
+            flex: 0 0 96%;
+            text-decoration: none;
+            color: #fff;
+            text-align: left;
         }
         .card-body {
             padding: 1.5rem;

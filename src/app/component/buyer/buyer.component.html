@@ -1,129 +1,266 @@
-<section id="hero-section">
-  <app-hero [heading]="heading" [text]="subHeading" [backgroundImage]="'buyer_banner.png'"></app-hero>
+<section class="section-1">
+    <div class="hero-container">
+        <div class="hero-text-container">
+            <div class="hero-text">
+                <p class="large-text-white">Find a house, <br>Make it your home</p>
+                <p class="regular-text-white" style="margin-top: 10px;">Together, lets find a place to create beautiful
+                    memories!</p>
+            </div>
+        </div>
+    </div>
 </section>
-<div class="wrapper">
-  <section id="tech-company">
-    <app-right-align [textColor]="'blue'">
-      <div heading>
-        <p>Hire a TECH Company!</p>
-      </div>
-      <div pic>
-        <img src="assets/images/tech_agent.png" />
-      </div>
-      <div text>
-        <p>
-          All REALTORS® are not created equal! Choosing the right Agent the
-          first time could save you a lot of frustration, time and money... We
-          have TECH Agents who are trained Market Area Experts that specifically
-          work with Buyers. You get an experienced and company trained Buyers
-          Agent Specialist to help you avoid the pitfalls of buying a home and
-          get up to $5,000* to reduce your closing cost
-        </p>
-      </div>
-    </app-right-align>
-    <div class="disclaimer text-center">
-      <p>{{ disclaimerText1 }}</p>
+
+<section class="section-2">
+    <div class="section-2-wrapper">
+        <div class="info-container">
+            <div class="image-box">
+                <img src="assets/images/home_oval_agent.png" alt="image of Doss Agent" style="width: 100%;">
+            </div>
+            <div class="text-box">
+                <p class="large-text-blue">HIRE A TECH <br>COMAPANY!</p>
+                <p class="regular-text-blue" style="margin-top: 10px; color: #3A679A;">
+                    All REALTORS® are not created equal! Choosing
+                    the right Agent the first time could save you a
+                    lot of frustration, time and money... We have
+                    TECH Agents who are trained Market Area
+                    Experts that specifically work with Buyers. You
+                    get an experienced and company trained Buyers
+                    Agent Specialist to help you avoid the pitfalls of
+                    buying a home and get up to $5,000* to reduce
+                    your closing cost </p>
+            </div>
+        </div>
     </div>
-  </section>
-  <section id="rebate">
-    <app-movement [heading]="'Get a Buyer Rebate up to $5,000*'" [caption]="disclaimerText1"
-      [subHeading]="'Making homeownership more affordable…'"></app-movement>
-  </section>
-  <section id="compare-table">
-    <div class="container">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Service Offering</th>
-            <th scope="col">Traditional Agent</th>
-            <th scope="col">TECH Agent™</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Do a BUYER Consultation</td>
-            <td>--</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER get Pre-Approved(If Applicable)</td>
-            <td>&#10003;</td>
-            <td>--</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
+</section>
 
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
+<section class="section-3">
+    <div class="section-3-wrapper">
+        <div class="section-3-container">
+            <div class="section-3-text">
+                <p class="regular-text-white" style="margin-bottom: 10px;">
+                    Making Homeownership more affordable
+                </p>
+                <p class="large-text-white">Get a buyer rebate up to $5000*</p>
+                <p class="footnote" style="color: #ffb39a; line-height: 2; background: #EF6C40; padding-top: 20px;">
+                    *Buyer Rebate is subject to lender approval and buyer agent commission.
+                </p>
 
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
+            </div>
+        </div>
 
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
-
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
-
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
-
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
-
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
-
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
-
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-          <tr>
-            <td>Help BUYER find the perfect home</td>
-
-            <td>&#10003;</td>
-            <td>&#10003;</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
+</section>
 
-    <div class="disclaimer text-center">
-      <p>{{ disclaimerText1 }}</p>
-      <p>{{ disclaimerText2 }}</p>
-      <p>{{ disclaimerText3 }}</p>
+<section class="section-4">
+    <div class="section-4-wrapper">
+        <div class="doss-container">
+            <div class="section-header">
+                <p class="large-text-blue">
+                    TRADITIONAL Agent <br>
+                    vs <br>
+                    DOSS TECH Agent™</p>
+            </div>
+
+            <div class="doss-table">
+                <div class="table-list-container">
+                    <div class="table-header">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding" style="font-weight: 600; ">Services</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="folder">
+                                <p class="regular-text-blue" style="font-weight: 600;">Traditional Agent</p>
+                            </div>
+                            <div class="folder">
+                                <p class="regular-text-blue" style="font-weight: 600;">TECH Agent™</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Do a BUYER Consultation</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Help BUYER get Pre-Approved</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Help BUYER find perfect home</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Same Day Home-Tours*</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Contract Support/Digital Signatures</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Negotiation Expert</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Attend Home Inspections</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Has a TEAM to support BUYER</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Buyer Rebate up to $5000*</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Staff Real Estate Attorney</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Concierge Services</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-list-last">
+                        <div class="table-section-1">
+                            <p class="regular-text-blue table-left-padding">Attend Closing</p>
+                        </div>
+                        <div class="table-section-2">
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                            <div class="check">
+                                <img src="assets/images/check.svg" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footnote-container">
+                <p class="footnote" style="color: #9E9E9E; line-height: 2;">
+                    *Buyer Rebate is subject to lender approval and buyer agent commission. <br>
+                    *Home-Tours requested before 3pm are scheduled for the same day.
+                    <br>
+                    *TECH Agents can help setup Cable/Internet, Security, Utilities, etc.
+                    <br>
+                    *The buyer rebate is 1% of the sale of the property up to $5,000.
+                </p>
+            </div>
+        </div>
     </div>
-  </section>
-  <section id="consultation">
-    <app-buyer-consultation></app-buyer-consultation>
-  </section>
-  <section id="call-us">
-    <app-contact-number></app-contact-number>
-  </section>
-</div>
+</section>
+
+<app-buyer-consultation></app-buyer-consultation>

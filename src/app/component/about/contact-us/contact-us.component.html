@@ -1,78 +1,79 @@
-<div class="form-wrapper">
-    <p class="heading text-center">Contact Us</p>
-    <div class="container form-container">
+<section class="consultation-form">
+  <div class="wrapper">
+    <div class="doss-container">
+      <div class="section-header">
+        <p class="large-text-blue">Contact Us</p>
+      </div>
+
+      <div class="section-1-form">
         <form [formGroup]="contactUsForm" (ngSubmit)="submitForm(contactUsForm)">
-            <div class="mb-4">
-                <label for="firstName">First Name</label>
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">@</div>
-                    </div>
-                    <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName"
-                        formControlName="firstName" required />
-                </div>
-                <div class="text-center" *ngIf="cf.firstName.touched && cf.firstName.errors?.required">
-                    <div class="text-danger py-1">First name is required.</div>
+          <div class="form-input-group">
+            <div class="form-input">
+              <label for="firstName">
+                <p class="regular-text-blue">First Name <span class="required">*</span></p>
+              </label>
+              <input type="text" class="form-control" name="firstName" formControlName="firstName" id="firstName"
+                required />
+              <div *ngIf="cf.firstName.touched && cf.firstName.errors?.required">
+                <div class="text-danger py-1">First name is required.</div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="lastName">
+                <p class="regular-text-blue">Last Name <span class="required">*</span></p>
+              </label>
+              <input type="text" name="lastName" formControlName="lastName" id="lastName" class="form-control"
+                required />
+                <div *ngIf="cf.lastName.touched && cf.lastName.errors?.required">
+                  <div class="text-danger py-1">Last name is required.</div>
                 </div>
             </div>
-            <div class="mb-4">
-                <label for="lastName">Last Name</label>
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">@</div>
-                    </div>
-                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName"
-                        formControlName="lastName" required />
-                </div>
-                <div class="text-center" *ngIf="cf.lastName.touched && cf.lastName.errors?.required">
-                    <div class="text-danger py-1">Last name is required.</div>
-                </div>
-            </div>
-            <div class="mb-4">
-                <label for="bestNumber">Best Number</label>
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">@</div>
-                    </div>
-                    <input type="text" class="form-control" id="bestNumber" placeholder="Best Number" name="bestNumber"
-                        formControlName="phoneNumber" required />
-                </div>
-                <div class="text-center" *ngIf="cf.phoneNumber.touched && cf.phoneNumber.errors?.required">
-                    <div class="text-danger py-1">Best number is required.</div>
+
+            <div class="form-input">
+              <label for="phoneNumber">
+                <p class="regular-text-blue">Phone Number <span class="required">*</span></p>
+              </label>
+              <input type="text" id="phoneNumber" name="phoneNumber" placeholder="777-777-7777"  formControlName="phoneNumber" required />
+              <div *ngIf="cf.phoneNumber.touched && cf.phoneNumber.errors?.required">
+                <div class="text-danger py-1">Phone number is required.</div>
+              </div>
+              <div *ngIf="cf.phoneNumber.dirty">
+                <div class="text-danger py-1" *ngIf="cf.phoneNumber.invalid">
+                    Please enter a valid phone number
                 </div>
             </div>
-            <div class="mb-4">
-                <label for="email">Email</label>
-                <div class="input-group mb-2 mr-sm-2">
-                    <div class="input-group-prepend">
-                        <div class="input-group-text">@</div>
-                    </div>
-                    <input type="text" class="form-control" id="email" placeholder="Email" name="email"
-                        formControlName="email" required />
-                </div>
-                <div class="text-center" *ngIf="cf.email.touched && cf.email.errors?.required">
-                    <div class="text-danger py-1">Email is required.</div>
-                </div>
-                <div class="text-center" *ngIf="cf.email.dirty">
-                    <div class="text-danger py-1" *ngIf="cf.email.invalid">
-                        Please enter a valid email address
-                    </div>
-                </div>
             </div>
-            <div class="help mb-4">
-                <label for="help">How can we help you?
-                </label>
-                <textarea id="help" rows="4" cols="60" name="help" required formControlName="help"></textarea>
-                <div class="text-center" *ngIf="cf.help.touched && cf.help.errors?.required">
-                    <div class="text-danger py-1">help description is required.</div>
+
+            <div class="form-input">
+              <label for="email">
+                <p class="regular-text-blue">Email <span class="required">*</span></p>
+              </label>
+              <input type="email" id="email" formControlName="email" name="email" class="form-control" required />
+              <div *ngIf="cf.email.touched && cf.email.errors?.required">
+                <div class="text-danger py-1">Email is required.</div>
+              </div>
+              <div *ngIf="cf.email.dirty">
+                <div class="text-danger py-1" *ngIf="cf.email.invalid">
+                  Please enter a valid email address
                 </div>
+              </div>
             </div>
-            <hr class="mb-4" />
-            <div class="submit-btn">
-                <button [disabled]="!contactUsForm.valid" class="btn btn-primary btn-lg btn-block" type="submit">
-                    Send
-                </button>
+          </div>
+
+          <div class="form-input-group mb-5">
+            <label for="help">
+              <p class="regular-text-blue">How can we help you? <span class="required">*</span></p>
+            </label>
+            <textarea name="help" id="help" formControlName="help" required></textarea>
+            <div *ngIf="cf.help.touched && cf.help.errors?.required">
+              <div class="text-danger py-1">Help needed is required.</div>
             </div>
+          </div>
+
+          <button class="submit" type="submit" [disabled]="!contactUsForm.valid">Send</button>
         </form>
+      </div>
     </div>
-</div>
+  </div>
+</section>

@@ -1,157 +1,177 @@
-<!-- <div   class="wrapper"  >
-    <div id="navbar"
-    class="d-flex  flex-column flex-md-row align-items-center px-md-4 doss-nav"
-  >
-    <h5 class="my-0 mr-md-auto font-weight-normal span-link" routerLink="/">DOSS</h5>
-    <nav class="my-2 my-md-0 mr-md-3" *ngFor="let link of links">
-      <span class="p-2 span-link"  routerLink="{{link.path}}">{{ link.title }}</span>
-    </nav>
-  </div>
+<!-- <div class="doss-mobile-navbar hide">
+    <div class="doss-mobile-wrapper">
+        <div class="mobile-menu-container">
+            <div class="mobile-dropdown">
+                <div class="mobile-dropdown-button buy-button">
+                    <p class="nav-text" style="font-weight: 600;">BUY</p>
+                    <img src="../../../assets/navbar/icon_chevron_down.svg" alt="">
+                </div>
+                <div class="dropdown-container buy-drop hide">
+                    <div class="mobile-dropdown-content">
+                        <a href="" routerLink="/buyer">Buy with DOSS</a>
+                        <a href="">Consultation</a>
+                        <a href="">Steps</a>
+                        <a href="">FAQ</a>
+                    </div>
+                </div>
+                
+            </div>
+    
+            <div class="mobile-dropdown">
+                <div class="mobile-dropdown-button sell-button">
+                    <p class="nav-text" style="font-weight: 600;">BUY</p>
+                    <img src="../../../assets/navbar/icon_chevron_down.svg" alt="">
+                </div>
+                <div class="dropdown-container sell-drop hide">
+                    <div class="mobile-dropdown-content">
+                        <a href="">Buy with DOSS</a>
+                        <a href="">Consultation</a>
+                        <a href="">Steps</a>
+                        <a href="">FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div> -->
 
-<div class="wrapper" [style.color]="contentService.getColor(textColor)">
-  <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
-    <a class="logo" routerLink="/"
-      ><img src="assets/images/logo.png" alt="logo"
-    /></a>
-    <button
-      class="navbar-toggler collapsed"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarCollapse"
-      aria-controls="navbarCollapse"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="navbar-collapse collapse" id="navbarCollapse">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="/buyer"
-            id="buyer-dropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Buy</a
-          >
-          <div class="dropdown-menu">
-            <a class="dropdown-item" routerLink="/buyer-consultation"
-              >Consultation</a
-            >
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/buyer-steps">Steps</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/buyer-faq">FAQ</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="/seller"
-            id="seller-dropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Sell</a
-          >
-          <div class="dropdown-menu">
-            <a class="dropdown-item" routerLink="/seller-consultation"
-              >Consultation</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/seller-steps">Steps</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/seller-faq">Faq</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/seller-flat-rate"
-              >Flat Rate</a
-            >
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/seller-full-service"
-              >Full Service</a
-            >
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="/rent"
-            id="rent-dropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Rent</a
-          >
-          <div class="dropdown-menu">
-            <a class="dropdown-item" routerLink="/rent-consultation"
-              >Consultation</a
-            >
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/rent-steps"
-              >Steps</a
-            >
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/landlord"
-              >Landlord</a
-            >
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" routerLink="/landlord-faq"
-              >Landlord Faq</a
-            >
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="/about"
-            id="about-dropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >About</a
-          >
-          <div class="dropdown-menu">
-            <a class="dropdown-item" routerLink="/contact-us"
-              >Contact us</a
-            >
-            <a class="dropdown-item" routerLink="/join-us"
-              >join us</a
-            >
-            <a class="dropdown-item" routerLink="/five-laws"
-              >five laws</a
-            >
-            <a class="dropdown-item" routerLink="/learn-doss"
-              >learn about doss</a
-            >
-            <a class="dropdown-item" routerLink="/digital-ads"
-              >digital ads</a
-            >
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            routerLink="/franchising"
-            id="franchising-dropdown"
-            role="button"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-            >Franchising</a
-          >
-          <div class="dropdown-menu">
-            <a class="dropdown-item" routerLink="/franchising-faq"
-              >FAQ</a
-            >
-          </div>
-        </li>
-      </ul>
+<!-- <div class="doss-navbar">
+    <div class="nav-container">
+        <div class="logo">
+            <a routerLink='/'><img src="../../../assets/home/section_1/logo.svg" alt="image of logo"></a>
+        </div>
+        <div class="menu">
+            
+            <div class="dropdown">
+                <button class="dropdown-button">Buy</button>
+                <div class="dropdown-content">
+                    <a href="" routerLink='/buyer'>Buy with DOSS</a>
+                    <a href="" routerLink="/buyer-consultation">Consultation</a>
+                    <a href="" routerLink="/buyer-steps">Steps</a>
+                    <a href="" routerLink="/buyer-faq">Buy FAQ</a>
+                </div>
+            </div>
+
+            
+            <div class="dropdown">
+                <button class="dropdown-button">Sell</button>
+                <div class="dropdown-content">
+                    <a href="" routerLink="/seller">Sell with DOSS</a>
+                    <a href="" routerLink="/seller-consultation">Consultation</a>
+                    <a href="" routerLink="/seller-steps">Steps</a>
+                    <a href="" routerLink="/seller-flat-rate">Flat Rate</a>
+                    <a href="" routerLink="/seller-full-service">Full Service</a>
+                    <a href="" routerLink="/seller-faq">Sell FAQ</a>
+                </div>
+            </div>
+
+            
+            <div class="dropdown">
+                <button class="dropdown-button">Rent</button>
+                <div class="dropdown-content">
+                    <a href="" routerLink="/rent">Rent with DOSS</a>
+                    <a href="" routerLink="/rent-consultation">Consultation</a>
+                    <a href="" routerLink="/rent-steps">Steps</a>
+                    <a href="" routerLink="/landlord">Landlords</a>
+                    <a href="" routerLink="/landlord-faq">Landlords FAQ</a>
+                </div>
+            </div>
+
+            
+            <div class="dropdown">
+                <button class="dropdown-button">About</button>
+                <div class="dropdown-content">
+                    <a href="" routerLink="/about">Our Story</a>
+                    <a href="" routerLink="/contact-us">Contact Us</a>
+                    <a href="" routerLink="/join-us">Join Us</a>
+                    <a href="" routerLink="/five-laws">Five Laws</a>
+                    <a href="" routerLink="/learn-doss">Learn about DOSS</a>
+                    <a href="" routerLink="/digital-ads">Digital Ads</a>
+                </div>
+            </div>
+
+            
+            <div class="dropdown">
+                <button class="dropdown-button">Franchise</button>
+                <div class="dropdown-content">
+                    <a href="" routerLink="/franchising">Franchising with DOSS</a>
+                    <a href="" routerLink="/franchising-faq">Franchise FAQ</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
-</div>
+</div> -->
+
+
+
+
+
+
+<nav class="navbar fixed-top navbar-expand-md navbar-light" >
+    <div class="container">
+        <a class="navbar-brand" routerLink="/"><img src="assets/images/logo.svg" alt="logo of Doss"></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+            <div class="navbar-nav">
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link" data-toggle="dropdown">BUY</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" routerLink='/buyer'>Buy with DOSS</a>
+                        <a href="#" class="dropdown-item" routerLink="/buyer-consultation">Consultation</a>
+                        <a href="#" class="dropdown-item" routerLink="/buyer-steps">Steps</a>
+                        <a href="#" class="dropdown-item" routerLink="/buyer-faq">FAQ</a>
+                    </div>
+                </div>
+    
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link " data-toggle="dropdown">SELL</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" routerLink="/seller">Sell with DOSS</a>
+                        <a href="#" class="dropdown-item" routerLink="/seller-consultation">Consultation</a>
+                        <a href="#" class="dropdown-item" routerLink="/seller-steps">Steps</a>
+                        <a href="#" class="dropdown-item" routerLink="/seller-faq">FAQ</a>
+                        <a href="#" class="dropdown-item" routerLink="/seller-flat-rate">Flat Rate</a>
+                        <a href="#" class="dropdown-item" routerLink="/seller-full-service">Full Service</a>
+                    </div>
+                </div>
+    
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link " data-toggle="dropdown">RENT</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" routerLink="/rent">Rent with DOSS</a>
+                        <a href="#" class="dropdown-item" routerLink="/rent-consultation">Consultation</a>
+                        <a href="#" class="dropdown-item" routerLink="/rent-steps">Steps</a>
+                        <a href="#" class="dropdown-item" routerLink="/landlord">Landlord</a>
+                        <a href="#" class="dropdown-item" routerLink="/landlord-faq">Landlord FAQ</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link " data-toggle="dropdown">ABOUT</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" routerLink="/about">Our Story</a>
+                        <a href="#" class="dropdown-item" routerLink="/contact-us">Contact Us</a>
+                        <a href="#" class="dropdown-item" routerLink="/join-us">Join Us</a>
+                        <a href="#" class="dropdown-item" routerLink="/five-laws">Five Laws</a>
+                        <a href="#" class="dropdown-item" routerLink="/learn-doss">Learn About Doss</a>
+                        <a href="#" class="dropdown-item" routerLink="/digital-ads">Digital Ads</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link " data-toggle="dropdown">FRANCHISE</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" routerLink="/franchising">Franchise with DOSS</a>
+                        <a href="#" class="dropdown-item" routerLink="/franchising-faq">FAQ</a>
+                    </div>
+                </div>
+    
+            </div>
+            
+        </div>
+    </div>
+    
+</nav>

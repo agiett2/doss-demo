@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RentStepsComponent } from './rent-steps/rent-steps.component';
-import { RentContentComponent } from './rent-content/rent-content.component';
-import { LandlordFaqComponent } from '../landlord/landlord-faq/landlord-faq.component';
 
 @Component({
   selector: 'app-rent',
@@ -19,7 +16,6 @@ export class RentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.component = RentContentComponent;
     this.heading = 'LIVE ANYWHERE, one year at a time…';
     this.subHeading = 'FAST. FLEXIBLE. FUN.';
     this.newSpaceHeading = 'Do you want a new space?';
@@ -30,19 +26,5 @@ export class RentComponent implements OnInit {
     this.leasingText = `Leasing a property and getting the perfect tenant is both an ART and a SCIENCE. Our TECH Agents and MEDIA Team
     can give your property the exposure needed to select the right tenant every time!`;
   }
-  public showComponent = (component: string): void => {
-    switch (component) {
-      case 'faq':
-        this.component = LandlordFaqComponent;
-        break;
-      case 'steps':
-        this.component = RentStepsComponent;
-        break;
-      case 'content':
-        this.component = RentContentComponent;
-        break;
-      default:
-        this.component = RentContentComponent;
-    }
-  }
+
 }

@@ -1,155 +1,182 @@
-<div class="form-wrapper">
-  <p class="heading text-center">Schedule a Buyer Consultation, TODAY!</p>
-  <div class="container form-container">
-    <form [formGroup]="buyerForm" (ngSubmit)="submitForm(buyerForm)" novalidate="">
-      <div class="mb-4">
-        <label for="buyerName">Buyer</label>
-        <div class="input-group mb-2 mr-sm-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
-          </div>
-          <input type="text" class="form-control" id="buyerName" placeholder="Buyer Name" name="buyerName"
-            formControlName="buyerName" required />
+<div class="consultation-form">
+    <div class="wrapper">
+        <div class="doss-container">
+            <div class="section-header">
+                <p class="large-text-blue">Schedule a Buyer<br>Consultation</p>
+            </div>
+
+            <div class="section-5-form">
+                <form [formGroup]="buyerForm" (ngSubmit)="submitForm(buyerForm)"
+                    novalidate="">
+                    <div class="form-input-group">
+                        <div class="form-input">
+                            <label for="buyerName">
+                                <p class="regular-text-blue">Buyer Name <span class="required">*</span></p>
+                            </label>
+                            <input type="text" class="form-control" name="buyerName" 
+                                formControlName="buyerName" required />
+                            <div *ngIf="bf.buyerName.touched && bf.buyerName.errors?.required">
+                                <div class="text-danger py-1">Buyer name is required.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="coBuyerName">
+                                <p class="regular-text-blue">Co-Buyer Name(If Applicable)</p>
+                            </label>
+                            <input type="text" id="coBuyerName" class="form-control"
+                                name="coBuyerName" formControlName="coBuyerName">
+                        </div>
+
+                        <div class="form-input">
+                            <label for="buyerEmail">
+                                <p class="regular-text-blue">Buyer Email <span class="required">*</span></p>
+                            </label>
+                            <input type="email" class="form-control" id="buyerEmail"
+                                name="email" formControlName="buyerEmail" required />
+                            <div *ngIf="bf.buyerEmail.touched && bf.buyerEmail.errors?.required">
+                                <div class="text-danger py-1">Buyer email is required.</div>
+                            </div>
+                            <div *ngIf="bf.buyerEmail.dirty">
+                                <div class="text-danger py-1" *ngIf="bf.buyerEmail.invalid">
+                                    Please enter a valid email address
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="coBuyerEmail">
+                                <p class="regular-text-blue">Co-Buyer Email(If Applicable)</p>
+                            </label>
+                            <input type="email" id="coBuyerEmail" class="form-control"
+                                name="coBuyerEmail" formControlName="coBuyerEmail" />
+                                <div *ngIf="bf.coBuyerEmail.dirty">
+                                    <div class="text-danger py-1" *ngIf="bf.coBuyerEmail.invalid">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="buyerPhone">
+                                <p class="regular-text-blue">Buyer Phone Number <span class="required">*</span></p>
+                            </label>
+                            <input type="text" class="form-control" id="buyerPhone"
+                                name="buyerPhone" formControlName="buyerPhone" placeholder="777-777-7777" required />
+                            <div *ngIf="bf.buyerPhone.touched && bf.buyerPhone.errors?.required">
+                                <div class="text-danger py-1">Phone number is required.</div>
+                            </div>
+                            <div *ngIf="bf.buyerPhone.dirty">
+                                <div class="text-danger py-1" *ngIf="bf.buyerPhone.invalid">
+                                    Please enter a valid phone number
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="coBuyerPhone">
+                                <p class="regular-text-blue">Co-Buyer Phone Number(If Applicable)</p>
+                            </label>
+                            <input type="text" id="coBuyerPhone" class="form-control"
+                                name="coBuyerPhone" formControlName="coBuyerPhone" />
+                        </div>
+                    </div>
+
+                    <div class="radio-input-group">
+                        <p class="regular-text-blue" style="margin-bottom: 10px;">Are you Pre-Approved? <span class="required">*</span></p>
+                        <div class="radio-input-selections">
+                            <div class="radio-input">
+                                <input type="radio" id="pre-approved" name='preApproved' class="regular-radio" value="yes"
+                                    formControlName="preApproved">
+                                <label for="pre-approved">
+                                    <p class="regular-text-blue">Yes</p>
+                                </label>
+                            </div>
+
+                            <div class="radio-input">
+                                <input type="radio" id="not-approved" name="preApproved" class="regular-radio"
+                                    formControlName="preApproved" value="no">
+                                <label for="not-approved">
+                                    <p class="regular-text-blue">No</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <div class="form-input">
+                            <label for="">
+                                <p class="regular-text-blue">If so please attach Pre-Approved Letter</p>
+                            </label>
+                            <input type="file">
+                        </div>
+                    </div>
+
+                    <div class="radio-input-group">
+                        <p class="regular-text-blue" style="margin-bottom: 10px;">When are you looking to buy? <span class="required">*</span></p>
+                        <div class="radio-input-selections">
+                            <div class="radio-input">
+                                <input type="radio" id="now" name='whenToBuy' class="regular-radio" formControlName="whenToBuy" value="now">
+                                <label for="now">
+                                    <p class="regular-text-blue">Now</p>
+                                </label>
+                            </div>
+
+                            <div class="radio-input">
+                                <input type="radio" id="3mon" name="whenToBuy" formControlName="whenToBuy" value="0-3 months" class="regular-radio"
+                                    formControlName="whenToBuy">
+                                <label for="3mon">
+                                    <p class="regular-text-blue">0-3 months</p>
+                                </label>
+                            </div>
+
+                            <div class="radio-input">
+                                <input type="radio" id="6mon" name="whenToBuy" formControlName="whenToBuy" value="3-6 months" class="regular-radio"
+                                    formControlName="whenToBuy">
+                                <label for="6mon">
+                                    <p class="regular-text-blue">3-6 months</p>
+                                </label>
+                            </div>
+
+                            <div class="radio-input">
+                                <input type="radio" id="12mon" name="whenToBuy" formControlName="whenToBuy" value="6-12 months" class="regular-radio"
+                                    formControlName="whenToBuy">
+                                <label for="12mon">
+                                    <p class="regular-text-blue">6-12 months</p>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <div class="form-input">
+                            <label for="priceRange">
+                                <p class="regular-text-blue">What's your price range? <span class="required">*</span></p>
+                            </label>
+                            <input type="text" class="form-control" id="priceRange" name='when-buy'
+                                formControlName="priceRange" required />
+                            <div *ngIf="bf.priceRange.touched && bf.priceRange.errors?.required">
+                                <div class="text-danger py-1">Price range is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-input-group mb-5">
+                        <label for="description">
+                            <p class="regular-text-blue">Describe your dream home and preferred location. <span class="required">*</span></p>
+                        </label>
+                        <textarea class="form-control" name="describe" id="description" required
+                            formControlName="dreamHome"></textarea>
+                        <div *ngIf="bf.dreamHome.touched && bf.dreamHome.errors?.required">
+                            <div class="text-danger py-1">Dream home description is required.</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit" [disabled]="!buyerForm.valid">Send</button>
+
+                </form>
+            </div>
         </div>
-        <div class="text-center" *ngIf="bf.buyerName.touched && bf.buyerName.errors?.required">
-          <div class="text-danger py-1">Buyer name is required.</div>
-        </div>
-      </div>
-      <div class="mb-4">
-        <label for="coBuyerName">Co-Buyer <span class="text-muted">(If Applicable)</span>
-        </label>
-        <div class="input-group mb-2 mr-sm-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
-          </div>
-          <input type="text" class="form-control" id="coBuyerName" placeholder="Co-Buyer Name" name="coBuyerName"
-            formControlName="coBuyerName" />
-        </div>
-      </div>
-      <div class="mb-4">
-        <label for="buyerEmail">Buyer Email</label>
-        <div class="input-group mb-2 mr-sm-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
-          </div>
-          <input type="email" class="form-control" id="buyerEmail" placeholder="you@example.com" name="email"
-            formControlName="buyerEmail" required />
-        </div>
-        <div class="text-center" *ngIf="bf.buyerEmail.touched && bf.buyerEmail.errors?.required">
-          <div class="text-danger py-1">Buyer email is required.</div>
-        </div>
-        <div class="text-center" *ngIf="bf.buyerEmail.dirty">
-          <div class="text-danger py-1" *ngIf="bf.buyerEmail.invalid">
-            Please enter a valid email address
-          </div>
-        </div>
-      </div>
-      <div class="mb-4">
-        <label for="coBuyerEmail">Co-Buyer Email
-          <span class="text-muted">(If Applicable)</span></label>
-        <div class="input-group mb-2 mr-sm-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
-          </div>
-          <input type="email" class="form-control" id="coBuyerEmail" placeholder="you@example.com" name="coBuyerEmail"
-            formControlName="coBuyerEmail" />
-        </div>
-      </div>
-      <div class="mb-4">
-        <label for="buyerPhone">Buyer Phone Number</label>
-        <div class="input-group mb-2 mr-sm-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
-          </div>
-          <input type="text" class="form-control" id="buyerPhone" placeholder="713-555-5555" name="buyerPhone"
-            formControlName="buyerPhone" required />
-        </div>
-        <div class="text-center" *ngIf="bf.buyerPhone.touched && bf.buyerPhone.errors?.required">
-          <div class="text-danger py-1">Phone number is required.</div>
-        </div>
-      </div>
-      <div class="mb-4">
-        <label for="coBuyerPhone">Co-Buyer Phone Number
-          <span class="text-muted">(If Applicable)</span></label>
-        <div class="input-group mb-2 mr-sm-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
-          </div>
-          <input type="text" class="form-control" id="coBuyerPhone" placeholder="713-555-5555" name="coBuyerPhone"
-            formControlName="coBuyerPhone" />
-        </div>
-      </div>
-      <div class="preapproved">
-        <p class="title">Are you Pre-Approved</p>
-        <div class="preapproved-controls">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="preApproved" name="preApproved"
-              formControlName="preApproved" />
-            <label class="custom-control-label" for="preApproved">Yes</label>
-          </div>
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="notPreApproved" name="notPreApproved"
-              formControlName="notPreApproved" />
-            <label class="custom-control-label" for="notPreApproved">No</label>
-          </div>
-        </div>
-        <div class="preapproved-letter">
-          <p>If so, please attach Pre-Approval Letter:</p>
-          <input type="file" id="img" name="img" accept="image/*">
-        </div>
-      </div>
-      <div class="looking-to-buy">
-        <label class="mb-1">When are you looking to buy?</label>
-        <div class="options">
-          <div class="custom-control custom-radio">
-            <input id="now" name="now" type="radio" class="custom-control-input" checked="" required=""
-              formControlName="now" />
-            <label class="custom-control-label" for="now">Now</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="oneToThreeMonths" name="oneToThreeMonths" type="radio" class="custom-control-input" checked=""
-              required="" formControlName="oneToThreeMonths" />
-            <label class="custom-control-label" for="oneToThreeMonths">0-3 Months</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="threeToSixMonths" name="threeToSixMonths" type="radio" class="custom-control-input" required
-              formControlName="threeToSixMonths" />
-            <label class="custom-control-label" for="threeToSixMonths">3-6 Months</label>
-          </div>
-          <div class="custom-control custom-radio">
-            <input id="sixToTwelveMonths" name="sixToTwelveMonths" type="radio" class="custom-control-input" required
-              formControlName="sixToTwelveMonths" />
-            <label class="custom-control-label" for="sixToTwelveMonths">6-12 Months</label>
-          </div>
-        </div>
-      </div>
-      <div class="price-range my-4">
-        <label for="priceRange">What’s your price range? </label>
-        <div class="input-group mb-2 mr-sm-2">
-          <div class="input-group-prepend">
-            <div class="input-group-text">@</div>
-          </div>
-          <input type="text" class="form-control" id="priceRange" placeholder="" formControlName="priceRange"
-            required />
-        </div>
-        <div class="text-center" *ngIf="bf.priceRange.touched && bf.priceRange.errors?.required">
-          <div class="text-danger py-1">Price range is required.</div>
-        </div>
-      </div>
-      <div class="dreamhome mb-3">
-        <label for="dreamHome">Describe your Dream Home and preferred location?
-        </label>
-        <textarea id="w3mission" rows="4" cols="60" required formControlName="dreamHome"></textarea>
-        <div class="text-center" *ngIf="bf.dreamHome.touched && bf.dreamHome.errors?.required">
-          <div class="text-danger py-1">Dream home description is required.</div>
-        </div>
-      </div>
-      <hr class="mb-4" />
-      <div class="submit-btn">
-        <button [disabled]="!buyerForm.valid" class="btn btn-primary btn-lg btn-block" type="submit">
-          Send
-        </button>
-      </div>
-    </form>
-  </div>
+    </div>
 </div>

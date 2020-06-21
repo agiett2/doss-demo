@@ -1,24 +1,18 @@
 <div class="wrapper">
     <section id="header">
         <div class="text-center">
-            <p class="heading">Buyer Faq</p>
+            <div class="heading">
+                <p>Buyer FAQ</p>
+            </div>
         </div>
     </section>
     <section id="body">
         <div class="container my-5">
             <ng-container *ngIf="faqs">
-                <app-faq [faqs]="faqs"  [faqId]="'buyer'" [textColor]="'black'">
+                <app-faq [faqs]="faqs"  [faqId]="'buyer'">
                 </app-faq>
             </ng-container>
         </div>
     </section>
     
 </div>
-<section id="mission" class="text-center">
-    <div class="heading">
-        <p>{{ missionHeadding}}</p>
-    </div>
-    <div class="message">
-        <p>{{ missionMessage }}</p>
-    </div>
-</section>

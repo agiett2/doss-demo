@@ -1,15 +1,76 @@
-<section id="hero-section">
-  <app-hero [heading]="heading" [text]="subHeading" [backgroundImage]="'franchise.png'"></app-hero>
+<section class="section-1">
+  <div class="hero-container">
+    <div class="hero-text-container">
+      <div class="hero-text">
+        <p class="large-text-white">OPEN DOSS IN <br> YOUR MARKET AREA</p>
+        <p class="regular-text-white" style="margin-top: 10px;">Finally, An Oppurtunity to Franchise a Real Estate TECH Brand!</p>
+      </div>
+    </div>
+  </div>
 </section>
-<div class="wrapper">
-  <section id="quote">
-    <p class="quote">{{ quote }} </p>
-    <p class="signature">{{ signature }}</p>
-  </section>
-  <section id="request-form">
-    <app-franchising-request-form></app-franchising-request-form>
-  </section>
-  <section id="contact-us">
-    <app-contact-number></app-contact-number>
-  </section>
-</div>
+
+<section class="section-2">
+  <div class="section-2-wrapper">
+    <div class="section-2-text">
+      <p class="regular-text-white" style="font-weight: 600;">"You never change things by fighting the existing reality. To change something, build a new model that makes the existing model obsolete"</p>
+        <p class="regular-text-white" style="margin-top: 10px; font-weight: 300; font-style: italic;">
+          - Buminster Fuller
+        </p>
+    </div>
+  </div>
+</section>
+
+<section class="section-3">
+  <div class="section-3-wrapper">
+      <div class="doss-container">
+          <div class="section-header">
+            <p class="large-text-blue">REQUEST MORE <br> INFORMATION</p>
+            <p class="regular-text-blue" style="margin-top: 10px;">Schedule a confidential consultation.</p>
+          </div>
+
+          <div class="section-5-form">
+              <form action="#">
+                <div class="form-input-group">
+                    <div class="form-input">
+                        <label for=""><p class="regular-text-blue">First Name</p></label>
+                        <input type="text">
+                    </div>
+
+                    <div class="form-input">
+                      <label for=""><p class="regular-text-blue">Last Name</p></label>
+                      <input type="text">
+                    </div>
+
+                    <div class="form-input">
+                      <label for=""><p class="regular-text-blue">Phone Number</p></label>
+                      <input type="text">
+                    </div>
+
+                    <div class="form-input">
+                      <label for=""><p class="regular-text-blue">Email</p></label>
+                      <input type="text">
+                    </div>
+
+                    <div class="form-input">
+                        <label for=""><p class="regular-text-blue">City, State of Interest</p></label>
+                        <input type="text">
+                    </div>
+
+                    <div class="form-input">
+                        <label for=""><p class="regular-text-blue">Market Area of Interest</p></label>
+                        <input type="text" required>
+                    </div>
+                </div>
+
+                <div class="form-input-group">
+                    <label for="description"><p class="regular-text-blue">Tell us about your background and real estate experience along with your interest in DOSS</p></label>
+                    <textarea name="describe" id="description" ></textarea>
+                </div>
+
+                <input type="submit" value="Send">
+                    
+              </form>
+          </div>
+      </div>
+  </div>
+</section>

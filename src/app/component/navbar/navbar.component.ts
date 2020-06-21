@@ -39,6 +39,7 @@ export class NavbarComponent implements OnInit {
     // );
 
     // window.onscroll = () => this.myFunction(navBar, sticky);
+
   }
 
   private myFunction = (navBar: HTMLElement, stickyLocation: number) => {
@@ -46,4 +47,7 @@ export class NavbarComponent implements OnInit {
       ? navBar.classList.add('sticky')
       : navBar.classList.remove('sticky');
   }
+
+
+
 }
