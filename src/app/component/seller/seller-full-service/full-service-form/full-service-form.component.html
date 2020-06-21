@@ -1,1 +1,178 @@
-Hi from fuller service form component!
+<section class="consultation-form">
+    <div class="wrapper">
+        <div class="doss-container">
+            <div class="section-header">
+                <p class="large-text-blue">Let's get you<br>started</p>
+            </div>
+
+            <div class="section-5-form">
+                <form [formGroup]="fullServiceForm" (ngSubmit)="submitForm(fullServiceForm)">
+                    <div class="form-input-group">
+                        <div class="form-input">
+                            <label for="sellerName">
+                                <p class="regular-text-blue">Seller Name <span class="required">*</span></p>
+                            </label>
+                            <input type="text" id="sellerName" name="sellerName" formControlName="sellerName"
+                                class="form-control" required />
+                            <div *ngIf="fsf.sellerName.touched && fsf.sellerName.errors?.required">
+                                <div class="text-danger py-1">Seller name is required.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="coSellerName">
+                                <p class="regular-text-blue">Co-Seller Name(If Applicable)</p>
+                            </label>
+                            <input type="text" name="coSellerName" formControlName="coSellerName" id="coSellerName"
+                                class="form-control">
+                        </div>
+
+                        <div class="form-input">
+                            <label for="sellerEmail">
+                                <p class="regular-text-blue">Seller Email <span class="required">*</span></p>
+                            </label>
+                            <input type="email" id="sellerEmail" name="sellerEmail" formControlName="sellerEmail"
+                                class="form-control" required />
+                            <div *ngIf="fsf.sellerEmail.touched && fsf.sellerEmail.errors?.required">
+                                <div class="text-danger py-1">Email is required.</div>
+                            </div>
+                            <div *ngIf="fsf.sellerEmail.dirty">
+                                <div class="text-danger py-1" *ngIf="fsf.sellerEmail.invalid">
+                                    Please enter a valid email
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="coSellerEmail">
+                                <p class="regular-text-blue">Co-Seller Email(If Applicable)</p>
+                            </label>
+                            <input type="email" name="coSellerEmail" id="coSellerEmail" formControlName="coSellerEmail"
+                                class="form-control">
+                            <div *ngIf="fsf.coSellerEmail.dirty">
+                                <div class="text-danger py-1" *ngIf="fsf.coSellerEmail.invalid">
+                                    Please enter a valid email
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="sellerPhoneNumber">
+                                <p class="regular-text-blue">Seller Phone Number <span class="required">*</span></p>
+                            </label>
+                            <input type="text" name="sellerPhoneNumber" formControlName="sellerPhoneNumber"
+                                id="sellerPhoneNumber" placeholder="777-777-7777" class="form-control" required />
+                            <div *ngIf="fsf.sellerPhoneNumber.touched && fsf.sellerPhoneNumber.errors?.required">
+                                <div class="text-danger py-1">Phone number is required.</div>
+                            </div>
+                            <div *ngIf="fsf.sellerPhoneNumber.dirty">
+                                <div class="text-danger py-1" *ngIf="fsf.sellerPhoneNumber.invalid">
+                                    Please enter a valid phone number
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="coSellerPhoneNumber">
+                                <p class="regular-text-blue">Co-Seller Phone Number(If Applicable)</p>
+                            </label>
+                            <input type="text" placeholder="777-777-7777" name="coSellerPhoneNumber"
+                                id="coSellerPhoneNumber" formControlName="coSellerPhoneNumber" class="form-control" />
+                            <div *ngIf="fsf.coSellerPhoneNumber.dirty">
+                                <div class="text-danger py-1" *ngIf="fsf.coSellerPhoneNumber.invalid">
+                                    Please enter a valid phone number
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-input">
+                            <label for="address">
+                                <p class="regular-text-blue">Property Address <span class="required">*</span></p>
+                            </label>
+                            <input type="text" name="address" formControlName="address" id="address"
+                                class="form-control" required />
+                            <div *ngIf="fsf.address.touched && fsf.address.errors?.required">
+                                <div class="text-danger py-1">Address is required.</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="radio-input-group">
+                        <p class="regular-text-blue" style="margin-bottom: 10px;">When are you looking to sell? <span class="required">*</span></p>
+                        <div class="radio-input-selections" required>
+                            <div class="radio-input">
+                                <input type="radio" id="now" name="lookingToSell" formControlName="lookingToSell"
+                                    value="now" class="regular-radio">
+                                <label for="now">
+                                    <p class="regular-text-blue">Now</p>
+                                </label>
+                            </div>
+
+                            <div class="radio-input">
+                                <input type="radio" id="3mon" name="lookingToSell" formControlName="lookingToSell"
+                                    value="0-3 months" class="regular-radio">
+                                <label for="3mon">
+                                    <p class="regular-text-blue">0-3 months</p>
+                                </label>
+                            </div>
+
+                            <div class="radio-input">
+                                <input type="radio" id="6mon" name="lookingToSell" formControlName="lookingToSell"
+                                    value="3-6 months" class="regular-radio">
+                                <label for="6mon">
+                                    <p class="regular-text-blue">3-6 months</p>
+                                </label>
+                            </div>
+
+                            <div class="radio-input">
+                                <input type="radio" formControlName="lookingToSell" value="6-12 months" id="12mon"
+                                    name="lookingToSell" class="regular-radio">
+                                <label for="12mon">
+                                    <p class="regular-text-blue">6-12 months</p>
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-input-group">
+                        <div class="form-input">
+                            <label for="priceListing">
+                                <p class="regular-text-blue">What price do you have in mind? <span class="required">*</span></p>
+                            </label>
+                            <input type="text" name="priceListing" formControlName="priceListing"
+                                id="priceListing" class="form-control" required />
+                                <div *ngIf="fsf.priceListing.touched && fsf.priceListing.errors?.required">
+                                    <div class="text-danger py-1">Price in mind is required.</div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="form-input-group mb-5">
+                        <label for="aboutHome">
+                            <p class="regular-text-blue">Describe your dream home and preferred location <span class="required">*</span></p>
+                        </label>
+                        <textarea name="aboutHome" id="aboutHome" formControlName="aboutHome" class="form-control" required></textarea>
+                        <div *ngIf="fsf.aboutHome.touched && fsf.aboutHome.errors?.required">
+                            <div class="text-danger py-1">Dream home description is required.</div>
+                        </div>
+                    </div>
+                    <div class="form-input-group">
+                        <div class="form-input">
+                            <label for="timeDateToContact">
+                                <p class="regular-text-blue">Best day and time to call you? <span class="required">*</span></p>
+                            </label>
+                            <input type="text" name="timeDateToContact" formControlName="timeDateToContact" id="timeDateToContact" class="form-control" required />
+                            <div *ngIf="fsf.timeDateToContact.touched && fsf.timeDateToContact.errors?.required">
+                                <div class="text-danger py-1">Best time to contact is required.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="submit" type="submit" [disabled]="!fullServiceForm.valid">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -19,20 +19,20 @@ export class FullServiceFormComponent implements OnInit {
     this.fullServiceForm = this.fb.group({
       sellerName: ['', Validators.required],
       coSellerName: [''],
-      sellerEmail: ['', Validators.required, Validators.email],
-      coSellerEmail: [''],
+      sellerEmail: ['', Validators.compose([Validators.required, Validators.email])],
+      coSellerEmail: ['', Validators.email],
       address: ['', Validators.required],
-      sellerPhoneNumber: ['', Validators.required],
-      coSellerPhoneNumber: [''],
+      sellerPhoneNumber: ['',
+        Validators.compose([Validators.required, Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)])],
+      coSellerPhoneNumber: ['', Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)],
       lookingToSell: ['', Validators.required],
       priceListing: ['', Validators.required],
-      howArrivedAtPrice: ['', Validators.required],
       aboutHome: ['', Validators.required],
       timeDateToContact: ['', Validators.required]
     });
   }
 
-  public get fsf(): { [key: string]: AbstractControl} {
+  public get fsf(): { [key: string]: AbstractControl } {
     return this.fullServiceForm.controls;
   }
 
