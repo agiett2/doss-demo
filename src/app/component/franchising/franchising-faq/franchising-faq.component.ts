@@ -19,7 +19,7 @@ export class FranchisingFaqComponent implements OnInit {
       },
       {
         question: 'How much will a DOSS Home Center Franchise Cost?',
-        answer: 'Depending on the population size, the cost will be either $10,000 or $15,000.'
+        answer: 'For the first 100 Market-Areas sold, based on the population size, $10,000 or $15,000.'
       },
       {
         question: 'Will the Market Areas be exclusive territories? ',
@@ -36,7 +36,7 @@ export class FranchisingFaqComponent implements OnInit {
       },
       {
         question: 'When will the Ask DOSS search and transaction portal launch?',
-        answer: 'Our Voice-Activated Intelligent Assistant built into a proprietary real estate search portal will launch by Fall 2020. '
+        answer: 'Our Voice-Activated Intelligent Assistant built into a proprietary real estate search portal will launch nationwide January 2021. '
       },
       {
         question: 'Will my DOSS Home Center get all the leads for my Market Area?',
@@ -55,7 +55,7 @@ export class FranchisingFaqComponent implements OnInit {
       {
         question: 'Will there be any annual conferences for DOSS Agents and Franchisees to attend?',
         // tslint:disable-next-line:max-line-length
-        answer: 'Yes! Starting January 2021, DOSS will be hosting our first annual DOSS DOMINATE Conference for the entire DOSS brand(DOSS Pros, DOSS Social Agents, etc… ) at the San Luis Resort in Galveston, Texas.'
+        answer: 'Yes! Starting January 2021, DOSS will be hosting our first annual DOSS GLOBAL Conference for the entire DOSS brand(DOSS Pros, DOSS Social Agents, etc… ) at the San Luis Resort in Galveston, Texas.'
       },
     ];
   }

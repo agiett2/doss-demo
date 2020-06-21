@@ -124,7 +124,84 @@ body {
 }
 @media only screen and (max-width: 767px) {}
 
+// ANIMATION FOR HERO BANNER
+.anim-left {
+  position: relative;
 
+  opacity: 0;
+  animation: left ease;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+.anim-right {
+  position: relative;
+
+  opacity: 0;
+  animation: right ease;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.anim-up {
+  position: relative;
+
+  opacity: 0;
+  animation: up ease;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+
+.anim-down {
+  position: relative;
+
+  opacity: 0;
+  animation: down ease;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes left {
+  0% {
+    opacity: 0;
+    left: -50px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+@keyframes right {
+  0% {
+    opacity: 0;
+    right: -50px;
+  }
+  100% {
+    opacity: 1;
+    right: 0px;
+  }
+}
+
+@keyframes up {
+  0% {
+    opacity: 0;
+    top: -50px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
+@keyframes down {
+  0% {
+    opacity: 0;
+    bottom: -50px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
 
 
 //INFO-CONTAINER, DOSS-CONTAINER, SECTION-HEADER, FOOTNOTE-CONTAINER, TEXT BOX AND IMAGE BOX

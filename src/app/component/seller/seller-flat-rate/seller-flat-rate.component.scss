@@ -35,3 +35,225 @@
     display: flex;
     justify-content: center;
 }
+
+
+//SECTION-4
+.section-4-wrapper {
+    display: flex;
+    justify-content: center;
+    background: #F8F9FB
+}
+
+.doss-table {
+    /* border: 1px solid black; */
+    
+    border-radius: 10px;
+    width: 100%;
+    
+    
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+}
+
+.table-header {
+    width: 100%;
+    height: 100px;
+
+    border-radius: 10px 10px 0 0;
+    background: #E8EEF4;
+
+    display: flex;
+}
+
+.table-left-padding {
+    padding-left: 50px;
+}
+.table-section-1 {
+    /* border: 1px solid red; */
+
+    width: 10%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.table-section-2 {
+    width: 70%;
+
+    display: flex;
+    align-items: center;
+}
+
+.table-section-2-form {
+    width: 70%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+
+.table-section-3 {
+    /* border: 1px solid red; */
+    width: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+
+
+.table-list {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+
+    background: white;
+    border-bottom: 2px solid #E8EEF4;
+}
+
+.table-list-last {
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+
+    background: white;
+    border-radius: 0 0 10px 10px;
+}
+
+
+// CHECKMARK
+.check-container {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+   
+  .check-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+   
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 5px;
+    background-color: #eee;
+  }
+  
+  .check-container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .check-container input:checked ~ .checkmark {
+    background-color: #f06e42;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .check-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .check-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 8px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  
+
+
+.form-control {
+    width: 25%;
+    padding: 5px;
+    margin-left: 50px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+.doss-button {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1169px) {
+    .check-container {padding-left: 20px;}
+    .form-control {
+        width: 40%;
+    }
+    .doss-button {
+        width: 100%;
+    }
+
+}
+@media only screen and (max-width: 767px) {
+    .table-section-1 {width: 15%;}
+    .table-section-2 {width: 60%;}
+    .table-section-2-form {
+        width: 60%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .table-section-3 {
+        width: 25%;
+        padding-right: 20px;
+    }
+    .folder {padding: 0 30px;}
+    .table-left-padding {
+        padding-left: 20px;
+    }
+    .checkmark {
+        width: 20px;
+        height: 20px;
+    }
+    .check-container .checkmark:after {
+        width: 7px;
+        height: 11px;
+        left: 7px;
+        top: 3px
+    }
+
+    .form-control {
+        width: 75%;
+        padding: 5px;
+        margin-left: 20px;
+        margin-top: 10px;
+
+        font-size: 14px;
+    }
+}
