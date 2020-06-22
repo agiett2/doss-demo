@@ -1,0 +1,46 @@
+//SECTION-1
+.hero-container {
+    // width: 100vw;
+    height: 90vh;
+    max-height: 1024px;
+    // max-width: 100%;
+
+    background-image: url('../../../../assets/images/hero_join_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 1169px) {
+        .hero-text-container {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+//SECTION-2
+.section-2-wrapper {
+    display: flex;
+    justify-content: center;
+    background: #F8F9FB;
+}
+
+
+//SECTION-3
+.section-3-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.doss-container img {
+    width: 100%;
+}
+
+
+
