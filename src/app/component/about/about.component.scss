@@ -1,9 +1,9 @@
 // SECTION-1
 .section-1-wrapper {
     min-height: 300px;
-    background: #F8F9FB;
+    background: #EF6C40;
 
-    background-image: url('../../../assets/images/home_mic_logo_2.png');
+    background-image: url('../../../assets/images/home_mic_logo.png');
     background-repeat: no-repeat;
     background-size: 30%;
     background-position: left;
@@ -26,6 +26,11 @@
     border-radius: 50%;
 
     box-shadow: 0 3px 25px rgba(0,0,0,0.09);
+    transition: 0.3s ease;
+}
+
+.section-1-text img:hover {
+    transform: scale(1.05);
 }
 
 @media only screen and (max-width: 1169px) {
