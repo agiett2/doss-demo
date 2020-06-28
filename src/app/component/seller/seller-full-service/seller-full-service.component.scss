@@ -60,8 +60,13 @@
 }
 
 
+.test-laptop {
+    display: flex;
+    justify-content: center;
+}
 .matterport-showcase {
     margin-bottom: 50px;
+    display: none;
     
 }
 .matterport-showcase iframe{
@@ -88,12 +93,19 @@
   }
 
 
-@media only screen and (max-width: 1169px) {}
+@media only screen and (max-width: 1169px) {
+    .test-laptop {display: none;}
+    .matterport-showcase {
+        display: block;
+    }
+}
 @media only screen and (max-width: 767px) {
+
     .icon img {
         width: 45px;
     }
 }
+
 
 //SECTION-5
 .section-5-wrapper {

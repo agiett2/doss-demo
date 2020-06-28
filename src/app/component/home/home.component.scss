@@ -207,19 +207,48 @@
 }
 // SECTION-8
 .forbes-wrapper {
-    height: 35vh;
+    // height: 35vh;
     background: #F8F9FB;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    // justify-content: center;
     align-items: center;
+}
+.forbes-container {
+    margin-top: 100px;
 }
 .forbes-container img {
     width: 250px;
+    
+}
+
+.article {
+    text-align: center;
+    margin: 0px 70px;
+}
+.article img {
+    width: 30px;
+}
+
+.article-container {
+    display: flex;
+    margin: 100px 0;
 }
 @media only screen and (max-width: 767px) {
+    .forbes-container {
+        margin-top: 50px;
+    }
     .forbes-container img {
         width: 200px;
+    }
+    .article-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
+    }
+    .article {
+        margin: 30px 0;
     }
 }
 // SECTION-9
