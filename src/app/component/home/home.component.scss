@@ -86,6 +86,51 @@
 
 
 //SECTION-4
+.section-4-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.car-container {
+    width: 90vw;
+    max-width: 1170px;
+
+    position: relative;
+}
+#car-text {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
+
+.car-text-white {
+    font-size: 36px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    border: 1px solid white;
+    padding: 0 10px;
+  }
+
+@media only screen and (max-width: 767px) {
+    .car-text-white {
+        font-size: 28px;
+    }
+  }
+@media only screen and (max-width: 767px) {
+    .car-text-white {
+        font-size: 20px;
+    }
+    .car-container {
+        width: 100vw;
+        max-width: 100%;
+    }
+    #car-text {
+        bottom: 10px;
+        right: 15px;
+    }
+
+}
 
 //SECTION-5
 .section-5-wrapper {
