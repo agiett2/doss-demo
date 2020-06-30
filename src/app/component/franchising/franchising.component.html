@@ -3,7 +3,8 @@
     <div class="hero-text-container">
       <div class="hero-text">
         <p class="large-text-white anim-up">OPEN DOSS IN <br> YOUR MARKET AREA</p>
-        <p class="regular-text-white anim-down" style="margin-top: 10px;">Finally, An Oppurtunity to Franchise a Real Estate TECH Brand!</p>
+        <p class="regular-text-white anim-down" style="margin-top: 10px;">Finally, An Oppurtunity to Franchise a Real
+          Estate TECH Brand!</p>
       </div>
     </div>
   </div>
@@ -12,65 +13,105 @@
 <section class="section-2">
   <div class="section-2-wrapper">
     <div class="section-2-text">
-      <p class="regular-text-white" style="font-weight: 600;">"You never change things by fighting the existing reality. To change something, build a new model that makes the existing model obsolete"</p>
-        <p class="regular-text-white" style="margin-top: 10px; font-weight: 300; font-style: italic;">
-          - Buminster Fuller
-        </p>
+      <p class="regular-text-white" style="font-weight: 600;">"You never change things by fighting the existing reality.
+        To change something, build a new model that makes the existing model obsolete"</p>
+      <p class="regular-text-white" style="margin-top: 10px; font-weight: 300; font-style: italic;">
+        - Buminster Fuller
+      </p>
     </div>
   </div>
 </section>
 
-<section class="section-3">
-  <div class="section-3-wrapper">
-      <div class="doss-container">
-          <div class="section-header">
-            <p class="large-text-blue">REQUEST MORE <br> INFORMATION</p>
-            <p class="regular-text-blue" style="margin-top: 10px;">Schedule a confidential consultation.</p>
-          </div>
-
-          <div class="section-5-form">
-              <form action="#">
-                <div class="form-input-group">
-                    <div class="form-input">
-                        <label for=""><p class="regular-text-blue">First Name</p></label>
-                        <input type="text">
-                    </div>
-
-                    <div class="form-input">
-                      <label for=""><p class="regular-text-blue">Last Name</p></label>
-                      <input type="text">
-                    </div>
-
-                    <div class="form-input">
-                      <label for=""><p class="regular-text-blue">Phone Number</p></label>
-                      <input type="text">
-                    </div>
-
-                    <div class="form-input">
-                      <label for=""><p class="regular-text-blue">Email</p></label>
-                      <input type="text">
-                    </div>
-
-                    <div class="form-input">
-                        <label for=""><p class="regular-text-blue">City, State of Interest</p></label>
-                        <input type="text">
-                    </div>
-
-                    <div class="form-input">
-                        <label for=""><p class="regular-text-blue">Market Area of Interest</p></label>
-                        <input type="text" required>
-                    </div>
-                </div>
-
-                <div class="form-input-group">
-                    <label for="description"><p class="regular-text-blue">Tell us about your background and real estate experience along with your interest in DOSS</p></label>
-                    <textarea name="describe" id="description" ></textarea>
-                </div>
-
-                <input type="submit" value="Send">
-                    
-              </form>
-          </div>
+<section class="consultation-form">
+  <div class="wrapper">
+    <div class="doss-container">
+      <div class="section-header">
+        <p class="large-text-blue">REQUEST MORE <br> INFORMATION</p>
+        <p class="regular-text-blue" style="margin-top: 10px;">Schedule a confidential consultation.</p>
       </div>
+
+      <div class="section-5-form">
+        <form [formGroup]="requestInfoForm" (ngSubmit)="submitForm(requestInfoForm)">
+          <div class="form-input-group">
+            <div class="form-input">
+              <label for="firstName">
+                <p class="regular-text-blue">First Name  <span class="required">*</span></p>
+              </label>
+              <input type="text" id="firstName" name="firstName" formControlName="firstName" class="form-control"
+                required />
+              <div *ngIf="rf.firstName.touched && rf.firstName.errors?.required">
+                <div class="text-danger py-1">First name is required.</div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="lastName">
+                <p class="regular-text-blue">Last Name  <span class="required">*</span></p>
+              </label>
+              <input type="text" id="lastName" name="lastName" formControlName="lastName" class="form-control"
+                required />
+              <div *ngIf="rf.lastName.touched && rf.lastName.errors?.required">
+                <div class="text-danger py-1">Last name is required.</div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="phoneNumber">
+                <p class="regular-text-blue">Phone Number  <span class="required">*</span></p>
+              </label>
+              <input type="text" name="phoneNumber" formControlName="phoneNumber" id="phoneNumber" placeholder="777-777-7777" required />
+              <div *ngIf="rf.phoneNumber.touched && rf.phoneNumber.errors?.required">
+                <div class="text-danger py-1">First name is required.</div>
+              </div>
+              <div *ngIf="rf.phoneNumber.dirty">
+                <div class="text-danger py-1" *ngIf="rf.phoneNumber.invalid">
+                  Please enter a valid phone number
+                </div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="email">
+                <p class="regular-text-blue">Email  <span class="required">*</span></p>
+              </label>
+              <input type="email" id="email" name="email" formControlName="email" required />
+              <div *ngIf="rf.email.touched && rf.email.errors?.required">
+                <div class="text-danger py-1">Buyer email is required.</div>
+              </div>
+              <div *ngIf="rf.email.dirty">
+                <div class="text-danger py-1" *ngIf="rf.email.invalid">
+                  Please enter a valid email address
+                </div>
+              </div>
+            </div>
+
+            <div class="form-input">
+              <label for="cityStateIntrest">
+                <p class="regular-text-blue">City, State of Interest</p>
+              </label>
+              <input type="text" id="cityStateIntrest" name="cityStateIntrest" formControlName="cityStateIntrest" />
+            </div>
+
+            <div class="form-input">
+              <label for="marketAreaInterest">
+                <p class="regular-text-blue">Market Area of Interest</p>
+              </label>
+              <input type="text" id="marketAreaInterest" name="marketAreaInterest" formControlName="marketAreaInterest" />
+            </div>
+          </div>
+
+          <div class="form-input-group mb-5">
+            <label for="expereince">
+              <p class="regular-text-blue">Tell us about your background and real estate experience along with your
+                interest in DOSS</p>
+            </label>
+            <textarea name="describe" id="expereince" name="expereince" formControlName="expereince"></textarea>
+          </div>
+
+          <button class="submit" type="submit" [disabled]="!requestInfoForm.valid">Send</button>
+
+        </form>
+      </div>
+    </div>
   </div>
 </section>

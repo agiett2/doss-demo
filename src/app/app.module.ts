@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { HeroComponent } from './shared/components/hero/hero.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FooterComponent } from './component/footer/footer.component';
 import { ContentServcieAbstract } from './core/services/abstract/content.service.abstract';
@@ -127,7 +128,8 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { useHash: true }),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: ContentServcieAbstract, useClass: ContentService },

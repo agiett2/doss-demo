@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { SendEmailService } from 'src/app/core/services/send-email/send-email.service';
+import { SendEmailServiceAbstract } from 'src/app/core/services/abstract/send-email.service.abstract';
 
 @Component({
   selector: 'app-franchising',
@@ -12,7 +15,8 @@ export class FranchisingComponent implements OnInit {
   public message: string;
   public quote: string;
   public signature: string;
-  constructor() { }
+  public requestInfoForm: FormGroup;
+  constructor(private fb: FormBuilder, private emailService: SendEmailServiceAbstract) { }
 
   ngOnInit(): void {
     this.heading = 'Open DOSS in your Market Area';
@@ -21,5 +25,23 @@ export class FranchisingComponent implements OnInit {
     something, build a new model that makes the existing model obsolete.`;
     this.quote = 'You never chnage things by fighting the existing reality. To change something, build a new model that makes the ';
     this.signature = '-buminster fuller';
+    this.requestInfoForm = this.fb.group({
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      phoneNumber: ['',
+        Validators.compose([Validators.required, Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)])],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      cityStateIntrest: [''],
+      marketAreaInterest: [''],
+      expereince: [''],
+    });
+  }
+
+  public get rf(): { [key: string]: AbstractControl } {
+    return this.requestInfoForm.controls;
+  }
+
+  public submitForm(form: FormGroup): void {
+    this.emailService.sendEmail(form);
   }
 }

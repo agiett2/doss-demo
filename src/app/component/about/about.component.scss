@@ -25,7 +25,12 @@
     width: 15%;
     border-radius: 50%;
 
-    box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+    box-shadow: 0 3px 25px rgba(0,0,0,0.09);
+    transition: 0.3s ease;
+}
+
+.section-1-text img:hover {
+    transform: scale(1.05);
 }
 
 @media only screen and (max-width: 1169px) {
