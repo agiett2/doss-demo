@@ -1,0 +1,61 @@
+//SECTION-1
+.hero-container {
+    // width: 100vw;
+    height: 90vh;
+    max-height: 1024px;
+    // max-width: 100%;
+
+    background-image: url('/assets/images/hero_franchise_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (max-width: 1169px) {
+        .hero-text-container {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+
+// SECTION-2
+.section-2-wrapper {
+    min-height: 45vh;
+    background: #EF6C40;
+
+    background-image: url('/assets/images/home_mic_logo.png');
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-position: left;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-2-text {
+    width: 60vw;
+    margin: 200px 0;
+}
+
+@media only screen and (max-width: 1169px) {
+    .section-2-wrapper {
+        min-height: 35vh;
+    }
+}
+@media only screen and (max-width: 767px) {
+    .section-2-wrapper {
+        background-image: none;
+    }
+    .section-2-text {
+        margin: 50px 0;
+    }
+}
