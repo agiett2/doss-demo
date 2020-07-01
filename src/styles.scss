@@ -48,7 +48,12 @@ body {
   color: #174D89;
   margin: 0;
 }
-
+.special-text-white {
+  font-size: 36px;
+  font-weight: 400;
+  color: white;
+  margin: 20px 0 0 0;
+}
 .footnote {
   font-size: 12px;
   font-weight: 400;
@@ -72,6 +77,9 @@ body {
   .small-text-blue {
     font-size: 14px;
   }
+  .special-text-white {
+    font-size: 28px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .large-text-white {
@@ -89,6 +97,9 @@ body {
   }
   .small-text-blue {
     font-size: 12px;
+  }
+  .special-text-white {
+    font-size: 24px;
   }
   .footnote {
     font-size: 8px;
