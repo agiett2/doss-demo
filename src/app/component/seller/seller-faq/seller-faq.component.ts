@@ -28,7 +28,7 @@ export class SellerFaqComponent implements OnInit {
     },
     {
       question: `Will I receive Full-Service with the 1% Listing Fee? `,
-      answer: `Absolutely! Our TECH Agents are BETTER. FASTER. SMARTER. than the average Agent. With DOSS, you are working with a TEAM of tech savvy professionals that know how to work efficiently, provide your property with the best marketing strategy, and give you the best support to make your transaction smooth and stress-free… `
+      answer: `Absolutely! Our techAGENT are BETTER. FASTER. SMARTER. than the average Agent. With DOSS, you are working with a TEAM of tech savvy professionals that know how to work efficiently, provide your property with the best marketing strategy, and give you the best support to make your transaction smooth and stress-free… `
     },
     {
       question: `If I'm selling a property for a 1% Listings Fee and buying a new home, do I qualify for a 1% Buyer Rebate?`,
