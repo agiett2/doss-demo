@@ -50,6 +50,8 @@ import { RentConsultationComponent as RentConsultationComponent } from './compon
 import { FullServiceFormComponent } from './component/seller/seller-full-service/full-service-form/full-service-form.component';
 import { SellerFaqComponent } from './component/seller/seller-faq/seller-faq.component';
 import { Hero2Component } from './shared/components/hero2/hero2.component';
+import { TermsComponent } from './component/footer/terms/terms/terms.component';
+import { PolicyComponent } from './component/footer/policy/policy/policy.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -77,6 +79,8 @@ const appRoutes: Routes = [
   { path: 'digital-ads', component: DigitalAdsComponent },
   { path: 'five-laws', component: FiveLawsComponent },
   { path: 'learn-doss', component: LearnDossComponent },
+  { path: 'terms', component: TermsComponent },
+  { path: 'policy', component: PolicyComponent },
   { path: '**', component: HomeComponent }
 ];
 @NgModule({
@@ -121,7 +125,9 @@ const appRoutes: Routes = [
     RentConsultationComponent,
     FullServiceFormComponent,
     SellerFaqComponent,
-    Hero2Component
+    Hero2Component,
+    TermsComponent,
+    PolicyComponent
   ],
   imports: [
     BrowserModule,
