@@ -18,7 +18,7 @@ export class SellerStepsComponent implements OnInit {
       {
         step: 'The Initial Phone Interview',
         // tslint:disable-next-line:max-line-length
-        detail: `This is your initial contact with one of our TECH Agents. This call is very important because it details what to expect during the In-House Consultation. However, there are two(2) very important questions: #1 What price do you have in mind for your property, and #2 When do you want to put it on the market? Furthermore, be prepared to showcase your home as if you are the Agent, while giving your TECH Agent a tour of your home. The objective is to hear you describe and highlight your property as you see it, so your TECH Agent can capture that essence and describe it to hundreds of potential buyers.`
+        detail: `This is your initial contact with one of our techAGENT. This call is very important because it details what to expect during the In-House Consultation. However, there are two(2) very important questions: #1 What price do you have in mind for your property, and #2 When do you want to put it on the market? Furthermore, be prepared to showcase your home as if you are the Agent, while giving your TECH Agent a tour of your home. The objective is to hear you describe and highlight your property as you see it, so your TECH Agent can capture that essence and describe it to hundreds of potential buyers.`
       },
       // tslint:disable-next-line: max-line-length
       {
