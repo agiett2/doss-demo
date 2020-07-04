@@ -14,6 +14,7 @@
                         <h4>
                             {{faq.question}}
                         </h4>
+                        <a *ngIf="faq.link" href="{{faq.link.href}}" target="_blank">{{faq.link.text}}</a>
                     </button>
                 </div>
 

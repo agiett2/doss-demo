@@ -258,6 +258,7 @@
     .nav-item a {
         font-size: 18px;
         padding: 1rem 0 0 0 ;
+        margin: .5rem 1rem 0rem 0rem;;
     }
     .dropdown-menu {
         background: none;
@@ -265,6 +266,7 @@
         border: none;
     }
     .dropdown-menu a {
-       padding: 1rem;
+       padding: 1.5rem 1rem 0rem 1rem;
+       margin: 0;
     }
 }

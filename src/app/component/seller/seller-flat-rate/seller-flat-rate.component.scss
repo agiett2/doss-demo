@@ -104,7 +104,9 @@
 }
 
 
-
+.disable-check {
+    pointer-events: none;
+}
 
 .table-list {
     width: 100%;
@@ -128,6 +130,9 @@
 
 
 // CHECKMARK
+#base-price {
+    pointer-events: none;
+}
 .check-container {
     display: block;
     position: relative;
