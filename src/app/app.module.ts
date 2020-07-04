@@ -51,8 +51,11 @@ import { RentConsultationComponent as RentConsultationComponent } from './compon
 import { FullServiceFormComponent } from './component/seller/seller-full-service/full-service-form/full-service-form.component';
 import { SellerFaqComponent } from './component/seller/seller-faq/seller-faq.component';
 import { Hero2Component } from './shared/components/hero2/hero2.component';
+import { NgxStripeModule } from 'ngx-stripe';
+import { StripeCheckoutComponent } from './shared/components/stripe-checkout/stripe-checkout.component';
 import { TermsComponent } from './component/footer/terms/terms/terms.component';
 import { PolicyComponent } from './component/footer/policy/policy/policy.component';
+import { PaymentService } from './core/services/payment.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -127,19 +130,22 @@ const appRoutes: Routes = [
     FullServiceFormComponent,
     SellerFaqComponent,
     Hero2Component,
+    StripeCheckoutComponent,
     TermsComponent,
-    PolicyComponent
+    PolicyComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { useHash: true }),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxStripeModule.forRoot('pk_test_6cg1ZyuqzT8ndN9sZjiPe341'),
   ],
   providers: [
     { provide: ContentServcieAbstract, useClass: ContentService },
-    { provide: SendEmailServiceAbstract, useClass: SendEmailService }
+    { provide: SendEmailServiceAbstract, useClass: SendEmailService },
+    PaymentService
   ],
   entryComponents: [
     RightAlignComponent,

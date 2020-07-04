@@ -3,8 +3,7 @@
     <div class="hero-text-container">
       <div class="hero-text">
         <p class="large-text-white anim-up">YOU GET WHAT<br>YOU PAY FOR...</p>
-        <p class="regular-text-white anim-down" style="margin-top: 10px; font-weight: 300;">Builders. Investors. Savvy
-          Sellers.</p>
+        <p class="regular-text-white anim-down" style="margin-top: 10px; font-weight: 300;">Great Service, at a fair price!</p>
         <p class="special-text-white anim-down" style="font-weight: 600;">$395 FLAT FEE</p>
       </div>
     </div>
@@ -109,12 +108,14 @@
         </div>
       </div>
 
-      <div class="button-container">
-        <button class="doss-button">
-          <img src="assets/images/shopping-cart.svg" alt="icon of cart" style="margin-right: 15px; width: 25px;">
-          <p style="margin: 0 10px 0 0;">Checkout</p>
-        </button>
+        <div class="button-container">
+          <button class="doss-button" (click)="checkout()">
+            <img src="assets/images/shopping-cart.svg" alt="icon of cart" style="margin-right: 15px; width: 25px;">
+            <p style="margin: 0 10px 0 0;">Checkout</p>
+          </button>
+        </div>
+        <app-stripe-checkout *ngIf="isCheckingOut" [price]="getTotal(getSelectedMenu(tableRowData))" [email]="'testing@askdoss.com'"></app-stripe-checkout>
+      
       </div>
     </div>
-  </div>
 </section>

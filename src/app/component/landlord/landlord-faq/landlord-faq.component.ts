@@ -14,17 +14,17 @@ export class LandlordFaqComponent implements OnInit {
   ngOnInit(): void {
     this.faqList = [{
       // tslint:disable-next-line: max-line-length
-      question: 'How much will DOSS charge to market and lease my property', answer: `There is not an upfront fee to work with a TECH Agent at DOSS. We get paid when checks are cut by finding you the right Tenant for your property.  The fee is one months rent. Example: If you are renting your property for $2,500.00, the Tenant will produce two checks. One check for $1,250 to you and another check for $1,250.00 written to DOSS Pros, LLC. We will distribute checks accordingly to Agents involved in the transaction.
+      question: 'How much will DOSS charge to market and lease my property', answer: `There is not an upfront fee to work with a tech AGENT at DOSS. We get paid when checks are cut by finding you the right Tenant for your property.  The fee is one months rent. Example: If you are renting your property for $2,500.00, the Tenant will produce two checks. One check for $1,250 to you and another check for $1,250.00 written to DOSS Pros, LLC. We will distribute checks accordingly to Agents involved in the transaction.
   `},
     {
       // tslint:disable-next-line: max-line-length
-      question: 'What makes DOSS different than Traditional Real Estate Brokerages?', answer: `DOSS is a Technology Company. We leverage technology to increase efficiencies in the process. Taking a systematic and transparent approach to working with our clients has proven to be very effective. Furthermore, DOSS has an In-House Media Company. This means that we provide the highest quality of works to market your property in the pursuit of giving it optimal exposure. You will work with a TECH Agent that only focuses on Rental Listings. This way, you have a dedicated Expert that knows how to get results. That’s what makes DOSS different! `
+      question: 'What makes DOSS different than Traditional Real Estate Brokerages?', answer: `DOSS is a Technology Company. We leverage technology to increase efficiencies in the process. Taking a systematic and transparent approach to working with our clients has proven to be very effective. Furthermore, DOSS has an In-House Media Company. This means that we provide the highest quality of works to market your property in the pursuit of giving it optimal exposure. You will work with a tech AGENT that only focuses on Rental Listings. This way, you have a dedicated Expert that knows how to get results. That’s what makes DOSS different! `
     },
     // tslint:disable-next-line: max-line-length
     { question: 'How will you market my property?', answer: `Unlike Traditional Brokerages, we have an In-House Media Company that does the Advertising and Marketing for our Landlords. We will take professional photos to ensure that we capture the best features of your property to attract as many qualified Tenants as possible. We will market your property on the MLS, Realtor.com, Trulia, Zillow, and many other real estate search engines.` },
     {
       question: 'Will my property be put on the MLS, Realtor.com, and Zillow?',
-      answer: `Yes! Your TECH Agent will place your property on the MLS. In addition, we will manage all phone calls and help you select the
+      answer: `Yes! Your tech AGENT will place your property on the MLS. In addition, we will manage all phone calls and help you select the
 right Tenant for your property
 `},
     {

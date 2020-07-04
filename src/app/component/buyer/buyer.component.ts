@@ -17,7 +17,7 @@ export class BuyerComponent implements OnInit {
   public disclaimerText1 = '*Buyer Rebate is subject to lender approval and buyer agent commission. ';
   public disclaimerText2 = '*Home-Tours requested before 3pm are scheduled for the same day. ';
   public disclaimerText3 = '*TECH Agents can help setup Cable/Internet, Security, Utilities, etc.';
-  public tableHeading = 'TRADITIONAL Agent vs. TECH Agent';
+  public tableHeading = 'TRADITIONAL Agent vs. tech AGENT';
   public tableHeadingData: string[];
   public compareTableData: TableDataInterface;
   public tableRowDate: AgentCompareTableRowDataInterface[];

@@ -20,7 +20,7 @@ export class JoinUsComponent implements OnInit {
     this.heroText = 'Join Us!';
     this.techAgentText = `Is your current Brokerage designed for the future? Are they structurally and
     technologically built to help you be competitive in your market?
-    If not, it's tme to join a purpose driven tech brokerage. It's time for you to become a TECH Agent!`;
+    If not, it's tme to join a purpose driven tech brokerage. It's time for you to become a tech AGENT!`;
     this.dossHeading = 'What do you get at DOSS?';
     this.signUpForm = this.fb.group({
       firstName: ['', Validators.required],

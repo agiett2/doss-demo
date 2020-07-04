@@ -16,7 +16,7 @@ export class LandlordComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.steps = [{ step: 'Landlord Consultation', detail: 'At DOSS, to ensure that we really understand your goals and objectives, we do a Landlord Consultation to learn more about you and to discuss how we plan to give you an awesome experience.' },
     // tslint:disable-next-line: max-line-length
-    { step: 'Complete Paperwork', detail: 'Once you decide to retain us(DOSS) to represent you, we will complete the necessary paperwork to start the process. At this stage, you and your TECH Agent decide the amount and date to list your property for on the MLS.' },
+    { step: 'Complete Paperwork', detail: 'Once you decide to retain us(DOSS) to represent you, we will complete the necessary paperwork to start the process. At this stage, you and your tech AGENT decide the amount and date to list your property for on the MLS.' },
     // tslint:disable-next-line: max-line-length
     { step: 'DOSS Media Experts', detail: 'DOSS has an in-house Media Company that will take professional pictures, etc… to capture and showcase the best features of your property.' },
     // tslint:disable-next-line: max-line-length

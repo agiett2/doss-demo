@@ -1,0 +1,22 @@
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+.doss-button {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 1169px) {
+    .form-input {
+        max-width: 50%;
+        color: #31325F;
+        color: #CFD7E0;;
+    }
+
+   
+}
+
