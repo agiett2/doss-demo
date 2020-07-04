@@ -53,6 +53,8 @@ import { SellerFaqComponent } from './component/seller/seller-faq/seller-faq.com
 import { Hero2Component } from './shared/components/hero2/hero2.component';
 import { NgxStripeModule } from 'ngx-stripe';
 import { StripeCheckoutComponent } from './shared/components/stripe-checkout/stripe-checkout.component';
+import { TermsComponent } from './component/footer/terms/terms/terms.component';
+import { PolicyComponent } from './component/footer/policy/policy/policy.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -80,6 +82,8 @@ const appRoutes: Routes = [
   { path: 'digital-ads', component: DigitalAdsComponent },
   { path: 'five-laws', component: FiveLawsComponent },
   { path: 'learn-doss', component: LearnDossComponent },
+  { path: 'terms', component: TermsComponent },
+  { path: 'policy', component: PolicyComponent },
   { path: '**', component: HomeComponent }
 ];
 @NgModule({
@@ -125,7 +129,9 @@ const appRoutes: Routes = [
     FullServiceFormComponent,
     SellerFaqComponent,
     Hero2Component,
-    StripeCheckoutComponent
+    StripeCheckoutComponent,
+    TermsComponent,
+    PolicyComponent
   ],
   imports: [
     BrowserModule,
