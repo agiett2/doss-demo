@@ -16,8 +16,8 @@ export class BuyerFaqComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.faqs = [{
       // tslint:disable-next-line: max-line-length
-      question: `What is a Buyer Rebate?`, answer: `A Buyer Rebate is a portion of a REALTORS® commission that’s provided to a Buyer as a credit to reduce their closing cost and/or to cover other expenses. Read what the Department of Justice(DOJ) has to say about Buyer Rebates.
-    `, link: {text: `Department of Justice`, href: 'https://www.justice.gov/atr/rebates-make-buying-home-less-expensive'}},
+      question: `What is a Buyer Rebate?`, answer: `A Buyer Rebate is a portion of a REALTORS® commission that’s provided to a Buyer as a credit to reduce their closing cost and/or to cover other expenses. Read what the <a href="https://www.justice.gov/atr/rebates-make-buying-home-less-expensive" target="_blank" class="hot-link">Department of Justice(DOJ)</a> has to say about Buyer Rebates.
+    `},
     // tslint:disable-next-line: max-line-length
     { question: `How do I qualify to receive a Buyer Rebate?`, answer: `To qualify for a Buyer Rebate, you simply must purchase a property that is priced over $100k with one of our DOSS, techAGENT. It’s just that easy…` },
     {

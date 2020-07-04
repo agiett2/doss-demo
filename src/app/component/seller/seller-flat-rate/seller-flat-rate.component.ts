@@ -7,6 +7,7 @@ import { TableDataInterface } from 'src/app/shared/interfaces/table-data.interfa
   styleUrls: ['./seller-flat-rate.component.scss']
 })
 export class SellerFlatRateComponent implements OnInit {
+  public isCheckingOut:boolean;
   public heading: string;
   public subHeading: string;
   public whatYouGetList: string[];
@@ -18,6 +19,7 @@ export class SellerFlatRateComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.isCheckingOut = false;
     this.heading = 'You get what you pay for!';
     this.subHeading = 'Total Control. Maximum Exposure. Save Thousands.';
     this.whatYouGetList = [
@@ -35,10 +37,10 @@ export class SellerFlatRateComponent implements OnInit {
     this.tableHeadingData = ['Menu of Services', 'Price'];
     this.tableRowData = [
       { selected: true, menu: 'Base Fee', price: 395, isRequired: true },
-      { selected: false, menu: 'Pricing Support', price: 75, isRequired: false },
+      { selected: false, menu: 'Pricing Support', price: 100, isRequired: false },
       { selected: false, menu: 'Supra Lockbox Rental', price: 100, isRequired: false },
       { selected: false, menu: 'Open Houses(2 hours)', price: 100, isRequired: false },
-      { selected: false, menu: 'Contract Negotiations/Support', price: 100, isRequired: false },
+      { selected: false, menu: 'Contract Negotiations/Support', price: 200, isRequired: false },
       {
         selected: false, menu: 'Professional Photos', price: 175, isRequired: false,
         selectOptions: ['Over 3,000 sft', 'Under 3,000 sft']
@@ -47,7 +49,7 @@ export class SellerFlatRateComponent implements OnInit {
         selected: false, menu: 'Matterport 3D Home Tour', price: 275, isRequired: false,
         selectOptions: ['Over 3,000 sft', 'Under 3,000 sft']
       },
-      { selected: false, menu: '50 Full Color Property Booklet', price: 275, isRequired: false },
+      { selected: false, menu: '50 Full Color Property Booklet', price: 225, isRequired: false },
       {
         selected: false, menu: 'Pro Photos/3D Home Tour', price: 350, isRequired: false,
         selectOptions: ['Over 3,000 sft', 'Under 3,000 sft']
@@ -57,6 +59,9 @@ export class SellerFlatRateComponent implements OnInit {
 
   }
 
+  public checkout(): void {
+    this.isCheckingOut = true;
+  }
   public getSelectedMenu(menus: { selected: boolean, menu: string, price: number, selectOptions?: string[], isRequired: boolean }[])
     : { selected: boolean, menu: string, price: number, selectOptions?: string[], isRequired: boolean }[] {
     return menus.filter((data: {

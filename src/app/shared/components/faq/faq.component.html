@@ -14,13 +14,12 @@
                         <h4>
                             {{faq.question}}
                         </h4>
-                        <a *ngIf="faq.link" href="{{faq.link.href}}" target="_blank">{{faq.link.text}}</a>
                     </button>
                 </div>
-
-                <div id="{{ setAnswerId(faqId, index) }}" class="collapse multi-collapse" [ngClass]="{'show': first}" aria-labelledby="headingOne">
+                <div id="{{ setAnswerId(faqId, index) }}" class="collapse multi-collapse" [ngClass]="{'show': first}"
+                    aria-labelledby="headingOne">
                     <div class="card-body">
-                        <p>{{faq.answer}}</p>
+                        <p [innerHTML]="faq.answer"></p>
                     </div>
                 </div>
             </div>

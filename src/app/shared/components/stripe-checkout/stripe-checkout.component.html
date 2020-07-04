@@ -1,7 +1,91 @@
-<form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm">
-  <input type="text" formControlName="name" placeholder="Jane Doe">
-  <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
-  <button type="submit">
-    BUY
-  </button>
-</form>
+<div class="consultation-form">
+  <div class="wrapper">
+    <div class="doss-container">
+      <div class="section-header">
+          <p class="large-text-blue">Complete Checkout</p>
+      </div>
+    <form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm">
+      <div class="form-input-group">
+        <div class="form-input">
+          <label for="name">
+            <p class="regular-text-blue">Card Holder Name <span class="required">*</span></p>
+        </label>
+          <input type="text" class="form-control" id="name" formControlName="name" name="name"
+            required />
+          <div *ngIf="sf.name.touched && sf.name.errors?.required">
+            <div class="text-danger py-1">Name is required.</div>
+          </div>
+        </div>
+        <div class="form-input">
+          <label for="email">
+              <p class="regular-text-blue">Email <span class="required">*</span></p>
+          </label>
+          <input type="email" class="form-control" id="email" name="email"
+              formControlName="email" required />
+          <div *ngIf="sf.email.touched && sf.email.errors?.required">
+              <div class="text-danger py-1">Email is required.</div>
+          </div>
+          <div *ngIf="sf.email.dirty">
+              <div class="text-danger py-1" *ngIf="sf.email.invalid">
+                  Please enter a valid email address
+              </div>
+          </div>
+      </div>
+        <div class="form-input">
+          <label for="sellerName">
+            <p class="regular-text-blue">Street <span class="required">*</span></p>
+        </label>
+          <input type="text" class="form-control" id="street" formControlName="street" name="street"
+            required />
+          <div *ngIf="sf.street.touched && sf.street.errors?.required">
+            <div class="text-danger py-1">Street address is required.</div>
+          </div>
+        </div>
+        <div class="form-input">
+          <label for="sellerName">
+            <p class="regular-text-blue">Unit</p>
+        </label>
+          <input type="text" class="form-control" id="unit" formControlName="unit" name="unit"
+            />
+    
+        </div>
+        <div class="form-input">
+          <label for="sellerName">
+            <p class="regular-text-blue">State <span class="required">*</span></p>
+        </label>
+          <input type="text" class="form-control" id="state" formControlName="state" name="state"
+            required />
+          <div *ngIf="sf.state.touched && sf.state.errors?.required">
+            <div class="text-danger py-1">State is required.</div>
+          </div>
+        </div>
+        <div class="form-input">
+          <label for="sellerName">
+            <p class="regular-text-blue">Zip Code <span class="required">*</span></p>
+        </label>
+          <input type="text" class="form-control" id="zip" formControlName="zip" name="zip"
+            required />
+          <div *ngIf="sf.zip.touched && sf.zip.errors?.required">
+            <div class="text-danger py-1">Zip code is required.</div>
+          </div>
+        </div>
+    
+      </div>
+  
+      <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
+      <div class="button-container">
+        <button class="doss-button" [disabled]="!stripeForm.valid" type="submit">
+          <p style="margin: 0 10px 0 0;"> BUY ${{ price }}</p>
+        </button>
+      </div>
+  
+      <ng-container *ngIf="isPaymentProcessing">
+        <div>
+          <img src="assets/images/Pulse-1s-94px.svg" alt="processinig payment svg"> <span>....processing payment</span>
+        </div>
+  
+      </ng-container>
+  
+    </form>
+  </div>
+</div>

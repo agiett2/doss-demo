@@ -55,6 +55,7 @@ import { NgxStripeModule } from 'ngx-stripe';
 import { StripeCheckoutComponent } from './shared/components/stripe-checkout/stripe-checkout.component';
 import { TermsComponent } from './component/footer/terms/terms/terms.component';
 import { PolicyComponent } from './component/footer/policy/policy/policy.component';
+import { PaymentService } from './core/services/payment.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -131,7 +132,7 @@ const appRoutes: Routes = [
     Hero2Component,
     StripeCheckoutComponent,
     TermsComponent,
-    PolicyComponent
+    PolicyComponent,
   ],
   imports: [
     BrowserModule,
@@ -143,7 +144,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     { provide: ContentServcieAbstract, useClass: ContentService },
-    { provide: SendEmailServiceAbstract, useClass: SendEmailService }
+    { provide: SendEmailServiceAbstract, useClass: SendEmailService },
+    PaymentService
   ],
   entryComponents: [
     RightAlignComponent,
