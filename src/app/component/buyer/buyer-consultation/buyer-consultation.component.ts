@@ -8,10 +8,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class BuyerConsultationComponent implements OnInit {
 public buyerForm: FormGroup;
+public isSubmittingEmail: boolean;
   constructor(private fb: FormBuilder) { }
   // Look into issue
   // form becomes inavlid when checking either of the radio buttons
   ngOnInit(): void {
+    this.isSubmittingEmail = false;
     this.buyerForm = this.fb.group({
       buyerName: ['', Validators.required],
       coBuyerName: [''],
@@ -28,6 +30,10 @@ public buyerForm: FormGroup;
 
   }
   public submitForm(form: FormGroup): void {
+    this.isSubmittingEmail = true;
+    setTimeout(() => {
+      this.isSubmittingEmail = false;
+    }, 6000);
 
   }
   public get bf(): any {

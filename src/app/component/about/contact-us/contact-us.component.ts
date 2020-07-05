@@ -8,10 +8,12 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 })
 export class ContactUsComponent implements OnInit {
   public contactUsForm: FormGroup;
+  public isSubmittingEmail: boolean;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.isSubmittingEmail = false;
     this.contactUsForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -23,7 +25,11 @@ export class ContactUsComponent implements OnInit {
   }
 
   public submitForm(form: FormGroup): void {
+    this.isSubmittingEmail = true;
     console.log('form submited' + form);
+    setTimeout(() => {
+      this.isSubmittingEmail = false;
+    }, 6000);
   }
 
   public get cf(): any {

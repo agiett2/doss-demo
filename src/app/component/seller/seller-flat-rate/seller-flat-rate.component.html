@@ -75,15 +75,15 @@
           <div class="table-list" *ngFor="let rowData of tableRowData">
             <div class="table-section-1">
               <label class="check-container" [ngClass]="{'disable-check':rowData.isRequired}">
-                <input type="checkbox" [checked]="rowData.isRequired" (change)="rowData.selected = true">
+                <input type="checkbox" [checked]="rowData.isRequired" (change)="checkBoxChanged($event, rowData)">
                 <span class="checkmark"></span>
               </label>
             </div>
             <div class="table-section-2">
               <p class="regular-text-blue table-left-padding">{{rowData.menu}}</p>
               <ng-container *ngIf="rowData.selectOptions">
-                <select class="form-control">
-                  <option *ngFor="let options of rowData.selectOptions" value="{{options}}" selected>{{ options}}
+                <select class="form-control" (change)="updatePrice($event, rowData)">
+                  <option *ngFor="let options of rowData.selectOptions" value="{{options.price}}" selected >{{ options.menu}}
                   </option>
                 </select>
               </ng-container>
