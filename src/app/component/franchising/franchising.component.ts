@@ -16,9 +16,11 @@ export class FranchisingComponent implements OnInit {
   public quote: string;
   public signature: string;
   public requestInfoForm: FormGroup;
+  public isSubmittingEmail: boolean;
   constructor(private fb: FormBuilder, private emailService: SendEmailServiceAbstract) { }
 
   ngOnInit(): void {
+    this.isSubmittingEmail = false;
     this.heading = 'Open DOSS in your Market Area';
     this.subHeading = 'Finally, an opportunity to Franchise a Real Estate TECH brand!';
     this.message = `You never change things by fighting the existing reality. To change
@@ -42,6 +44,10 @@ export class FranchisingComponent implements OnInit {
   }
 
   public submitForm(form: FormGroup): void {
+    this.isSubmittingEmail = true;
     this.emailService.sendEmail(form);
+    setTimeout(() => {
+      this.isSubmittingEmail = false;
+    }, 6000);
   }
 }

@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 })
 export class FullServiceFormComponent implements OnInit {
   public fullServiceForm: FormGroup;
+  public isSubmittingEmail: boolean;
 
   constructor(private fb: FormBuilder) { }
 
@@ -16,6 +17,7 @@ export class FullServiceFormComponent implements OnInit {
   }
 
   public createForm(): void {
+    this.isSubmittingEmail = false;
     this.fullServiceForm = this.fb.group({
       sellerName: ['', Validators.required],
       coSellerName: [''],
@@ -37,6 +39,9 @@ export class FullServiceFormComponent implements OnInit {
   }
 
   public submitForm(form: FormGroup): void {
-    console.log(form.getRawValue());
+    this.isSubmittingEmail = true;
+    setTimeout(() => {
+      this.isSubmittingEmail = false;
+    }, 6000);
   }
 }

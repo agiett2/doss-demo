@@ -9,9 +9,11 @@ import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/fo
 export class SellerConsultationComponent implements OnInit {
   public sellerForm: FormGroup;
   public addressForm: FormGroup;
+  public isSubmittingEmail: boolean;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.isSubmittingEmail = false;
     this.sellerForm = this.fb.group({
       sellerName: ['', Validators.required],
       coSellerName: [''],
@@ -32,6 +34,11 @@ export class SellerConsultationComponent implements OnInit {
     return this.sellerForm.controls;
   }
 
-  public submitForm(sellerForm: FormGroup): void { }
+  public submitForm(sellerForm: FormGroup): void { 
+    this.isSubmittingEmail = true;
+    setTimeout(() => {
+      this.isSubmittingEmail = false;
+    }, 6000);
+  }
 
 }

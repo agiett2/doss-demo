@@ -49,19 +49,21 @@ export class StripeCheckoutComponent implements OnInit {
         this.stripeForm = this.fb.group({
             name: ['', Validators.required],
             email: ['', Validators.compose([Validators.required, Validators.email])],
-            phone: [''],
+            phone: ['',
+                Validators.compose([Validators.required, Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)])],
             street: ['', Validators.required],
             unit: [''],
             city: ['', Validators.required],
             state: ['', Validators.required],
             zip: ['', Validators.required]
-
         });
+
+        console.log(this.sf)
     }
 
     public get sf(): { [key: string]: AbstractControl } {
         return this.stripeForm.controls;
-      }
+    }
 
     buy() {
         this.isPaymentProcessing = true;
@@ -80,12 +82,17 @@ export class StripeCheckoutComponent implements OnInit {
                     this.paymentService.create({ token, price, email }).subscribe((sucess) => {
                         console.log('sucess')
                         console.log(sucess);
-                        this.isPaymentProcessing = false;
+                        setTimeout(() => {
+                            this.isPaymentProcessing = false;
+                        }, 6000);
+
                     },
                         (error) => {
                             console.log(`error`)
                             console.log(error)
-                            this.isPaymentProcessing = false;
+                            setTimeout(() => {
+                                this.isPaymentProcessing = false;
+                            }, 6000);
                         });
 
                     // Use the token to create a charge or a customer

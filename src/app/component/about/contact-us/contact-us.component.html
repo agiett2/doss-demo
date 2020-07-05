@@ -72,6 +72,9 @@
           </div>
 
           <button class="submit" type="submit" [disabled]="!contactUsForm.valid">Send</button>
+          <div class="payment-processing" *ngIf="isSubmittingEmail">
+            <img src="assets/images/Pulse-1s-167px.svg" alt="processinig payment svg"> <span>.... sending Email</span>
+          </div>
         </form>
       </div>
     </div>

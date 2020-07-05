@@ -10,10 +10,12 @@ export class RentConsultationComponent implements OnInit {
   public heading: string;
   public subHeading: string;
   public ltForm: FormGroup;
+  public isSubmittingEmail: boolean;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.isSubmittingEmail = false;
     window.scroll(0, 0);
     this.heading = `Schedule a Landlord/Tenant Consultation, TODAY!`;
     this.subHeading = `NOTE: Leave blank all questions that are not applicable`;
@@ -47,6 +49,9 @@ export class RentConsultationComponent implements OnInit {
   }
 
   public submitForm(form: FormGroup): void {
-    console.log(form.getRawValue());
+    this.isSubmittingEmail = true;
+    setTimeout(() => {
+      this.isSubmittingEmail = false;
+    }, 6000);
   }
 }

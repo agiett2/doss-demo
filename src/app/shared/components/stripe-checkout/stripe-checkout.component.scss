@@ -2,12 +2,24 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 40px;
+    .payment-processing {
+        margin-top: -5%;
+       color:  #174D89;
+       font-size: 1.5rem;
+       font-weight: 700;
+       
+    }
 }
 .doss-button {
+    margin-left: 10%;
     width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
+    &:disabled {
+        cursor: no-drop;
+        background: #426d9e;
+    }
 }
 
 @media only screen and (min-width: 1169px) {

@@ -31,8 +31,23 @@
               </div>
           </div>
       </div>
+      <div class="form-input">
+        <label for="phone">
+            <p class="regular-text-blue">Phone Number <span class="required">*</span></p>
+        </label>
+        <input type="text" name="phone" formControlName="phone"
+            id="phone" placeholder="777-777-7777" class="form-control" required />
+        <div *ngIf="sf.phone.touched && sf.phone.errors?.required">
+            <div class="text-danger py-1">Phone number is required.</div>
+        </div>
+        <div *ngIf="sf.phone.dirty">
+            <div class="text-danger py-1" *ngIf="sf.phone.invalid">
+                Please enter a valid phone number
+            </div>
+        </div>
+    </div>
         <div class="form-input">
-          <label for="sellerName">
+          <label for="street">
             <p class="regular-text-blue">Street <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="street" formControlName="street" name="street"
@@ -42,7 +57,7 @@
           </div>
         </div>
         <div class="form-input">
-          <label for="sellerName">
+          <label for="unit">
             <p class="regular-text-blue">Unit</p>
         </label>
           <input type="text" class="form-control" id="unit" formControlName="unit" name="unit"
@@ -50,7 +65,17 @@
     
         </div>
         <div class="form-input">
-          <label for="sellerName">
+          <label for="city">
+            <p class="regular-text-blue">City <span class="required">*</span></p>
+        </label>
+          <input type="text" class="form-control" id="city" formControlName="city" name="city"
+            required />
+          <div *ngIf="sf.city.touched && sf.city.errors?.required">
+            <div class="text-danger py-1">City is required.</div>
+          </div>
+        </div>
+        <div class="form-input">
+          <label for="state">
             <p class="regular-text-blue">State <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="state" formControlName="state" name="state"
@@ -60,7 +85,7 @@
           </div>
         </div>
         <div class="form-input">
-          <label for="sellerName">
+          <label for="zip">
             <p class="regular-text-blue">Zip Code <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="zip" formControlName="zip" name="zip"
@@ -74,17 +99,19 @@
   
       <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
       <div class="button-container">
-        <button class="doss-button" [disabled]="!stripeForm.valid" type="submit">
+        <ng-container >
+          <div class="payment-processing" *ngIf="isPaymentProcessing">
+            <img src="assets/images/Pulse-1s-167px.svg" alt="processinig payment svg"> <span>....processing payment</span>
+          </div>
+    
+        </ng-container>
+        <button class="doss-button" [disabled]="!stripeForm.valid" type="submit"> 
           <p style="margin: 0 10px 0 0;"> BUY ${{ price }}</p>
         </button>
+       
       </div>
   
-      <ng-container *ngIf="isPaymentProcessing">
-        <div>
-          <img src="assets/images/Pulse-1s-94px.svg" alt="processinig payment svg"> <span>....processing payment</span>
-        </div>
-  
-      </ng-container>
+     
   
     </form>
   </div>

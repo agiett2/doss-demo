@@ -15,7 +15,7 @@ export class SendEmailService implements SendEmailServiceAbstract {
         if (contactForm.valid) {
             const user = contactForm.value;
             const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-            this.http.post('https://formspree.io/asdlf7asdf',
+            this.http.post('https://lo.io/asdlf7asdf',
                 { name: `${user.firstName} ${user.lastName}`, replyto: user.email, message: user.messages },
                 { headers }).subscribe(
                     response => {

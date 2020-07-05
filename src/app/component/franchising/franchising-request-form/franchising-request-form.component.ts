@@ -9,9 +9,11 @@ import { SendEmailServiceAbstract } from 'src/app/core/services/abstract/send-em
 })
 export class FranchisingRequestFormComponent implements OnInit {
     public requestFrom: FormGroup;
+    public isSubmittingEmail: boolean;
     constructor(private fb: FormBuilder, private sendEmailService: SendEmailServiceAbstract) { }
 
     public ngOnInit(): void {
+        this.isSubmittingEmail = false;
         this.requestFrom = this.fb.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
@@ -23,13 +25,16 @@ export class FranchisingRequestFormComponent implements OnInit {
             dossUpdates: [true],
         });
         console.log(this.rf.firstName.errors)
-     }
+    }
 
-     public submitForm(form: FormGroup): void {
-        //  this.sendEmailService.sendEmail();
-     }
+    public submitForm(form: FormGroup): void {
+        this.isSubmittingEmail = true;
+        setTimeout(() => {
+            this.isSubmittingEmail = false;
+        }, 6000);
+    }
 
-     public get rf(): {[key: string]: AbstractControl} {
-         return this.requestFrom.controls;
-     }
+    public get rf(): { [key: string]: AbstractControl } {
+        return this.requestFrom.controls;
+    }
 }

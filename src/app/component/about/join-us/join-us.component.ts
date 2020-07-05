@@ -12,10 +12,12 @@ export class JoinUsComponent implements OnInit {
   public techAgentText: string;
   public dossHeading: string;
   public signUpForm: FormGroup;
+  public isSubmittingEmail: boolean;
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.isSubmittingEmail = false;
     this.heroHeading = 'SUCCESS, is a decision....';
     this.heroText = 'Join Us!';
     this.techAgentText = `Is your current Brokerage designed for the future? Are they structurally and
@@ -40,7 +42,11 @@ export class JoinUsComponent implements OnInit {
   }
 
   public submitForm(form: FormGroup): void {
+    this.isSubmittingEmail = true;
     console.log('sumbitted form', form);
+    setTimeout(() => {
+      this.isSubmittingEmail = false;
+    }, 6000);
   }
 
 }
