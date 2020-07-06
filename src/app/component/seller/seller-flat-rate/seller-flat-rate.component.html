@@ -114,7 +114,7 @@
             <p style="margin: 0 10px 0 0;">Checkout</p>
           </button>
         </div>
-        <app-stripe-checkout *ngIf="isCheckingOut" [price]="getTotal(getSelectedMenu(tableRowData))" [email]="'testing@askdoss.com'"></app-stripe-checkout>
+        <app-stripe-checkout *ngIf="isCheckingOut" [price]="getTotal(getSelectedMenu(tableRowData))"></app-stripe-checkout>
       
       </div>
     </div>

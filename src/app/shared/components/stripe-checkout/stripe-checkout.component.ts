@@ -7,6 +7,7 @@ import {
 } from 'ngx-stripe';
 import { PaymentService } from 'src/app/core/services/payment.service';
 import { VirtualTimeScheduler } from 'rxjs';
+import { CreateChargePayloadInterface } from 'src/app/core/model/create-charge.payload.interface';
 
 
 @Component({
@@ -16,7 +17,6 @@ import { VirtualTimeScheduler } from 'rxjs';
 })
 export class StripeCheckoutComponent implements OnInit {
     @Input() price: number;
-    @Input() email?: string;
     @ViewChild(StripeCardComponent) card: StripeCardComponent;
     public isPaymentProcessing = false;
     public cardOptions: ElementOptions = {
@@ -67,21 +67,33 @@ export class StripeCheckoutComponent implements OnInit {
 
     buy() {
         this.isPaymentProcessing = true;
-        let token: string;
-        const price = this.price;
-        const email = this.email;
         console.log(this.card.getCard())
         const name = this.stripeForm.get('name').value;
         this.stripeService
             .createToken(this.card.getCard(), { name })
             .subscribe(result => {
                 if (result.token) {
-                    console.log('this is the result')
                     console.log(result.token.id)
-                    token = result.token.id;
-                    this.paymentService.create({ token, price, email }).subscribe((sucess) => {
+                    const token = result.token.id;
+                    const payload: CreateChargePayloadInterface = {
+                        token: result.token.id,
+                        price: this.price,
+                        billing_details: {
+                            address: {
+                                city: this.stripeForm.controls.city.value,
+                                line1: this.stripeForm.controls.street.value,
+                                line2: this.stripeForm.controls.unit.value,
+                                state: this.stripeForm.controls.state.value,
+                                zip: this.stripeForm.controls.zip.value
+                            },
+                            email: this.stripeForm.controls.email.value,
+                            phone: this.stripeForm.controls.phone.value
+                        }
+                    };
+                    this.paymentService.createCharge(payload).subscribe((response: any) => {
                         console.log('sucess')
-                        console.log(sucess);
+                        console.log(response);
+                        const message: string = response.outcome.seller_message;
                         setTimeout(() => {
                             this.isPaymentProcessing = false;
                         }, 6000);

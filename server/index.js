@@ -12,5 +12,5 @@ app.get('/', (req, res) => {
       "<h1 style='text-align: center'>Welcome to DOSS API </h1>"
     );
   });
-app.post('/order',
-controller.create);
+app.post('/createCharge', controller.createCharge);
+app.post('/sendEmail', controller.sendEmail);
