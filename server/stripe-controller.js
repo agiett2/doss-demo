@@ -19,7 +19,6 @@ exports.create = function(req, res, next) {
         console.log('success');
         console.log(resposne);
         res.send(resposne);
-        sendEmail();
     }).catch(error => {
         //error
         console.log('error');
@@ -28,9 +27,7 @@ exports.create = function(req, res, next) {
     });
     
 }
-exports.sendEmail = function(req, res, next) {
 
-}
 // function makeOrderCreation(req, res, next, charge) {
 //     return createOrder(req, res, next).then(order => {
 //        res.status(200).json(order).end();

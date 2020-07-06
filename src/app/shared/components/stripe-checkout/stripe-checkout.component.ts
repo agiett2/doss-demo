@@ -58,7 +58,7 @@ export class StripeCheckoutComponent implements OnInit {
             zip: ['', Validators.required]
         });
 
-        console.log(this.sf)
+
     }
 
     public get sf(): { [key: string]: AbstractControl } {
@@ -67,13 +67,13 @@ export class StripeCheckoutComponent implements OnInit {
 
     buy() {
         this.isPaymentProcessing = true;
-        console.log(this.card.getCard())
+        console.log(this.card.getCard());
         const name = this.stripeForm.get('name').value;
         this.stripeService
             .createToken(this.card.getCard(), { name })
             .subscribe(result => {
                 if (result.token) {
-                    console.log(result.token.id)
+                    console.log(result.token.id);
                     const token = result.token.id;
                     const payload: CreateChargePayloadInterface = {
                         token: result.token.id,
@@ -91,7 +91,7 @@ export class StripeCheckoutComponent implements OnInit {
                         }
                     };
                     this.paymentService.createCharge(payload).subscribe((response: any) => {
-                        console.log('sucess')
+                        console.log('sucess');
                         console.log(response);
                         const message: string = response.outcome.seller_message;
                         setTimeout(() => {
@@ -100,8 +100,6 @@ export class StripeCheckoutComponent implements OnInit {
 
                     },
                         (error) => {
-                            console.log(`error`)
-                            console.log(error)
                             setTimeout(() => {
                                 this.isPaymentProcessing = false;
                             }, 6000);
