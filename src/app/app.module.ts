@@ -56,6 +56,7 @@ import { StripeCheckoutComponent } from './shared/components/stripe-checkout/str
 import { TermsComponent } from './component/footer/terms/terms/terms.component';
 import { PolicyComponent } from './component/footer/policy/policy/policy.component';
 import { PaymentService } from './core/services/payment.service';
+import { DossHomeLoansComponent } from './component/doss-home-loans/doss-home-loans.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -85,6 +86,7 @@ const appRoutes: Routes = [
   { path: 'learn-doss', component: LearnDossComponent },
   { path: 'terms', component: TermsComponent },
   { path: 'policy', component: PolicyComponent },
+  { path: 'home-loans', component: DossHomeLoansComponent },
   { path: '**', component: HomeComponent }
 ];
 @NgModule({
@@ -133,6 +135,7 @@ const appRoutes: Routes = [
     StripeCheckoutComponent,
     TermsComponent,
     PolicyComponent,
+    DossHomeLoansComponent,
   ],
   imports: [
     BrowserModule,

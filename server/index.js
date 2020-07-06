@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const controller = require('./controller');
+const stripeController = require('./stripe-controller');
+const emailController = require('./email-controller')
 const cors = require("cors");
 const bodyParser = require("body-parser");
 app.use(cors({ origin: "*" }));
@@ -12,5 +13,5 @@ app.get('/', (req, res) => {
       "<h1 style='text-align: center'>Welcome to DOSS API </h1>"
     );
   });
-app.post('/order',
-controller.create);
+app.post('/createCharge', stripeController.createCharge);
+app.post('/sendEmail', emailController.sendEmail);

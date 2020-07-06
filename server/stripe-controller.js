@@ -6,7 +6,7 @@ exports.create = function(req, res, next) {
     const stripeToken = req.body.token;
     const price = req.body.price;
     const priceInCents = price *100;
-    const email = req.body.email;
+    const email = req.body.billing_details.email;
     return stripe.charges.create({
         amount: priceInCents,
         currency: 'usd',

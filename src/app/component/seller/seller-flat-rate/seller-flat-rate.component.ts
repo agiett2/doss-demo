@@ -62,9 +62,7 @@ export class SellerFlatRateComponent implements OnInit {
   }
 
   public updatePrice(e: any, data: TableDataRowInterface): void {
-    if (data.selected) {
       data.price = parseInt(e.target.value, 10);
-    }
 
   }
 
