@@ -29,7 +29,7 @@ exports.createCharge = function (req, res, next) {
                 <p> Paymnet Confirmation Receipt: ${
                   resposne.payment_method_details.card.fingerprint
                 } </p>
-                <h3>total: $${39500 / 100}.00</h3>`,
+                <h3>total: $${price}.00</h3>`,
           },
         },
       };
