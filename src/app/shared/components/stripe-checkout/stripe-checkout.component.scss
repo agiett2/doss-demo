@@ -12,7 +12,7 @@
     }
 }
 .doss-button {
-    margin-left: 10%;
+    // margin-left: 10%;
     width: 250px;
     display: flex;
     justify-content: center;
@@ -36,7 +36,10 @@
         color: #31325F;
         color: #CFD7E0;;
     }
-
-   
+}
+@media only screen and (max-width: 1169px) {
+    .doss-button {
+        width: 100%;
+    }
 }
 
