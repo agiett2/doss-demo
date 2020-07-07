@@ -1,5 +1,7 @@
 import { FormGroup } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { EmailOptionsPayloadInterface } from '../../model/email-options.payload.interface';
 
 export abstract class SendEmailServiceAbstract {
-    public abstract sendEmail = (form: FormGroup): void => {};
+    public abstract sendEmail(form: EmailOptionsPayloadInterface): Observable<any>;
 }

@@ -93,7 +93,7 @@ export class StripeCheckoutComponent implements OnInit {
                     this.paymentService.createCharge(payload).subscribe((response: any) => {
                         console.log('sucess');
                         console.log(response);
-                        const message: string = response.outcome.seller_message;
+                        // const message: string = response.outcome.seller_message;
                         setTimeout(() => {
                             this.isPaymentProcessing = false;
                         }, 6000);
