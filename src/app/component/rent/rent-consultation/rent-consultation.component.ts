@@ -56,6 +56,9 @@ export class RentConsultationComponent implements OnInit {
     this.emailService.sendEmail(this.buildEmailOptions(form)).subscribe((response: { error?: any, success?: any}) => {
       this.isSubmittingEmail = false;
       response.success ? this.responseMsg = 'Email Sent!' : this.responseMsg = 'Error: Unable to send email at this time.';
+    }, (error) => {
+      this.isSubmittingEmail = false;
+      this.responseMsg = 'Error: Unable to send email at this time.';
     });
 
     setTimeout(() => {

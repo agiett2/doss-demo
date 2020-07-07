@@ -6,7 +6,7 @@ import { EmailOptionsPayloadInterface } from 'src/app/core/model/email-options.p
 @Component({
   selector: 'app-buyer-consultation',
   templateUrl: './buyer-consultation.component.html',
-  styleUrls: ['./buyer-consultation.component.scss']
+  styleUrls: ['./buyer-consultation.component.scss'],
 })
 export class BuyerConsultationComponent implements OnInit {
   public buyerForm: FormGroup;
@@ -14,9 +14,8 @@ export class BuyerConsultationComponent implements OnInit {
   public responseMsg: string;
   constructor(
     private fb: FormBuilder,
-    private emailService: SendEmailServiceAbstract) { }
-  // Look into issue
-  // form becomes inavlid when checking either of the radio buttons
+    private emailService: SendEmailServiceAbstract
+  ) {}
   ngOnInit(): void {
     this.isSubmittingEmail = false;
     this.buyerForm = this.fb.group({
@@ -25,22 +24,35 @@ export class BuyerConsultationComponent implements OnInit {
       buyerEmail: ['', [Validators.required, Validators.email]],
       coBuyerEmail: ['', Validators.email],
       preApproved: ['', Validators.required],
-      buyerPhone: ['',
-        Validators.compose([Validators.required, Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)])],
+      buyerPhone: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(
+            /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+          ),
+        ]),
+      ],
       coBuyerPhone: [''],
       whenToBuy: ['', Validators.required],
       priceRange: ['', Validators.required],
-      dreamHome: ['', Validators.required]
+      dreamHome: ['', Validators.required],
     });
-
   }
   public submitForm(form: FormGroup): void {
     this.isSubmittingEmail = true;
-    this.emailService.sendEmail(this.buildEmailOptions(form)).subscribe((response: { error?: any, success?: any }) => {
-      this.isSubmittingEmail = false;
-      response.success ? this.responseMsg = 'Email Sent!' : this.responseMsg = 'Error: Unable to send email at this time.';
-    });
-
+    this.emailService.sendEmail(this.buildEmailOptions(form)).subscribe(
+      (response: { error?: any; success?: any }) => {
+        this.isSubmittingEmail = false;
+        response.success
+          ? (this.responseMsg = 'Email Sent!')
+          : (this.responseMsg = 'Error: Unable to send email at this time.');
+      },
+      (error) => {
+        this.isSubmittingEmail = false;
+        this.responseMsg = 'Error: Unable to send email at this time.';
+      }
+    );
   }
   public get bf(): any {
     return this.buyerForm.controls;
@@ -59,7 +71,7 @@ export class BuyerConsultationComponent implements OnInit {
       <p>Co Buyer Phone: ${form.controls.coBuyerPhone.value}</p>
       <p>When To Buy: ${form.controls.whenToBuy.value}</p>
       <p>Price Range: ${form.controls.priceRange.value}</p>
-      <p>Dream Home: ${form.controls.dreamHome.value}</p>`
+      <p>Dream Home: ${form.controls.dreamHome.value}</p>`,
     };
   }
 }

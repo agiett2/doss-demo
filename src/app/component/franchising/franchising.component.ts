@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { SendEmailService } from 'src/app/core/services/send-email/send-email.service';
 import { SendEmailServiceAbstract } from 'src/app/core/services/abstract/send-email.service.abstract';
+import { EmailOptionsPayloadInterface } from 'src/app/core/model/email-options.payload.interface';
 
 @Component({
   selector: 'app-franchising',
@@ -17,6 +18,7 @@ export class FranchisingComponent implements OnInit {
   public signature: string;
   public requestInfoForm: FormGroup;
   public isSubmittingEmail: boolean;
+  public responseMsg: string;
   constructor(private fb: FormBuilder, private emailService: SendEmailServiceAbstract) { }
 
   ngOnInit(): void {
@@ -45,9 +47,26 @@ export class FranchisingComponent implements OnInit {
 
   public submitForm(form: FormGroup): void {
     this.isSubmittingEmail = true;
-    this.emailService.sendEmail(form);
-    setTimeout(() => {
+    this.emailService.sendEmail(this.buildEmailOptions(form)).subscribe((response: { error?: any, success?: any}) => {
       this.isSubmittingEmail = false;
-    }, 6000);
+      response.success ? this.responseMsg = 'Email Sent!' : this.responseMsg = 'Error: Unable to send email at this time.';
+    }, (error) => {
+      this.isSubmittingEmail = false;
+      this.responseMsg = 'Error: Unable to send email at this time.';
+    });
+  }
+
+  private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {
+    return {
+      to: 'agiet_doss@askdoss.com',
+      from: 'noreply@askdoss.com',
+      subject: `Contact Rewuest from ${form.controls.firstName.value} ${form.controls.lastName.value}`,
+      html: `<p>Name: ${form.controls.firstName.value} ${form.controls.lastName.value}</p>
+      <p>Phone Number: ${form.controls.phoneNumber.value}</p>
+      <p>Email: ${form.controls.email.value}</p>
+      <p>City State Intrest: ${form.controls.cityStateIntrest.value}</p>
+      <p>Market Area Interest: ${form.controls.marketAreaInterest.value}</p>
+      <p>Expereince: ${form.controls.expereince.value}</p>`
+    };
   }
 }
