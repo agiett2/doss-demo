@@ -4,11 +4,36 @@
       <div class="section-header">
           <p class="large-text-blue">Complete Checkout</p>
       </div>
+
+      <div class="service-wrapper">
+        <p class="regular-text-blue" style="font-weight: 700; margin-bottom: 20px;">Services selected</p>
+        <div class="service-container">
+          <div class="service">
+            <p class="small-text-blue">Pricing Support</p>
+            <p class="small-text-blue">$100</p>
+          </div>
+          <div class="service">
+            <p class="small-text-blue">Professional Photos (under 3,000 sft)</p>
+            <p class="small-text-blue">$225</p>
+          </div>
+          <div class="service">
+            <p class="small-text-blue">Pro Photos/3D Home Tour (under 3,000 sft)</p>
+            <p class="small-text-blue">$525</p>
+          </div>
+          <div class="service" style="margin-bottom: 50px;">
+            <p class="small-text-blue" style="font-weight: 700;">Total</p>
+            <p class="small-text-blue" style="font-weight: 700;">$850</p>
+          </div>
+        </div>
+      </div>
     <form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm">
+      <div class="section-header-2">
+        <p class="regular-text-blue" style="font-weight: 700; margin-bottom: 20px;">User Information</p>
+      </div>
       <div class="form-input-group">
         <div class="form-input">
           <label for="name">
-            <p class="regular-text-blue">Card Holder Name <span class="required">*</span></p>
+            <p class="small-text-blue">Card Holder Name <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="name" formControlName="name" name="name"
             required />
@@ -18,7 +43,7 @@
         </div>
         <div class="form-input">
           <label for="email">
-              <p class="regular-text-blue">Email <span class="required">*</span></p>
+              <p class="small-text-blue">Email <span class="required">*</span></p>
           </label>
           <input type="email" class="form-control" id="email" name="email"
               formControlName="email" required />
@@ -33,7 +58,7 @@
       </div>
       <div class="form-input">
         <label for="phone">
-            <p class="regular-text-blue">Phone Number <span class="required">*</span></p>
+            <p class="small-text-blue">Phone Number <span class="required">*</span></p>
         </label>
         <input type="text" name="phone" formControlName="phone"
             id="phone" placeholder="777-777-7777" class="form-control" required />
@@ -48,7 +73,7 @@
     </div>
         <div class="form-input">
           <label for="street">
-            <p class="regular-text-blue">Street <span class="required">*</span></p>
+            <p class="small-text-blue">Billing Address <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="street" formControlName="street" name="street"
             required />
@@ -57,16 +82,8 @@
           </div>
         </div>
         <div class="form-input">
-          <label for="unit">
-            <p class="regular-text-blue">Unit</p>
-        </label>
-          <input type="text" class="form-control" id="unit" formControlName="unit" name="unit"
-            />
-    
-        </div>
-        <div class="form-input">
           <label for="city">
-            <p class="regular-text-blue">City <span class="required">*</span></p>
+            <p class="small-text-blue">City <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="city" formControlName="city" name="city"
             required />
@@ -76,7 +93,7 @@
         </div>
         <div class="form-input">
           <label for="state">
-            <p class="regular-text-blue">State <span class="required">*</span></p>
+            <p class="small-text-blue">State <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="state" formControlName="state" name="state"
             required />
@@ -86,7 +103,19 @@
         </div>
         <div class="form-input">
           <label for="zip">
-            <p class="regular-text-blue">Zip Code <span class="required">*</span></p>
+            <p class="small-text-blue">Zip Code <span class="required">*</span></p>
+        </label>
+          <input type="text" class="form-control" id="zip" formControlName="zip" name="zip"
+            required />
+          <div *ngIf="sf.zip.touched && sf.zip.errors?.required">
+            <div class="text-danger py-1">Zip code is required.</div>
+          </div>
+        </div>
+
+        <!-- which techAGENT referred you. New input added -->
+        <div class="form-input">
+          <label for="zip">
+            <p class="small-text-blue">Were you referred by a techAGENT? If so, who?<span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="zip" formControlName="zip" name="zip"
             required />
@@ -96,7 +125,34 @@
         </div>
     
       </div>
+
+      <!-- listing address same as billing address? -->
+      <div class="radio-input-group">
+        <p class="small-text-blue" style="margin-bottom: 10px;">Is your listing address same as your billing address? <span class="required">*</span></p>
+        <div class="radio-input-selections">
+            <div class="radio-input">
+                <input type="radio" id="pre-approved" name='preApproved' class="regular-radio" value="yes"
+                    formControlName="preApproved">
+                <label for="pre-approved">
+                    <p class="small-text-blue">Yes</p>
+                </label>
+            </div>
+
+            <div class="radio-input">
+                <input type="radio" id="not-approved" name="preApproved" class="regular-radio"
+                    formControlName="preApproved" value="no">
+                <label for="not-approved">
+                    <p class="small-text-blue">No</p>
+                </label>
+            </div>
+        </div>
+      </div>
   
+
+
+
+
+
       <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
       <div class="button-container">
         <ng-container >

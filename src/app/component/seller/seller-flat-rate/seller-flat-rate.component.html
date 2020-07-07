@@ -58,6 +58,12 @@
           your property</p>
       </div>
 
+      
+      
+    </div>
+
+
+    <div class="special-table-container">
       <div class="doss-table">
         <div class="table-list-container">
           <div class="table-header">
@@ -114,8 +120,9 @@
             <p style="margin: 0 10px 0 0;">Checkout</p>
           </button>
         </div>
-        <app-stripe-checkout *ngIf="isCheckingOut" [price]="getTotal(getSelectedMenu(tableRowData))"></app-stripe-checkout>
-      
-      </div>
+    </div>
+    <div class="doss-container">
+      <app-stripe-checkout *ngIf="isCheckingOut" [price]="getTotal(getSelectedMenu(tableRowData))"></app-stripe-checkout>
+    </div>
     </div>
 </section>
