@@ -58,7 +58,7 @@ export class FranchisingComponent implements OnInit {
 
   private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {
     return {
-      to: 'agiet_doss@askdoss.com',
+      to: 'noreplydoss@gmail.com',
       from: 'noreply@askdoss.com',
       subject: `Contact Rewuest from ${form.controls.firstName.value} ${form.controls.lastName.value}`,
       html: `<p>Name: ${form.controls.firstName.value} ${form.controls.lastName.value}</p>

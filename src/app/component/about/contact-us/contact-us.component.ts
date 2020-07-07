@@ -44,9 +44,9 @@ export class ContactUsComponent implements OnInit {
 
   private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {
     return {
-      to: 'agiet_doss@askdoss.com',
+      to: 'noreplydoss@gmail.com',
       from: 'noreply@askdoss.com',
-      subject: `Contact Rewuest from ${form.controls.firstName.value} ${form.controls.lastName.value}`,
+      subject: `Contact Request From ${form.controls.firstName.value} ${form.controls.lastName.value}`,
       html: `<p>Name: ${form.controls.firstName.value} ${form.controls.lastName.value}</p>
       <p>Phone Number: ${form.controls.phoneNumber.value}</p>
       <p>Email: ${form.controls.email.value}</p>

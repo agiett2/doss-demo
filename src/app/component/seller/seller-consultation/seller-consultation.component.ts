@@ -49,9 +49,9 @@ export class SellerConsultationComponent implements OnInit {
   }
   private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {
     return {
-      to: 'agiet_doss@askdoss.com',
+      to: 'noreplydoss@gmail.com',
       from: 'noreply@askdoss.com',
-      subject: `Seller Conslation Form for ${form.controls.sellerName.value}`,
+      subject: `Seller Consultation Form For ${form.controls.sellerName.value}`,
       html: `<p>Seller Name ${form.controls.sellerName.value}</p>
       <p>Co Seller Name: ${form.controls.coSellerName.value}</p>
       <p>Seller Email: ${form.controls.sellerEmail.value}</p>
