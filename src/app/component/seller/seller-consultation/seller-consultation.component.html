@@ -161,9 +161,13 @@
                         
                     </div>
 
-                    <button class="submit" type="submit" [disabled]="!sellerForm.valid">Send</button>
-                    
-
+                    <button class="submit" type="submit" [disabled]="!sellerForm.valid || isSubmittingEmail">Send</button>
+                    <ng-container *ngIf="isSubmittingEmail">
+                        <div class="processing-payment">
+                            <img src="assets/images/Pulse-1s-167px.svg" alt="sending email svg"> <span>....sending email</span>
+                        </div>
+                    </ng-container>
+                    <p *ngIf="!isSubmittingEmail && responseMsg ">{{ responseMsg}}</p>
                 </form>
             </div>
         </div>

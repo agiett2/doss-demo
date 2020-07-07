@@ -6,23 +6,13 @@ import {
     HttpHeaders,
     HttpErrorResponse
 } from '@angular/common/http';
+import { EmailOptionsPayloadInterface } from '../../model/email-options.payload.interface';
 
 @Injectable()
 export class SendEmailService implements SendEmailServiceAbstract {
     constructor(private http: HttpClient) { }
-    public sendEmail(contactForm: FormGroup) {
-        console.log(contactForm);
-        if (contactForm.valid) {
-            const user = contactForm.value;
-            const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-            this.http.post('https://lo.io/asdlf7asdf',
-                { name: `${user.firstName} ${user.lastName}`, replyto: user.email, message: user.messages },
-                { headers }).subscribe(
-                    response => {
-                        console.log(response);
-                    }
-                );
-        }
+    public sendEmail(mailOptions: EmailOptionsPayloadInterface) {
+        return this.http.post('http://localhost:3000/sendEmail', mailOptions);
     }
 }
 
