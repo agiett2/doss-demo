@@ -21,16 +21,12 @@ exports.createCharge = function (req, res, next) {
       res.send(resposne);
       const mailOptions = {
         body: {
-          mailOptions: {
-            from: "noreply@askdoss.com",
-            to: resposne.receipt_email,
-            subject: "Payment Confirmation",
-            html: `<h1>Thank You For your Payment at WWW.ASKDOSS.COM</h1>
-                <p> Paymnet Confirmation Receipt: ${
-                  resposne.payment_method_details.card.fingerprint
-                } </p>
+          from: "noreply@askdoss.com",
+          to: [`${resposne.receipt_email}`, "noreplydoss@gmail.com"],
+          subject: "Payment Confirmation",
+          html: `<h1>Thank You For your Payment at WWW.ASKDOSS.COM</h1>
+                <p> Paymnet Confirmation Receipt: ${resposne.payment_method_details.card.fingerprint} </p>
                 <h3>total: $${price}.00</h3>`,
-          },
         },
       };
       emailService.sendEmail(mailOptions);
@@ -42,4 +38,3 @@ exports.createCharge = function (req, res, next) {
       res.send(error);
     });
 };
-

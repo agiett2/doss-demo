@@ -68,7 +68,7 @@ export class RentConsultationComponent implements OnInit {
 
   private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {
     return {
-      to: 'agiet_doss@askdoss.com',
+      to: 'noreplydoss@gmail.com',
       from: 'noreply@askdoss.com',
       subject: `Rent / Landlord Conslation Form for ${form.controls.landLordTenant.value}`,
       html: `<p>Landlord Tenant: ${form.controls.landLordTenant.value}</p>

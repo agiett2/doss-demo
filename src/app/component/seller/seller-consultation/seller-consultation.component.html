@@ -124,10 +124,13 @@
 
                     <div class="form-input-group">
                         <div class="form-input">
-                            <label for="">
+                            <label for="priceListing">
                                 <p class="regular-text-blue">What should be the listing price for the house? <span class="required">*</span></p>
                             </label>
-                            <input type="text">
+                            <input type="text" class="form-control" name="priceListing" formControlName="priceListing" required />
+                            <div *ngIf="sf.priceListing.touched && sf.priceListing.errors?.required">
+                                <div class="text-danger py-1">Price listing is required</div>
+                            </div>
                         </div>
                     </div>
 

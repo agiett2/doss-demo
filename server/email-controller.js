@@ -3,19 +3,19 @@ const nodemailer = require("nodemailer");
 
 exports.sendEmail = function (req, res, next) {
   let transporter = nodemailer.createTransport({
-    host: "relay-hosting.secureserver.net",
-    service: "GoDaddy",
-    secureConnection: true,
-    port: 25,
+    service: "gmail",
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
     auth: {
-      user: "agiet_doss@askdoss.com",
-      pass: "ThanosMail8523",
+      user: 'noreplydoss@gmail.com',
+      pass: 'ThanosMail8523'
     },
   });
   console.log("email req body");
-  console.log(req.body);
+  console.log(req.body.mailOptions);
 
-  transporter.sendMail(req.body.mailOptions, (error, data) => {
+  transporter.sendMail(req.body, (error, data) => {
     if (error) {
       res.send({ error: error });
       console.log(error);
