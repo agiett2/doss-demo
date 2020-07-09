@@ -12,7 +12,7 @@ import { EmailOptionsPayloadInterface } from '../../model/email-options.payload.
 export class SendEmailService implements SendEmailServiceAbstract {
     constructor(private http: HttpClient) { }
     public sendEmail(mailOptions: EmailOptionsPayloadInterface) {
-        return this.http.post('https://askdoss.com/api/sendEmail', mailOptions);
+        return this.http.post('https://askdoss.com/api/sdoss', mailOptions);
     }
 }
 
