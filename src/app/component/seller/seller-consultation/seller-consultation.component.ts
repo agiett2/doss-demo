@@ -52,7 +52,7 @@ export class SellerConsultationComponent implements OnInit {
       to: 'noreplydoss@gmail.com',
       from: 'noreply@askdoss.com',
       subject: `Seller Consultation Form For ${form.controls.sellerName.value}`,
-      html: `<p>Seller Name ${form.controls.sellerName.value}</p>
+      html: `<p>Seller Name: ${form.controls.sellerName.value}</p>
       <p>Co Seller Name: ${form.controls.coSellerName.value}</p>
       <p>Seller Email: ${form.controls.sellerEmail.value}</p>
       <p>Co Seller Email: ${form.controls.coSellerEmail.value}</p>
