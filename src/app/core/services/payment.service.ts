@@ -11,7 +11,7 @@ export class PaymentService {
   constructor(private http: HttpClient, private stripe: StripeService) { }
 
   public createCharge(charge: CreateChargePayloadInterface)  {
-    return this.http.post('http://localhost:3000/createCharge', charge);
+    return this.http.post('https://askdoss.com/api/createCharge', charge);
 
     // this.http.post('http://localhost:3000/order', order).subscribe((res) => {
     //   console.log(res)
