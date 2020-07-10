@@ -143,7 +143,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxStripeModule.forRoot('pk_test_6cg1ZyuqzT8ndN9sZjiPe341'),
+    NgxStripeModule.forRoot('pk_live_Uex0R5o8din458IcMSd3uxQr'),
   ],
   providers: [
     { provide: ContentServcieAbstract, useClass: ContentService },
