@@ -39,12 +39,9 @@ export class SellerConsultationComponent implements OnInit {
 
   public submitForm(form: FormGroup): void {
     this.isSubmittingEmail = true;
-    this.emailService.sendEmail(this.buildEmailOptions(form)).subscribe((response: { error?: any, success?: any}) => {
+    this.emailService.sendEmail(this.buildEmailOptions(form)).then((value: any) => {
       this.isSubmittingEmail = false;
-      response.success ? this.responseMsg = 'Email Sent!' : this.responseMsg = 'Error: Unable to send email at this time.';
-    }, (error) => {
-      this.isSubmittingEmail = false;
-      this.responseMsg = 'Error: Unable to send email at this time.';
+      this.responseMsg = 'Email Sent';
     });
   }
   private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {

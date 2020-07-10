@@ -102,8 +102,12 @@
         <ng-container >
           <div class="payment-processing" *ngIf="isPaymentProcessing">
             <img src="assets/images/Pulse-1s-167px.svg" alt="processinig payment svg"> <span>....processing payment</span>
-          </div>
-    
+          </div>    
+        </ng-container>
+        <ng-container *ngIf="paymentMes">
+           <div class="payment-complete">
+          {{ paymentMes }}
+           </div>
         </ng-container>
         <button class="doss-button" [disabled]="!stripeForm.valid" type="submit"> 
           <p style="margin: 0 10px 0 0;"> BUY ${{ price }}</p>

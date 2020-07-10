@@ -19,17 +19,17 @@ exports.createCharge = function (req, res, next) {
       console.log("success");
       console.log(resposne);
       res.send(resposne);
-      const mailOptions = {
-        body: {
-          from: "noreply@askdoss.com",
-          to: [`${resposne.receipt_email}`, "noreplydoss@gmail.com"],
-          subject: "Payment Confirmation",
-          html: `<h1>Thank You For your Payment at WWW.ASKDOSS.COM</h1>
-                <p> Paymnet Confirmation Receipt: ${resposne.payment_method_details.card.fingerprint} </p>
-                <h3>total: $${price}.00</h3>`,
-        },
-      };
-      emailService.sendEmail(mailOptions);
+      // const mailOptions = {
+      //   body: {
+      //     from: "noreply@askdoss.com",
+      //     to: [`${resposne.receipt_email}`, "noreplydoss@gmail.com"],
+      //     subject: "Payment Confirmation",
+      //     html: `<h1>Thank You For your Payment at WWW.ASKDOSS.COM</h1>
+      //           <p> Payment Confirmation Receipt: ${resposne.payment_method_details.card.fingerprint} </p>
+      //           <h3>total: $${price}.00</h3>`,
+      //   },
+      // };
+      // emailService.sendEmail(mailOptions);
     })
     .catch((error) => {
       //error

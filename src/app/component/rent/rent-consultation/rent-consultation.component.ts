@@ -1,12 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+} from '@angular/forms';
 import { SendEmailServiceAbstract } from 'src/app/core/services/abstract/send-email.service.abstract';
 import { EmailOptionsPayloadInterface } from 'src/app/core/model/email-options.payload.interface';
 
 @Component({
   selector: 'app-rent-consultation',
   templateUrl: './rent-consultation.component.html',
-  styleUrls: ['./rent-consultation.component.scss']
+  styleUrls: ['./rent-consultation.component.scss'],
 })
 export class RentConsultationComponent implements OnInit {
   public heading: string;
@@ -15,7 +20,10 @@ export class RentConsultationComponent implements OnInit {
   public isSubmittingEmail: boolean;
   public responseMsg: string;
 
-  constructor(private fb: FormBuilder, private emailService: SendEmailServiceAbstract) { }
+  constructor(
+    private fb: FormBuilder,
+    private emailService: SendEmailServiceAbstract
+  ) {}
 
   ngOnInit(): void {
     this.isSubmittingEmail = false;
@@ -43,7 +51,7 @@ export class RentConsultationComponent implements OnInit {
       howManyParkingSpots: [''],
       havePets: ['', Validators.required],
       kindOfPets: [''],
-      haveBrokenLease: ['', Validators.required]
+      haveBrokenLease: ['', Validators.required],
     });
   }
 
@@ -53,13 +61,12 @@ export class RentConsultationComponent implements OnInit {
 
   public submitForm(form: FormGroup): void {
     this.isSubmittingEmail = true;
-    this.emailService.sendEmail(this.buildEmailOptions(form)).subscribe((response: { error?: any, success?: any}) => {
-      this.isSubmittingEmail = false;
-      response.success ? this.responseMsg = 'Email Sent!' : this.responseMsg = 'Error: Unable to send email at this time.';
-    }, (error) => {
-      this.isSubmittingEmail = false;
-      this.responseMsg = 'Error: Unable to send email at this time.';
-    });
+    this.emailService
+      .sendEmail(this.buildEmailOptions(form))
+      .then((value: any) => {
+        this.isSubmittingEmail = false;
+        this.responseMsg = 'Email Sent';
+      });
 
     setTimeout(() => {
       this.isSubmittingEmail = false;
@@ -91,7 +98,7 @@ export class RentConsultationComponent implements OnInit {
       <p>How Many Parking Spots: ${form.controls.howManyParkingSpots.value}</p>
       <p>Have Pets: ${form.controls.havePets.value}</p>
       <p>Kind Of Pets: ${form.controls.kindOfPets.value}</p>
-      <p>Have Broken Lease: ${form.controls.haveBrokenLease.value}</p>`
+      <p>Have Broken Lease: ${form.controls.haveBrokenLease.value}</p>`,
     };
   }
 }
