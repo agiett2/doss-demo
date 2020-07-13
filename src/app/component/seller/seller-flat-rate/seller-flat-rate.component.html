@@ -2,9 +2,16 @@
   <div class="hero-container">
     <div class="hero-text-container">
       <div class="hero-text">
-        <p class="large-text-white anim-up">YOU GET WHAT<br>YOU PAY FOR...</p>
-        <p class="regular-text-white anim-down" style="margin-top: 10px; font-weight: 300;">Great Service, at a fair price!</p>
-        <p class="special-text-white anim-down" style="font-weight: 600;">$395 FLAT FEE</p>
+        <p class="large-text-white anim-up">YOU GET WHAT<br />YOU PAY FOR...</p>
+        <p
+          class="regular-text-white anim-down"
+          style="margin-top: 10px; font-weight: 300;"
+        >
+          Great Service, at a fair price!
+        </p>
+        <p class="special-text-white anim-down" style="font-weight: 600;">
+          $395 FLAT FEE
+        </p>
       </div>
     </div>
   </div>
@@ -14,15 +21,25 @@
   <div class="section-2-wrapper">
     <div class="info-container">
       <div class="image-box">
-        <img src="assets/images/sell_person_pointing_4.png" alt="image of person" style="width: 100%;">
+        <img
+          src="assets/images/sell_person_pointing_4.png"
+          alt="image of person"
+          style="width: 100%;"
+        />
       </div>
       <div class="text-box">
-        <p class="large-text-blue">What do <br> you get?</p>
-        <p class="regular-text-blue" style="margin-top: 15px; color: #3A679A; line-height: 2;">
-          • Flat Fee <br>
-          • Local Agents <br>
-          • Professional Yard Signage <br>
-          • Property listed on Realtor.com, Zillow, etc. <br>
+        <p class="large-text-blue">
+          What do <br />
+          you get?
+        </p>
+        <p
+          class="regular-text-blue"
+          style="margin-top: 15px; color: #3a679a; line-height: 2;"
+        >
+          • Flat Fee <br />
+          • Local Agents <br />
+          • Professional Yard Signage <br />
+          • Property listed on Realtor.com, Zillow, etc. <br />
           • Manage Calls/Call Support
         </p>
       </div>
@@ -34,16 +51,26 @@
   <div class="section-3-wrapper">
     <div class="info-container-reverse">
       <div class="text-box">
-        <p class="large-text-blue">What's your <br> responsibility?</p>
-        <p class="regular-text-blue" style="margin-top: 15px; color: #3A679A; line-height: 2;">
-          • Set a price for your home <br>
-          • Manage/Schedule Home Tours <br>
-          • Take Pictures/Video <br>
+        <p class="large-text-blue">
+          What's your <br />
+          responsibility?
+        </p>
+        <p
+          class="regular-text-blue"
+          style="margin-top: 15px; color: #3a679a; line-height: 2;"
+        >
+          • Set a price for your home <br />
+          • Manage/Schedule Home Tours <br />
+          • Take Pictures/Video <br />
           • Negotiate your own contract
         </p>
       </div>
       <div class="image-box">
-        <img src="assets/images/sell_person_pointing_1.png" alt="image of person" style="width: 100%;">
+        <img
+          src="assets/images/sell_person_pointing_1.png"
+          alt="image of person"
+          style="width: 100%;"
+        />
       </div>
     </div>
   </div>
@@ -53,76 +80,102 @@
   <div class="section-4-wrapper">
     <div class="doss-container">
       <div class="section-header">
-        <p class="large-text-blue">Additional Services <br> to Purchase</p>
-        <p class="regular-text-blue" style="margin-top: 10px;">Sellers can purchase additional services to help sell
-          your property</p>
+        <p class="large-text-blue">
+          Additional Services <br />
+          to Purchase
+        </p>
+        <p class="regular-text-blue" style="margin-top: 10px;">
+          Sellers can purchase additional services to help sell your property
+        </p>
       </div>
-
-      
-      
     </div>
-
-
     <div class="special-table-container">
       <div class="doss-table">
         <div class="table-list-container">
           <div class="table-header">
-            <div class="table-section-1">
-
-            </div>
+            <div class="table-section-1"></div>
             <div class="table-section-2">
-              <p class="regular-text-blue table-left-padding" style="font-weight: 600; ">Service Menu</p>
+              <p
+                class="regular-text-blue table-left-padding"
+                style="font-weight: 600;"
+              >
+                Service Menu
+              </p>
             </div>
             <div class="table-section-3">
               <p class="regular-text-blue" style="font-weight: 600;">Price</p>
             </div>
           </div>
-
           <div class="table-list" *ngFor="let rowData of tableRowData">
             <div class="table-section-1">
-              <label class="check-container" [ngClass]="{'disable-check':rowData.isRequired}">
-                <input type="checkbox" [checked]="rowData.isRequired" (change)="checkBoxChanged($event, rowData)">
+              <label
+                class="check-container"
+                [ngClass]="{ 'disable-check': rowData.isRequired }"
+              >
+                <input
+                  type="checkbox"
+                  [checked]="rowData.isRequired"
+                  (change)="checkBoxChanged($event, rowData)"
+                />
                 <span class="checkmark"></span>
               </label>
             </div>
             <div class="table-section-2">
-              <p class="regular-text-blue table-left-padding">{{rowData.menu}}</p>
+              <p class="regular-text-blue table-left-padding">
+                {{ rowData.name }}
+              </p>
               <ng-container *ngIf="rowData.selectOptions">
-                <select class="form-control" (change)="updatePrice($event, rowData)">
-                  <option *ngFor="let options of rowData.selectOptions" value="{{options.price}}" selected >{{ options.menu}}
+                <select
+                  class="form-control"
+                  (change)="updatePrice($event, rowData)"
+                >
+                  <option
+                    *ngFor="let options of rowData.selectOptions"
+                    value="{{ options.price }}"
+                    selected
+                    >{{ options.name }}
                   </option>
                 </select>
               </ng-container>
-
             </div>
             <div class="table-section-3">
-              <p class="regular-text-blue">${{rowData.price}}</p>
+              <p class="regular-text-blue">${{ rowData.price }}</p>
             </div>
-
           </div>
-
           <div class="table-list-last">
-            <div class="table-section-1">
-            </div>
+            <div class="table-section-1"></div>
             <div class="table-section-2" style="justify-content: flex-end;">
-              <p class="regular-text-blue table-left-padding" style="font-weight: 700; ">Total</p>
+              <p
+                class="regular-text-blue table-left-padding"
+                style="font-weight: 800;"
+              >
+                Total
+              </p>
             </div>
             <div class="table-section-3">
-              <p class="regular-text-blue">${{getTotal(getSelectedMenu(tableRowData))}}</p>
+              <p class="regular-text-blue">
+                ${{ getTotal(getSelectedMenu(tableRowData)) }}
+              </p>
             </div>
           </div>
         </div>
       </div>
-
-        <div class="button-container">
-          <button class="doss-button" (click)="checkout()">
-            <img src="assets/images/shopping-cart.svg" alt="icon of cart" style="margin-right: 15px; width: 25px;">
-            <p style="margin: 0 10px 0 0;">Checkout</p>
-          </button>
-        </div>
+      <div class="button-container">
+        <button class="doss-button" (click)="checkout()">
+          <img
+            src="assets/images/shopping-cart.svg"
+            alt="icon of cart"
+            style="margin-right: 15px; width: 25px;"
+          />
+          <p style="margin: 0 10px 0 0;">Checkout</p>
+        </button>
+      </div>
     </div>
     <div class="doss-container">
-      <app-stripe-checkout *ngIf="isCheckingOut" [price]="getTotal(getSelectedMenu(tableRowData))"></app-stripe-checkout>
+      <app-stripe-checkout
+        *ngIf="isCheckingOut"
+        [selectedServices]="getSelectedMenu(tableRowData)"
+      ></app-stripe-checkout>
     </div>
-    </div>
+  </div>
 </section>

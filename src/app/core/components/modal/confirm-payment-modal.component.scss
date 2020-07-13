@@ -1,0 +1,13 @@
+.wrapper {
+   min-width: 500px;
+   .payment-processing {
+      color:  #174D89;
+      font-size: 1.5rem;
+      font-weight: 800;
+   }
+   service {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+  }
+}

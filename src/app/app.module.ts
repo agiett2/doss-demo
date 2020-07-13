@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { MatDialogModule } from '@angular/material/dialog';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -7,7 +8,6 @@ import { HomeComponent } from './component/home/home.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 import { HeroComponent } from './shared/components/hero/hero.component';
 import { HttpClientModule } from '@angular/common/http';
-
 import { FooterComponent } from './component/footer/footer.component';
 import { ContentServcieAbstract } from './core/services/abstract/content.service.abstract';
 import { ContentService } from './core/services/content.service';
@@ -47,7 +47,7 @@ import { JoinUsComponent } from './component/about/join-us/join-us.component';
 import { DigitalAdsComponent } from './component/about/digital-ads/digital-ads.component';
 import { FiveLawsComponent } from './component/about/five-laws/five-laws.component';
 import { LearnDossComponent } from './component/about/learn-doss/learn-doss.component';
-import { RentConsultationComponent as RentConsultationComponent } from './component/rent/rent-consultation/rent-consultation.component';
+import { RentConsultationComponent } from './component/rent/rent-consultation/rent-consultation.component';
 import { FullServiceFormComponent } from './component/seller/seller-full-service/full-service-form/full-service-form.component';
 import { SellerFaqComponent } from './component/seller/seller-faq/seller-faq.component';
 import { Hero2Component } from './shared/components/hero2/hero2.component';
@@ -55,8 +55,15 @@ import { NgxStripeModule } from 'ngx-stripe';
 import { StripeCheckoutComponent } from './shared/components/stripe-checkout/stripe-checkout.component';
 import { TermsComponent } from './component/footer/terms/terms/terms.component';
 import { PolicyComponent } from './component/footer/policy/policy/policy.component';
-import { PaymentService } from './core/services/payment.service';
+import { StripePaymentService } from './core/services/stripe-payment.service';
 import { DossHomeLoansComponent } from './component/doss-home-loans/doss-home-loans.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StripePaymentServiceAbstract } from './core/services/abstract/stripe-payment.service.abstract';
+import { StateServiceAbstract } from './core/services/abstract/state.service.abstract';
+import { StateService } from './core/services/state.service';
+import { ConfirmPaymentModalComponent } from './core/components/modal/confirm-payment-modal.component';
+import { ModalServiceAbstract } from './core/services/abstract/modal.service.abstract';
+import { ModalService } from './core/services/modal.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -87,7 +94,7 @@ const appRoutes: Routes = [
   { path: 'terms', component: TermsComponent },
   { path: 'policy', component: PolicyComponent },
   { path: 'home-loans', component: DossHomeLoansComponent },
-  { path: '**', component: HomeComponent }
+  { path: '**', component: HomeComponent },
 ];
 @NgModule({
   declarations: [
@@ -136,6 +143,7 @@ const appRoutes: Routes = [
     TermsComponent,
     PolicyComponent,
     DossHomeLoansComponent,
+    ConfirmPaymentModalComponent
   ],
   imports: [
     BrowserModule,
@@ -144,11 +152,15 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     NgxStripeModule.forRoot('pk_test_6cg1ZyuqzT8ndN9sZjiPe341'),
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   providers: [
     { provide: ContentServcieAbstract, useClass: ContentService },
     { provide: SendEmailServiceAbstract, useClass: SendEmailService },
-    PaymentService
+    { provide: StripePaymentServiceAbstract, useClass: StripePaymentService },
+    { provide: StateServiceAbstract, useClass: StateService },
+    { provide: ModalServiceAbstract, useClass: ModalService }
   ],
   entryComponents: [
     RightAlignComponent,
@@ -159,8 +171,9 @@ const appRoutes: Routes = [
     SellerConsultationComponent,
     SellerStepsComponent,
     RentStepsComponent,
-    LandlordFaqComponent
+    LandlordFaqComponent,
+    ConfirmPaymentModalComponent
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

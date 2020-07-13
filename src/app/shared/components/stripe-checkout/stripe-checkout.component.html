@@ -4,31 +4,22 @@
       <div class="section-header">
           <p class="large-text-blue">Complete Checkout</p>
       </div>
-
       <div class="service-wrapper">
-        <p class="regular-text-blue" style="font-weight: 700; margin-bottom: 20px;">Services selected</p>
+        <p class="regular-text-blue" style="font-weight: 800; margin-bottom: 20px;">Services selected</p>
         <div class="service-container">
-          <div class="service">
-            <p class="small-text-blue">Pricing Support</p>
-            <p class="small-text-blue">$100</p>
-          </div>
-          <div class="service">
-            <p class="small-text-blue">Professional Photos (under 3,000 sft)</p>
-            <p class="small-text-blue">$225</p>
-          </div>
-          <div class="service">
-            <p class="small-text-blue">Pro Photos/3D Home Tour (under 3,000 sft)</p>
-            <p class="small-text-blue">$525</p>
+          <div class="service" *ngFor="let service of selectedServices">
+            <p class="small-text-blue">{{service.name}}</p>
+            <p class="small-text-blue">${{service.price}}</p>
           </div>
           <div class="service" style="margin-bottom: 50px;">
-            <p class="small-text-blue" style="font-weight: 700;">Total</p>
-            <p class="small-text-blue" style="font-weight: 700;">$850</p>
+            <p class="small-text-blue" style="font-weight: 800;">Total</p>
+            <p class="small-text-blue" style="font-weight: 800;">${{ getTotal(selectedServices) }}</p>
           </div>
         </div>
       </div>
     <form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm">
       <div class="section-header-2">
-        <p class="regular-text-blue" style="font-weight: 700; margin-bottom: 20px;">User Information</p>
+        <p class="regular-text-blue" style="font-weight: 800; margin-bottom: 20px;">User Information</p>
       </div>
       <div class="form-input-group">
         <div class="form-input">
@@ -95,8 +86,11 @@
           <label for="state">
             <p class="small-text-blue">State <span class="required">*</span></p>
         </label>
-          <input type="text" class="form-control" id="state" formControlName="state" name="state"
-            required />
+        <select class="form-control"  id="state" formControlName="state" name="state" required>
+          <option *ngFor="let state of states" value="{{ state.value }}" >
+            {{ state.name }}
+          </option>
+        </select>
           <div *ngIf="sf.state.touched && sf.state.errors?.required">
             <div class="text-danger py-1">State is required.</div>
           </div>
@@ -131,44 +125,31 @@
         <p class="small-text-blue" style="margin-bottom: 10px;">Is your listing address same as your billing address? <span class="required">*</span></p>
         <div class="radio-input-selections">
             <div class="radio-input">
-                <input type="radio" id="pre-approved" name='preApproved' class="regular-radio" value="yes"
-                    formControlName="preApproved">
+                <input type="radio" id="pre-approved" name='listingSameAsBilling' class="regular-radio" value="yes"
+                    formControlName="listingSameAsBilling">
                 <label for="pre-approved">
                     <p class="small-text-blue">Yes</p>
                 </label>
             </div>
 
             <div class="radio-input">
-                <input type="radio" id="not-approved" name="preApproved" class="regular-radio"
-                    formControlName="preApproved" value="no">
+                <input type="radio" id="not-approved" name="listingSameAsBilling" class="regular-radio"
+                    formControlName="listingSameAsBilling" value="no">
                 <label for="not-approved">
                     <p class="small-text-blue">No</p>
                 </label>
             </div>
         </div>
       </div>
-  
-
-
-
-
-
-      <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
+        <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
       <div class="button-container">
-        <ng-container >
-          <div class="payment-processing" *ngIf="isPaymentProcessing">
-            <img src="assets/images/Pulse-1s-167px.svg" alt="processinig payment svg"> <span>....processing payment</span>
-          </div>
-    
-        </ng-container>
         <button class="doss-button" [disabled]="!stripeForm.valid" type="submit"> 
-          <p style="margin: 0 10px 0 0;"> BUY ${{ price }}</p>
+          <p style="margin: 0 10px 0 0;"> BUY {{ getTotal(selectedServices) |currency }}</p>
         </button>
-       
-      </div>
-  
-     
-  
+        <!-- <app-modal-component>
+          <div message>Processing payment</div>
+        </app-modal-component> -->
+      </div>  
     </form>
   </div>
 </div>

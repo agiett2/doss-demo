@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <h3>{{ dialogTitle }}</h3>
+  <hr>
+  <p>{{ dialogText }}</p>
+
+    <div class="service" *ngFor="let service of services">
+      <p class="small-text-blue">{{service.name}}</p>
+      <p class="small-text-blue">${{service.price}}</p>
+    </div>
+  <div class="payment-processing" *ngIf="showProgress">
+    <img src="assets/images/Pulse-1s-167px.svg" alt="processinig svg" />
+    <p  class="text-center">..Processing Payment..</p>
+  </div>
+</div>

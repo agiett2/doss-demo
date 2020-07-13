@@ -1,7 +1,7 @@
 export interface TableDataRowInterface {
-    selected: boolean;
-    readonly menu: string;
-    price: number;
-    readonly selectOptions?: { menu: string; price: number; }[];
-    readonly isRequired: boolean;
+  selected: boolean;
+  readonly name: string;
+  price: number;
+  readonly selectOptions?: { name: string; price: number }[];
+  readonly isRequired: boolean;
 }
