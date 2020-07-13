@@ -43,10 +43,27 @@ export class JoinUsComponent implements OnInit {
 
   public submitForm(form: FormGroup): void {
     this.isSubmittingEmail = true;
-    console.log('sumbitted form', form);
-    setTimeout(() => {
-      this.isSubmittingEmail = false;
-    }, 6000);
+    this.emailService
+      .sendEmail(this.buildEmailOptions(form))
+      .then((value: any) => {
+        this.isSubmittingEmail = false;
+        this.responseMsg = 'Email Sent';
+      });
   }
 
+  private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {
+     const name = `${form.controls.firstName.value.toUpperCase()} ${form.controls.lastName.value.toUpperCase()}`;
+    return {
+      to: 'noreplydoss@gmail.com',
+      from: 'noreply@askdoss.com',
+      subject: `Contact Request from ${ name }`,
+      html: `<p>Name: ${ name }</p>
+      <p>Phone Number: ${form.controls.phoneNumber.value}</p>
+      <p>Email: ${form.controls.email.value}</p>
+      <p>Current Broker: ${form.controls.currentBroker.value}</p>
+      <p>Years Licensed: ${form.controls.yearsLicensed.value}</p>
+      <p>Closing 2018: ${form.controls.closing2018.value}</p>
+      <p>Closing 2019: ${form.controls.closing2019.value}</p>`
+    };
+  }
 }
