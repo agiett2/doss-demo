@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+} from '@angular/forms';
+import { EmailOptionsPayloadInterface } from 'src/app/core/model/email-options.payload.interface';
+import { SendEmailServiceAbstract } from 'src/app/core/services/abstract/send-email.service.abstract';
 
 @Component({
   selector: 'app-join-us',
   templateUrl: './join-us.component.html',
-  styleUrls: ['./join-us.component.scss']
+  styleUrls: ['./join-us.component.scss'],
 })
 export class JoinUsComponent implements OnInit {
   public heroHeading: string;
@@ -13,8 +20,12 @@ export class JoinUsComponent implements OnInit {
   public dossHeading: string;
   public signUpForm: FormGroup;
   public isSubmittingEmail: boolean;
+  public responseMsg: string;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private emailService: SendEmailServiceAbstract
+    ) {}
 
   ngOnInit(): void {
     this.isSubmittingEmail = false;
@@ -27,13 +38,20 @@ export class JoinUsComponent implements OnInit {
     this.signUpForm = this.fb.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      phoneNumber: ['',
-        Validators.compose([Validators.required, Validators.pattern(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/)])],
+      phoneNumber: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(
+            /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+          ),
+        ]),
+      ],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       currentBroker: [''],
       yearsLicensed: ['', Validators.required],
       closing2018: ['', Validators.required],
-      closing2019: ['', Validators.required]
+      closing2019: ['', Validators.required],
     });
   }
 
@@ -52,18 +70,18 @@ export class JoinUsComponent implements OnInit {
   }
 
   private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {
-     const name = `${form.controls.firstName.value.toUpperCase()} ${form.controls.lastName.value.toUpperCase()}`;
+    const name = `${form.controls.firstName.value.toUpperCase()} ${form.controls.lastName.value.toUpperCase()}`;
     return {
       to: 'noreplydoss@gmail.com',
       from: 'noreply@askdoss.com',
-      subject: `Contact Request from ${ name }`,
-      html: `<p>Name: ${ name }</p>
+      subject: `Contact Request from ${name}`,
+      html: `<p>Name: ${name}</p>
       <p>Phone Number: ${form.controls.phoneNumber.value}</p>
       <p>Email: ${form.controls.email.value}</p>
       <p>Current Broker: ${form.controls.currentBroker.value}</p>
       <p>Years Licensed: ${form.controls.yearsLicensed.value}</p>
       <p>Closing 2018: ${form.controls.closing2018.value}</p>
-      <p>Closing 2019: ${form.controls.closing2019.value}</p>`
+      <p>Closing 2019: ${form.controls.closing2019.value}</p>`,
     };
   }
 }
