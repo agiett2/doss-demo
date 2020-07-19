@@ -1,10 +1,12 @@
 import { Component, OnInit, Inject, Output, EventEmitter } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TableDataRowInterface } from 'src/app/shared/interfaces/tableDataRow.interface';
-import { StripeService, StripeCardComponent } from 'ngx-stripe';
+import { StripeCardComponent } from 'ngx-stripe';
 import { CreateChargePayloadInterface } from '../../model/create-charge.payload.interface';
 import { StripePaymentServiceAbstract } from '../../services/abstract/stripe-payment.service.abstract';
 import { BillingDetailsPayloadInterface } from '../../model/billing-details.payload.interface';
+import { EmailOptionsPayloadInterface } from '../../model/email-options.payload.interface';
+import { SendEmailServiceAbstract } from '../../services/abstract/send-email.service.abstract';
 
 @Component({
   selector: 'app-confirm-payment-modal-component',
@@ -12,16 +14,19 @@ import { BillingDetailsPayloadInterface } from '../../model/billing-details.payl
   styleUrls: ['./confirm-payment-modal.component.scss'],
 })
 export class ConfirmPaymentModalComponent implements OnInit {
+  @Output() submitClicked = new EventEmitter<any>();
   public dialogTitle: string;
   public dialogText: string;
   public services: TableDataRowInterface[];
   public isPaymentProcessing: boolean;
   public isPaymentError: boolean;
-  @Output() submitClicked = new EventEmitter<any>();
+  public isPaymentComplete: boolean;
   public message: string;
+  public paymentMes: string;
   constructor(
     private paymentService: StripePaymentServiceAbstract,
     public dialogRef: MatDialogRef<ConfirmPaymentModalComponent>,
+    private emailService: SendEmailServiceAbstract,
     @Inject(MAT_DIALOG_DATA)
     public data: {
       dialogPrice: number;
@@ -34,6 +39,7 @@ export class ConfirmPaymentModalComponent implements OnInit {
   public ngOnInit(): void {
     this.isPaymentProcessing = false;
     this.isPaymentError = false;
+    this.isPaymentComplete = false;
     this.dialogText = `Please confirm your payment of $${this.data.dialogPrice}.00 for the following services:`;
     this.dialogTitle = 'Payment Confirmation';
     this.services = this.data.dialogServices;
@@ -56,24 +62,28 @@ export class ConfirmPaymentModalComponent implements OnInit {
         if (result.token) {
           console.log(result.token.id);
           const token = result.token.id;
+          const totalPrice = this.data.dialogPrice;
           const payload: CreateChargePayloadInterface = {
             token,
-            price: this.data.dialogPrice,
+            price: totalPrice,
             billing_details: this.data.billing,
           };
           this.paymentService.createCharge(payload).subscribe(
             (response: any) => {
+              this.isPaymentProcessing = false;
               console.log('sucess');
               console.log(response);
-              const message: string = response.outcome.seller_message;
-              setTimeout(() => {
-                this.isPaymentProcessing = false;
-              }, 6000);
+              if (response.status === 'succeeded') {
+                this.isPaymentComplete = true;
+                this.paymentMes = 'payment completed!';
+                this._sendCustomerEmail(response, totalPrice);
+                this._sendBobbyEmail(response, totalPrice);
+              } else {
+                this.paymentMes = 'unable to complete payment';
+              }
             },
             (error) => {
-              setTimeout(() => {
-                this.isPaymentProcessing = false;
-              }, 6000);
+              this.isPaymentProcessing = false;
             }
           );
 
@@ -85,5 +95,43 @@ export class ConfirmPaymentModalComponent implements OnInit {
           console.log(result.error.message);
         }
       });
+  }
+
+  private _sendCustomerEmail(response: any, totalPrice: number): void {
+    const customerEmail: EmailOptionsPayloadInterface = {
+      from: 'noreply@askdoss.com',
+      to: [`${response.receipt_email}`, 'noreplydoss@gmail.com'],
+      subject: 'Payment Confirmation',
+      html: `<h2>Thank You For your Payment at www.askdoss.com</h2>
+      <h4>Payment Confirmation Receipt:
+      Your receipt can be viewed <a href="${response.receipt_url}" target="_blank">here</a>.</h4>
+      <h4>Payment Total: $${totalPrice}.00</h4>`,
+    };
+    this.emailService.sendEmail(customerEmail);
+  }
+
+  private _sendBobbyEmail(response: any, totalPrice: number): void {
+    const bobbyEmail: EmailOptionsPayloadInterface = {
+      from: 'noreply@askdoss.com',
+      to: [`${response.receipt_email}`, 'noreplydoss@gmail.com'],
+      subject: 'Payment Confirmation',
+      html: `<h2>New Customer</h2>
+      <h4>Customer Payment Confirmation Receipt:
+     Receipt can be viewed <a href="${response.receipt_url}" target="_blank">here</a>.</h4>
+     <h4>Payment Total: $${totalPrice}.00</h4>
+     <hr>
+     <h2>Customer Info</h2>
+     <p>Name: ${this.data.name}</p>
+     <h2>Contact Info</h2>
+     <p>Email: ${this.data.billing.email}</p>
+     <p>Phone Number: ${this.data.billing.phone}</p>
+     <h2>Address</h2>
+     <p>Street: ${this.data.billing.address.line1}</p>
+     <p>Unit: ${this.data.billing.address.line2}</p>
+     <p>City: ${this.data.billing.address.city}</p>
+     <p>State: ${this.data.billing.address.state}</p>
+     <p>Zip Code: ${this.data.billing.address.zip}</p>`,
+    };
+    this.emailService.sendEmail(bobbyEmail);
   }
 }

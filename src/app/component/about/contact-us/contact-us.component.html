@@ -57,7 +57,7 @@
                 <div class="text-danger py-1" *ngIf="cf.email.invalid">
                   Please enter a valid email address
                 </div>
-              </div>
+              </div>  
             </div>
           </div>
 
@@ -71,10 +71,13 @@
             </div>
           </div>
 
-          <button class="submit" type="submit" [disabled]="!contactUsForm.valid">Send</button>
-          <div class="payment-processing" *ngIf="isSubmittingEmail">
-            <img src="assets/images/Pulse-1s-167px.svg" alt="processinig payment svg"> <span>.... sending Email</span>
-          </div>
+          <button class="submit" type="submit" [disabled]="!contactUsForm.valid || isSubmittingEmail">Send</button>
+          <ng-container *ngIf="isSubmittingEmail">
+            <div class="processing-payment">
+                <img src="assets/images/Pulse-1s-167px.svg" alt="sending email svg"> <span>....sending email</span>
+            </div>
+        </ng-container>
+        <p *ngIf="!isSubmittingEmail && responseMsg ">{{ responseMsg}}</p>
         </form>
       </div>
     </div>

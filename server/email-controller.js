@@ -1,30 +1,26 @@
-require('dotenv').config();
-const nodemailer = require('nodemailer');
+require("dotenv").config();
+const nodemailer = require("nodemailer");
 
-let transporter = nodemailer.createTransport({
-    service: "gmail",
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false, 
+exports.sendEmail = function (req, res, next) {
+  let transporter = nodemailer.createTransport({
+    host: "relay-hosting.secureserver.net",
+    service: "GoDaddy",
+    secureConnection: true,
+    port: 25,
     auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD
-    }
-});
+      user: "agiet_doss@askdoss.com",
+      pass: "ThanosMail8523",
+    },
+  });
+  console.log("email req body");
+  console.log(req.body);
 
-let mailOptions = {
-    from: 'agiet@askdoss.com', 
-    to: 'agiett2@gmail.com', 
-    subject: 'Testing',
-    text: 'It Works'
-}
-
-transporter.sendMail(mailOptions, (error, data) => {
+  transporter.sendMail(req.body.mailOptions, (error, data) => {
     if (error) {
-       console.log(error)
+      res.send({ error: error });
+      console.log(error);
     }
-    console.log(`email sent ${data}`)
-})
-exports.sendEmail = function(req, res, next) {
-
-}
+    res.send({success : data });
+    console.log(`email sent ${data}`);
+  });
+};

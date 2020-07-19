@@ -11,14 +11,6 @@ import {
 import { ConfirmPaymentModalComponent } from '../components/modal/confirm-payment-modal.component';
 import { TableDataRowInterface } from 'src/app/shared/interfaces/tableDataRow.interface';
 import { BillingDetailsPayloadInterface } from '../model/billing-details.payload.interface';
-// import {
-//   StripeService,
-//   Elements,
-//   Element as,
-//   ElementsOptions,
-//   StripeCardComponent,
-//   ElementOptions,
-// } from 'ngx-stripe';
 
 @Injectable({
   providedIn: 'root',
@@ -32,6 +24,7 @@ export class StripePaymentService {
 
   public createCharge(charge: CreateChargePayloadInterface): Observable<any> {
     return this.http.post('https://localhost:3000/createCharge', charge);
+    // return this.http.post('https://askdoss.com/api/cdoss', charge);
   }
   public confirmPayment(
     totalPrice: number,

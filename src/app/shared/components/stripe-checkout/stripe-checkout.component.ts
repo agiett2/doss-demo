@@ -26,6 +26,8 @@ import { StateServiceAbstract } from 'src/app/core/services/abstract/state.servi
 import { ConfirmPaymentModalComponent } from 'src/app/core/components/modal/confirm-payment-modal.component';
 import { Subscription } from 'rxjs';
 import { BillingDetailsPayloadInterface } from 'src/app/core/model/billing-details.payload.interface';
+import { SendEmailServiceAbstract } from 'src/app/core/services/abstract/send-email.service.abstract';
+import { EmailOptionsPayloadInterface } from 'src/app/core/model/email-options.payload.interface';
 
 @Component({
   selector: 'app-stripe-checkout',
@@ -37,6 +39,9 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
   @ViewChild(StripeCardComponent) card: StripeCardComponent;
   public paymentModalSubscription: Subscription;
   public isPaymentProcessing = false;
+  public isPaymentComplet: boolean;
+  @Input() price: number;
+  public paymentMes: string;
   public cardOptions: ElementOptions = {
     style: {
       base: {
@@ -64,7 +69,8 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
     private stripeService: StripeService,
     private paymentService: StripePaymentServiceAbstract,
     private stateService: StateServiceAbstract,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private emailService: SendEmailServiceAbstract
   ) {}
 
   ngOnInit() {
@@ -113,9 +119,9 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
       .confirmPayment(totalPrice, this.selectedServices, name, this.card, billingDetails )
       .componentInstance.submitClicked.subscribe((isConfirmed: boolean) => {
         if (isConfirmed) {
-        this.purchaseServices();
+          this.isPaymentComplet = true;
+          this.dialog.closeAll();
         } else {
-
           this.dialog.closeAll();
         }
       });
@@ -129,67 +135,6 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
     return price;
   }
 
-  public openConfirmPaymentModal(
-    text: string,
-    services: TableDataRowInterface[],
-    name: string,
-  ): MatDialogRef<ConfirmPaymentModalComponent> {
-    const dialogRef = this.dialog.open(ConfirmPaymentModalComponent, {
-      closeOnNavigation: false,
-      maxWidth: '300px',
-      data: { dialogText: text, dialogServices: services, userName: name, creditCardInfo: this.card.getCard() },
-      disableClose: true,
-      autoFocus: true,
-    });
-    return dialogRef;
-  }
-  public purchaseServices(): void {
-    this.stripeService
-    .createToken(this.card.getCard(), { name })
-    .subscribe((result) => {
-      if (result.token) {
-        console.log(result.token.id);
-        const token = result.token.id;
-        const payload: CreateChargePayloadInterface = {
-          token,
-          price: this.getTotal(this.selectedServices),
-          billing_details: {
-            address: {
-              city: this.stripeForm.controls.city.value,
-              line1: this.stripeForm.controls.street.value,
-              line2: this.stripeForm.controls.unit.value,
-              state: this.stripeForm.controls.state.value,
-              zip: this.stripeForm.controls.zip.value,
-            },
-            email: this.stripeForm.controls.email.value,
-            phone: this.stripeForm.controls.phone.value,
-          },
-        };
-        this.paymentService.createCharge(payload).subscribe(
-          (response: any) => {
-            console.log('sucess');
-            console.log(response);
-            const message: string = response.outcome.seller_message;
-            setTimeout(() => {
-              this.isPaymentProcessing = false;
-            }, 6000);
-          },
-          (error) => {
-            setTimeout(() => {
-              this.isPaymentProcessing = false;
-            }, 6000);
-          }
-        );
-
-        // Use the token to create a charge or a customer
-        // https://stripe.com/docs/charges
-      } else if (result.error) {
-        this.isPaymentProcessing = false;
-        // Error creating the token
-        console.log(result.error.message);
-      }
-    });
-  }
   public ngOnDestroy(): void {
     this.paymentModalSubscription.unsubscribe();
   }

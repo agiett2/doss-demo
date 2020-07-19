@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { SendEmailServiceAbstract } from 'src/app/core/services/abstract/send-email.service.abstract';
+import { EmailOptionsPayloadInterface } from 'src/app/core/model/email-options.payload.interface';
 
 @Component({
   selector: 'app-seller-consultation',
@@ -10,7 +12,8 @@ export class SellerConsultationComponent implements OnInit {
   public sellerForm: FormGroup;
   public addressForm: FormGroup;
   public isSubmittingEmail: boolean;
-  constructor(private fb: FormBuilder) { }
+  public responseMsg: string;
+  constructor(private fb: FormBuilder, private emailService: SendEmailServiceAbstract) { }
 
   ngOnInit(): void {
     this.isSubmittingEmail = false;
@@ -34,11 +37,29 @@ export class SellerConsultationComponent implements OnInit {
     return this.sellerForm.controls;
   }
 
-  public submitForm(sellerForm: FormGroup): void { 
+  public submitForm(form: FormGroup): void {
     this.isSubmittingEmail = true;
-    setTimeout(() => {
+    this.emailService.sendEmail(this.buildEmailOptions(form)).then((value: any) => {
       this.isSubmittingEmail = false;
-    }, 6000);
+      this.responseMsg = 'Email Sent';
+    });
   }
-
+  private buildEmailOptions(form: FormGroup): EmailOptionsPayloadInterface {
+    return {
+      to: 'noreplydoss@gmail.com',
+      from: 'noreply@askdoss.com',
+      subject: `Seller Consultation Form For ${form.controls.sellerName.value}`,
+      html: `<p>Seller Name: ${form.controls.sellerName.value}</p>
+      <p>Co Seller Name: ${form.controls.coSellerName.value}</p>
+      <p>Seller Email: ${form.controls.sellerEmail.value}</p>
+      <p>Co Seller Email: ${form.controls.coSellerEmail.value}</p>
+      <p>Seller Address ${form.controls.sellerAddress.value}</p>
+      <p>Seller Phone: ${form.controls.sellerPhoneNumber.value}</p>
+      <p>Co Seller Phone: ${form.controls.coSellerPhoneNumber.value}</p>
+      <p>When To Sell: ${form.controls.whenToSell.value}</p>
+      <p>Price Listing: ${form.controls.priceListing.value}</p>
+      <p>Have Pets: ${form.controls.havePets.value}</p>
+      <p>Why Selling: ${form.controls.whySelling.value}</p>`
+    };
+  }
 }

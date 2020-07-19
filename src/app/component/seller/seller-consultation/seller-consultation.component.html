@@ -124,10 +124,13 @@
 
                     <div class="form-input-group">
                         <div class="form-input">
-                            <label for="">
+                            <label for="priceListing">
                                 <p class="regular-text-blue">What should be the listing price for the house? <span class="required">*</span></p>
                             </label>
-                            <input type="text">
+                            <input type="text" class="form-control" name="priceListing" formControlName="priceListing" required />
+                            <div *ngIf="sf.priceListing.touched && sf.priceListing.errors?.required">
+                                <div class="text-danger py-1">Price listing is required</div>
+                            </div>
                         </div>
                     </div>
 
@@ -161,9 +164,13 @@
                         
                     </div>
 
-                    <button class="submit" type="submit" [disabled]="!sellerForm.valid">Send</button>
-                    
-
+                    <button class="submit" type="submit" [disabled]="!sellerForm.valid || isSubmittingEmail">Send</button>
+                    <ng-container *ngIf="isSubmittingEmail">
+                        <div class="processing-payment">
+                            <img src="assets/images/Pulse-1s-167px.svg" alt="sending email svg"> <span>....sending email</span>
+                        </div>
+                    </ng-container>
+                    <p *ngIf="!isSubmittingEmail && responseMsg ">{{ responseMsg}}</p>
                 </form>
             </div>
         </div>

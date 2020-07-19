@@ -15,6 +15,10 @@
     <img src="assets/images/Pulse-1s-167px.svg" alt="processinig svg" />
     <p class="text-center">..Processing Payment..</p>
   </div>
+  <ng-container *ngIf="isPaymentComplete">
+    Thank You!
+    Your payment is complete. A confirmation email will be sent, along with your payment details.
+  </ng-container>
   <hr />
   <div class="footer" *ngIf="!isPaymentProcessing">
     <button class="confirm btn" (click)="confirm()">Confirm</button
