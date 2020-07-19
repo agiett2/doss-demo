@@ -4,7 +4,7 @@ import { TableDataRowInterface } from 'src/app/shared/interfaces/tableDataRow.in
 import { BillingDetailsPayloadInterface } from '../../model/billing-details.payload.interface';
 import { MatDialogRef } from '@angular/material/dialog';
 import { ConfirmPaymentModalComponent } from '../../components/modal/confirm-payment-modal.component';
-import { TokenResult } from 'ngx-stripe';
+import { TokenResult, StripeCardComponent } from 'ngx-stripe';
 
 export abstract class StripePaymentServiceAbstract {
   public abstract createCharge(
@@ -13,13 +13,13 @@ export abstract class StripePaymentServiceAbstract {
 
   public abstract confirmPayment(
     totalPrice: number,
-    services: TableDataRowInterface[]
+    services: TableDataRowInterface[],
+    userName: string,
+    creditCardInfo: StripeCardComponent,
+    billing: BillingDetailsPayloadInterface
   ): MatDialogRef<ConfirmPaymentModalComponent>;
   public abstract createToken(
-    totalPrice: number,
-    card: any,
-    services: TableDataRowInterface[],
+    card: StripeCardComponent,
     name: string,
-    billingDetails: BillingDetailsPayloadInterface
   ): Observable<TokenResult>;
 }

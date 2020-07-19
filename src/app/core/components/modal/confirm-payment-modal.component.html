@@ -1,14 +1,23 @@
 <div class="wrapper">
-  <h3>{{ dialogTitle }}</h3>
-  <hr>
-  <p>{{ dialogText }}</p>
-
+  <div class="title">
+    {{ dialogTitle }}
+  </div>
+  <hr />
+  <ng-container *ngIf="!isPaymentProcessing">
+    <p class="text" *ngIf="!isPaymentProcessing">{{ dialogText }}</p>
     <div class="service" *ngFor="let service of services">
-      <p class="small-text-blue">{{service.name}}</p>
-      <p class="small-text-blue">${{service.price}}</p>
+      <p class="service-name">{{ service.name }}</p>
+      <p>${{ service.price }}.00</p>
     </div>
-  <div class="payment-processing" *ngIf="showProgress">
+  </ng-container>
+
+  <div class="payment-processing" *ngIf="isPaymentProcessing">
     <img src="assets/images/Pulse-1s-167px.svg" alt="processinig svg" />
-    <p  class="text-center">..Processing Payment..</p>
+    <p class="text-center">..Processing Payment..</p>
+  </div>
+  <hr />
+  <div class="footer" *ngIf="!isPaymentProcessing">
+    <button class="confirm btn" (click)="confirm()">Confirm</button
+    ><button class="btn btn-danger" (click)="cancel()">Cancel</button>
   </div>
 </div>

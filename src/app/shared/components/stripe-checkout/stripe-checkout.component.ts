@@ -23,7 +23,6 @@ import { TableDataRowInterface } from '../../interfaces/tableDataRow.interface';
 import { StripePaymentServiceAbstract } from 'src/app/core/services/abstract/stripe-payment.service.abstract';
 import { StateInterface } from '../../interfaces/state.interface';
 import { StateServiceAbstract } from 'src/app/core/services/abstract/state.service.abstract';
-import { ModalServiceAbstract } from 'src/app/core/services/abstract/modal.service.abstract';
 import { ConfirmPaymentModalComponent } from 'src/app/core/components/modal/confirm-payment-modal.component';
 import { Subscription } from 'rxjs';
 import { BillingDetailsPayloadInterface } from 'src/app/core/model/billing-details.payload.interface';
@@ -111,34 +110,12 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
       phone: this.stripeForm.controls.phone.value,
     };
     this.paymentModalSubscription = this.paymentService
-      .confirmPayment(totalPrice, this.selectedServices)
+      .confirmPayment(totalPrice, this.selectedServices, name, this.card, billingDetails )
       .componentInstance.submitClicked.subscribe((isConfirmed: boolean) => {
         if (isConfirmed) {
-          this.paymentService.createToken(
-            totalPrice,
-            this.card.getCard(),
-            this.selectedServices,
-            name,
-            billingDetails
-          ).subscribe((response: any) => {
-            const tokenId = response.token.id;
-            const payload: CreateChargePayloadInterface = {
-              token: tokenId,
-              price: this.getTotal(this.selectedServices),
-              billing_details: {
-                address: {
-                  city: this.stripeForm.controls.city.value,
-                  line1: this.stripeForm.controls.street.value,
-                  line2: this.stripeForm.controls.unit.value,
-                  state: this.stripeForm.controls.state.value,
-                  zip: this.stripeForm.controls.zip.value,
-                },
-                email: this.stripeForm.controls.email.value,
-                phone: this.stripeForm.controls.phone.value,
-              },
-            };
-          });
+        this.purchaseServices();
         } else {
+
           this.dialog.closeAll();
         }
       });
@@ -154,12 +131,13 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
 
   public openConfirmPaymentModal(
     text: string,
-    services: TableDataRowInterface[]
+    services: TableDataRowInterface[],
+    name: string,
   ): MatDialogRef<ConfirmPaymentModalComponent> {
     const dialogRef = this.dialog.open(ConfirmPaymentModalComponent, {
       closeOnNavigation: false,
-      width: '100%',
-      data: { dialogText: text, dialogServices: services },
+      maxWidth: '300px',
+      data: { dialogText: text, dialogServices: services, userName: name, creditCardInfo: this.card.getCard() },
       disableClose: true,
       autoFocus: true,
     });
@@ -173,7 +151,7 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
         console.log(result.token.id);
         const token = result.token.id;
         const payload: CreateChargePayloadInterface = {
-          token: result.token.id,
+          token,
           price: this.getTotal(this.selectedServices),
           billing_details: {
             address: {

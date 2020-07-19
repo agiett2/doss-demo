@@ -35,24 +35,23 @@ export class StripePaymentService {
   }
   public confirmPayment(
     totalPrice: number,
-    card: StripeCardComponent,
     services: TableDataRowInterface[],
+    userName: string,
+    creditCardInfo: any,
+    billingDetails: BillingDetailsPayloadInterface,
   ): MatDialogRef<ConfirmPaymentModalComponent> {
     const dialogRef = this.dialog.open(ConfirmPaymentModalComponent, {
       closeOnNavigation: false,
-      width: '100%',
-      data: { dialogPrice: totalPrice, dialogServices: services },
+      maxWidth: '500px',
+      data: { dialogPrice: totalPrice, dialogServices: services,  name: userName, ccInfo: creditCardInfo, },
       disableClose: true,
       autoFocus: true,
     });
     return dialogRef;
   }
   public createToken(
-    totalPrice: number,
     card: StripeCardComponent,
-    services: TableDataRowInterface[],
     name: string,
-    billingDetails: BillingDetailsPayloadInterface
   ): Observable<TokenResult> {
     return this.stripeService
       .createToken(card.getCard(), { name });

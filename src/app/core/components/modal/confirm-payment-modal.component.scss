@@ -1,13 +1,60 @@
 .wrapper {
-   min-width: 500px;
-   .payment-processing {
-      color:  #174D89;
-      font-size: 1.5rem;
-      font-weight: 800;
-   }
-   service {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
+  
+  .title {
+   text-align: center;
+    color: #174d89;
+    font-weight: 900;
+    font-size: 1.2rem;
+    @media only screen and (min-width: 1169px) {
+      font-size: 2rem;
+    }
+  }
+
+  .text {
+   text-align: center;
+    font-size: 1rem;
+    color: #174d89;
+    @media only screen and (min-width: 1169px) {
+       font-size: 1.2rem;
+    }
+  }
+  .payment-processing {
+    text-align: center;
+    color: #174d89;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+  .service {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    color: #174d89;
+    font-weight: 700;
+    font-size: .8rem;
+    .service-name {
+       margin-right: 1rem;
+    }
+    @media only screen and (min-width: 1169px) {
+      font-weight: 1.2rem;
+      font-size: 1.1rem;
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    .confirm {
+      background-color: #174d89;
+      color: #fff;
+    }
+  }
+
+  @media only screen and (min-width: 1169px) {
+    .footer {
+      float: right;
+      .confirm {
+        margin-right: 1rem;
+      }
+    }
   }
 }
