@@ -3,25 +3,38 @@
     {{ dialogTitle }}
   </div>
   <hr />
-  <ng-container *ngIf="!isPaymentProcessing">
-    <p class="text" *ngIf="!isPaymentProcessing">{{ dialogText }}</p>
-    <div class="service" *ngFor="let service of services">
-      <p class="service-name">{{ service.name }}</p>
-      <p>${{ service.price }}.00</p>
-    </div>
-  </ng-container>
+  <mat-dialog-content>
+    <ng-container *ngIf="!isPaymentProcessing && isPaymentError">
+      <div class="error">
+        {{ paymentMes }}
+      </div>
+    </ng-container>
 
-  <div class="payment-processing" *ngIf="isPaymentProcessing">
-    <img src="assets/images/Pulse-1s-167px.svg" alt="processinig svg" />
-    <p class="text-center">..Processing Payment..</p>
-  </div>
-  <ng-container *ngIf="isPaymentComplete">
-    Thank You!
-    Your payment is complete. A confirmation email will be sent, along with your payment details.
-  </ng-container>
+    <ng-container *ngIf="!isPaymentProcessing">
+      <p class="text" *ngIf="!isPaymentProcessing">{{ dialogText }}</p>
+      <div class="service" *ngFor="let service of services">
+        <p class="service-name">{{ service.name }}</p>
+        <p>${{ service.price }}.00</p>
+      </div>
+    </ng-container>
+
+    <div class="payment-processing" *ngIf="isPaymentProcessing">
+      <img src="assets/images/Pulse-1s-167px.svg" alt="processinig svg" />
+      <p class="text-center">..Processing Payment..</p>
+    </div>
+    <ng-container *ngIf="isPaymentComplete">
+      Thank You! Your payment is complete. A confirmation email will be sent,
+      along with your payment details.
+    </ng-container>
+  </mat-dialog-content>
   <hr />
-  <div class="footer" *ngIf="!isPaymentProcessing">
-    <button class="confirm btn" (click)="confirm()">Confirm</button
-    ><button class="btn btn-danger" (click)="cancel()">Cancel</button>
+  <div class="footer">
+    <ng-container *ngIf="!isPaymentProcessing && !isPaymentComplete">
+      <button class="confirm btn" (click)="confirm()">Confirm</button>
+      <button class="cancel btn" (click)="cancel()">Cancel</button>
+    </ng-container>
+   <ng-container *ngIf="!isPaymentProcessing && isPaymentComplete">
+    <button class="cancel btn" (click)="cancel()">Close</button>
+   </ng-container>
   </div>
 </div>

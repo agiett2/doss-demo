@@ -7,6 +7,7 @@ import { StripePaymentServiceAbstract } from '../../services/abstract/stripe-pay
 import { BillingDetailsPayloadInterface } from '../../model/billing-details.payload.interface';
 import { EmailOptionsPayloadInterface } from '../../model/email-options.payload.interface';
 import { SendEmailServiceAbstract } from '../../services/abstract/send-email.service.abstract';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-confirm-payment-modal-component',
@@ -47,7 +48,6 @@ export class ConfirmPaymentModalComponent implements OnInit {
 
   public confirm = (): void => {
     this.purchaseServices();
-    this.submitClicked.next(true);
   }
 
   public cancel = (): void => {
@@ -79,11 +79,17 @@ export class ConfirmPaymentModalComponent implements OnInit {
                 this._sendCustomerEmail(response, totalPrice);
                 this._sendBobbyEmail(response, totalPrice);
               } else {
+                console.log('payment failed');
                 this.paymentMes = 'unable to complete payment';
+                this.isPaymentError = true;
               }
             },
             (error) => {
+              console.log(error);
+              console.log('error on toaken');
               this.isPaymentProcessing = false;
+              this.isPaymentError = true;
+              this.paymentMes = 'unable to complete payment!. Please re-enter payment information and try agin.';
             }
           );
 

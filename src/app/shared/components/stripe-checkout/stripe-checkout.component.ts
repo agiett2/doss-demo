@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import {
   FormGroup,
   FormBuilder,
@@ -34,7 +34,7 @@ import { EmailOptionsPayloadInterface } from 'src/app/core/model/email-options.p
   templateUrl: './stripe-checkout.component.html',
   styleUrls: ['./stripe-checkout.component.scss'],
 })
-export class StripeCheckoutComponent implements OnInit, OnDestroy {
+export class StripeCheckoutComponent implements OnInit {
   @Input() selectedServices: TableDataRowInterface[];
   @ViewChild(StripeCardComponent) card: StripeCardComponent;
   public paymentModalSubscription: Subscription;
@@ -66,11 +66,8 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
 
   constructor(
     private fb: FormBuilder,
-    private stripeService: StripeService,
     private paymentService: StripePaymentServiceAbstract,
-    private stateService: StateServiceAbstract,
-    private dialog: MatDialog,
-    private emailService: SendEmailServiceAbstract
+    private stateService: StateServiceAbstract
   ) {}
 
   ngOnInit() {
@@ -115,16 +112,7 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
       email: this.stripeForm.controls.email.value,
       phone: this.stripeForm.controls.phone.value,
     };
-    this.paymentModalSubscription = this.paymentService
-      .confirmPayment(totalPrice, this.selectedServices, name, this.card, billingDetails )
-      .componentInstance.submitClicked.subscribe((isConfirmed: boolean) => {
-        if (isConfirmed) {
-          this.isPaymentComplet = true;
-          this.dialog.closeAll();
-        } else {
-          this.dialog.closeAll();
-        }
-      });
+    this.paymentService.confirmPayment(totalPrice, this.selectedServices, name, this.card, billingDetails );
   }
   public getTotal(selectedMenus: TableDataRowInterface[]): number {
     let price = 0;
@@ -133,9 +121,5 @@ export class StripeCheckoutComponent implements OnInit, OnDestroy {
       price = price + data.price;
     });
     return price;
-  }
-
-  public ngOnDestroy(): void {
-    this.paymentModalSubscription.unsubscribe();
   }
 }

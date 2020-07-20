@@ -35,10 +35,11 @@ export class StripePaymentService {
   ): MatDialogRef<ConfirmPaymentModalComponent> {
     const dialogRef = this.dialog.open(ConfirmPaymentModalComponent, {
       closeOnNavigation: false,
-      maxWidth: '500px',
+      maxHeight: '470px',
+      maxWidth: '600px',
       data: { dialogPrice: totalPrice, dialogServices: services,  name: userName, ccInfo: creditCardInfo, },
       disableClose: true,
-      autoFocus: true,
+      // autoFocus: true
     });
     return dialogRef;
   }
