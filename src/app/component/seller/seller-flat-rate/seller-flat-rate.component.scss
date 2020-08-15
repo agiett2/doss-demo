@@ -40,10 +40,16 @@
 //SECTION-4
 .section-4-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background: #F8F9FB
 }
+.special-table-container {
+    width: 80vw;
+    max-width: 1170px;
 
+    margin-bottom: 50px;
+}
 .doss-table {
     /* border: 1px solid black; */
     
@@ -216,6 +222,7 @@
 }
 
 @media only screen and (max-width: 1169px) {
+    .special-table-container {width: 100vw;}
     .check-container {padding-left: 20px;}
     .form-control {
         width: 40%;

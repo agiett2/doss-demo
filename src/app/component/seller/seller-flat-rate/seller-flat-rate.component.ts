@@ -38,23 +38,23 @@ export class SellerFlatRateComponent implements OnInit {
     ];
     this.tableHeadingData = ['Menu of Services', 'Price'];
     this.tableRowData = [
-      { selected: true, menu: 'Base Fee', price: 395, isRequired: true },
-      { selected: false, menu: 'Pricing Support', price: 100, isRequired: false },
-      { selected: false, menu: 'Supra Lockbox Rental', price: 100, isRequired: false },
-      { selected: false, menu: 'Open Houses(2 hours)', price: 100, isRequired: false },
-      { selected: false, menu: 'Contract Negotiations/Support', price: 200, isRequired: false },
+      { selected: true, name: 'Base Fee', price: 395, isRequired: true },
+      { selected: false, name: 'Pricing Support', price: 100, isRequired: false },
+      { selected: false, name: 'Supra Lockbox Rental', price: 100, isRequired: false },
+      { selected: false, name: 'Open Houses(2 hours)', price: 100, isRequired: false },
+      { selected: false, name: 'Contract Negotiations/Support', price: 200, isRequired: false },
       {
-        selected: false, menu: 'Professional Photos', price: 225, isRequired: false,
-        selectOptions: [{ menu: 'Over 3,000 sft', price: 350 }, { menu: 'Under 3,000 sft', price: 225 }]
+        selected: false, name: 'Professional Photos', price: 225, isRequired: false,
+        selectOptions: [{ name: 'Over 3,000 sft', price: 350 }, { name: 'Under 3,000 sft', price: 225 }]
       },
       {
-        selected: false, menu: 'Matterport 3D Home Tour', price: 375, isRequired: false,
-        selectOptions: [{ menu: 'Over 3,000 sft', price: 525 }, { menu: 'Under 3,000 sft', price: 225 }]
+        selected: false, name: 'Matterport 3D Home Tour', price: 375, isRequired: false,
+        selectOptions: [{ name: 'Over 3,000 sft', price: 525 }, { name: 'Under 3,000 sft', price: 225 }]
       },
-      { selected: false, menu: '50 Full Color Property Booklet', price: 225, isRequired: false },
+      { selected: false, name: '50 Full Color Property Booklet', price: 225, isRequired: false },
       {
-        selected: false, menu: 'Pro Photos/3D Home Tour', price: 525, isRequired: false,
-        selectOptions: [{ menu: 'Over 3,000 sft', price: 775 }, { menu: 'Under 3,000 sft', price: 525 }]
+        selected: false, name: 'Pro Photos/3D Home Tour', price: 525, isRequired: false,
+        selectOptions: [{ name: 'Over 3,000 sft', price: 775 }, { name: 'Under 3,000 sft', price: 525 }]
       },
     ];
     this.tableData = { heading: this.tableHeadingData, row: this.tableRowData };

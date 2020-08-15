@@ -4,11 +4,27 @@
       <div class="section-header">
           <p class="large-text-blue">Complete Checkout</p>
       </div>
+      <div class="service-wrapper">
+        <p class="regular-text-blue" style="font-weight: 800; margin-bottom: 20px;">Services selected</p>
+        <div class="service-container">
+          <div class="service" *ngFor="let service of selectedServices">
+            <p class="small-text-blue">{{service.name}}</p>
+            <p class="small-text-blue">${{service.price}}</p>
+          </div>
+          <div class="service" style="margin-bottom: 50px;">
+            <p class="small-text-blue" style="font-weight: 800;">Total</p>
+            <p class="small-text-blue" style="font-weight: 800;">${{ getTotal(selectedServices) }}</p>
+          </div>
+        </div>
+      </div>
     <form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm">
+      <div class="section-header-2">
+        <p class="regular-text-blue" style="font-weight: 800; margin-bottom: 20px;">User Information</p>
+      </div>
       <div class="form-input-group">
         <div class="form-input">
           <label for="name">
-            <p class="regular-text-blue">Card Holder Name <span class="required">*</span></p>
+            <p class="small-text-blue">Card Holder Name <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="name" formControlName="name" name="name"
             required />
@@ -18,7 +34,7 @@
         </div>
         <div class="form-input">
           <label for="email">
-              <p class="regular-text-blue">Email <span class="required">*</span></p>
+              <p class="small-text-blue">Email <span class="required">*</span></p>
           </label>
           <input type="email" class="form-control" id="email" name="email"
               formControlName="email" required />
@@ -33,7 +49,7 @@
       </div>
       <div class="form-input">
         <label for="phone">
-            <p class="regular-text-blue">Phone Number <span class="required">*</span></p>
+            <p class="small-text-blue">Phone Number <span class="required">*</span></p>
         </label>
         <input type="text" name="phone" formControlName="phone"
             id="phone" placeholder="777-777-7777" class="form-control" required />
@@ -48,7 +64,7 @@
     </div>
         <div class="form-input">
           <label for="street">
-            <p class="regular-text-blue">Street <span class="required">*</span></p>
+            <p class="small-text-blue">Billing Address <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="street" formControlName="street" name="street"
             required />
@@ -57,16 +73,8 @@
           </div>
         </div>
         <div class="form-input">
-          <label for="unit">
-            <p class="regular-text-blue">Unit</p>
-        </label>
-          <input type="text" class="form-control" id="unit" formControlName="unit" name="unit"
-            />
-    
-        </div>
-        <div class="form-input">
           <label for="city">
-            <p class="regular-text-blue">City <span class="required">*</span></p>
+            <p class="small-text-blue">City <span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="city" formControlName="city" name="city"
             required />
@@ -76,17 +84,32 @@
         </div>
         <div class="form-input">
           <label for="state">
-            <p class="regular-text-blue">State <span class="required">*</span></p>
+            <p class="small-text-blue">State <span class="required">*</span></p>
         </label>
-          <input type="text" class="form-control" id="state" formControlName="state" name="state"
-            required />
+        <select class="form-control"  id="state" formControlName="state" name="state" required>
+          <option *ngFor="let state of states" value="{{ state.value }}" >
+            {{ state.name }}
+          </option>
+        </select>
           <div *ngIf="sf.state.touched && sf.state.errors?.required">
             <div class="text-danger py-1">State is required.</div>
           </div>
         </div>
         <div class="form-input">
           <label for="zip">
-            <p class="regular-text-blue">Zip Code <span class="required">*</span></p>
+            <p class="small-text-blue">Zip Code <span class="required">*</span></p>
+        </label>
+          <input type="text" class="form-control" id="zip" formControlName="zip" name="zip"
+            required />
+          <div *ngIf="sf.zip.touched && sf.zip.errors?.required">
+            <div class="text-danger py-1">Zip code is required.</div>
+          </div>
+        </div>
+
+        <!-- which techAGENT referred you. New input added -->
+        <div class="form-input">
+          <label for="zip">
+            <p class="small-text-blue">Were you referred by a techAGENT? If so, who?<span class="required">*</span></p>
         </label>
           <input type="text" class="form-control" id="zip" formControlName="zip" name="zip"
             required />
@@ -96,27 +119,34 @@
         </div>
     
       </div>
-  
-      <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
-      <div class="button-container">
-        <ng-container >
-          <div class="payment-processing" *ngIf="isPaymentProcessing">
-            <img src="assets/images/Pulse-1s-167px.svg" alt="processinig payment svg"> <span>....processing payment</span>
-          </div>    
-        </ng-container>
-        <ng-container *ngIf="paymentMes">
-           <div class="payment-complete">
-          {{ paymentMes }}
-           </div>
-        </ng-container>
-        <button class="doss-button" [disabled]="!stripeForm.valid" type="submit"> 
-          <p style="margin: 0 10px 0 0;"> BUY ${{ price }}</p>
-        </button>
-       
+
+      <!-- listing address same as billing address? -->
+      <div class="radio-input-group">
+        <p class="small-text-blue" style="margin-bottom: 10px;">Is your listing address same as your billing address? <span class="required">*</span></p>
+        <div class="radio-input-selections">
+            <div class="radio-input">
+                <input type="radio" id="pre-approved" name='listingSameAsBilling' class="regular-radio" value="yes"
+                    formControlName="listingSameAsBilling">
+                <label for="pre-approved">
+                    <p class="small-text-blue">Yes</p>
+                </label>
+            </div>
+
+            <div class="radio-input">
+                <input type="radio" id="not-approved" name="listingSameAsBilling" class="regular-radio"
+                    formControlName="listingSameAsBilling" value="no">
+                <label for="not-approved">
+                    <p class="small-text-blue">No</p>
+                </label>
+            </div>
+        </div>
       </div>
-  
-     
-  
+        <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
+      <div class="button-container">
+        <button class="doss-button" [disabled]="!stripeForm.valid" type="submit"> 
+          <p style="margin: 0 10px 0 0;"> BUY {{ getTotal(selectedServices) |currency }}</p>
+        </button>
+      </div>  
     </form>
   </div>
 </div>

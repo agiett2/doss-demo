@@ -1,3 +1,4 @@
+
 .button-container {
   display: flex;
   justify-content: flex-end;
@@ -26,10 +27,22 @@
   }
 }
 
+.service {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
 @media only screen and (min-width: 1169px) {
-  .form-input {
-    max-width: 50%;
-    color: #31325f;
-    color: #cfd7e0;
-  }
+    .form-input {
+        max-width: 50%;
+        color: #31325F;
+        color: #CFD7E0;;
+    }
+}
+@media only screen and (max-width: 1169px) {
+    .doss-button {
+        width: 100%;
+    }
 }
