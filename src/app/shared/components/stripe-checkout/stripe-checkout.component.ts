@@ -114,6 +114,7 @@ export class StripeCheckoutComponent implements OnInit {
     };
     this.paymentService.confirmPayment(totalPrice, this.selectedServices, name, this.card, billingDetails );
   }
+
   public getTotal(selectedMenus: TableDataRowInterface[]): number {
     let price = 0;
 

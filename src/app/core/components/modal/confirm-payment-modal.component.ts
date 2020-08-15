@@ -89,7 +89,7 @@ export class ConfirmPaymentModalComponent implements OnInit {
               console.log('error on toaken');
               this.isPaymentProcessing = false;
               this.isPaymentError = true;
-              this.paymentMes = 'unable to complete payment!. Please re-enter payment information and try agin.';
+              this.paymentMes = 'unable to complete payment! Please re-enter payment information and try again.';
             }
           );
 
