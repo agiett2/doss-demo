@@ -98,6 +98,7 @@ export class ConfirmPaymentModalComponent implements OnInit {
         } else if (result.error) {
           this.isPaymentProcessing = false;
           this.isPaymentError = true;
+          this.paymentMes = result.error.message;
           console.log(result.error.message);
         }
       });

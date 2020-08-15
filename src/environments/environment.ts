@@ -6,6 +6,9 @@ export const environment = {
   production: false,
   stripe: {
     pk: 'pk_test_6cg1ZyuqzT8ndN9sZjiPe341'
+  },
+  charge: {
+    url: 'https://localhost:3000/createCharge'
   }
 };
 
