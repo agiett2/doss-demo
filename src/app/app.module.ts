@@ -64,6 +64,7 @@ import { StateService } from './core/services/state.service';
 import { ConfirmPaymentModalComponent } from './core/components/modal/confirm-payment-modal.component';
 import { ModalServiceAbstract } from './core/services/abstract/modal.service.abstract';
 import { ModalService } from './core/services/modal.service';
+import { environment } from 'src/environments/environment';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -151,7 +152,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxStripeModule.forRoot('pk_test_6cg1ZyuqzT8ndN9sZjiPe341'),
+    NgxStripeModule.forRoot(environment.stripe.pk),
     BrowserAnimationsModule,
     MatDialogModule,
   ],
