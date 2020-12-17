@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-seller-full-service',
@@ -14,6 +15,7 @@ export class SellerFullServiceComponent implements OnInit {
   public marketingListTwo: string[];
   public responsibilities: string[];
   public fullServiceForm: FormGroup;
+  public matterportLink: string = environment.matterport.link;
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
