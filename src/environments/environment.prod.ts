@@ -5,5 +5,8 @@ export const environment = {
   },
   charge: {
     url: 'https://askdoss.com/api/cdoss'
+  },
+  matterport: {
+    link: 'https://my.matterport.com/show/?m=rwJ3SwhYaa2'
   }
 };

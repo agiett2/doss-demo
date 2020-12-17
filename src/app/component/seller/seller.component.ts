@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TableDataInterface } from 'src/app/shared/interfaces/table-data.interface';
 import { AgentCompareTableRowDataInterface } from 'src/app/shared/interfaces/agent-compare-table-row-data.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'app-seller',
@@ -15,6 +16,7 @@ export class SellerComponent implements OnInit {
     public compareTableData: TableDataInterface;
     public tableHeadingData: string[];
     public tableRowDate: AgentCompareTableRowDataInterface[];
+    public matterportLink: string = environment.matterport.link;
 
     constructor() { }
 

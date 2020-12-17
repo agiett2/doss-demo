@@ -9,6 +9,9 @@ export const environment = {
   },
   charge: {
     url: 'https://localhost:3000/createCharge'
+  },
+  matterport: {
+    link: 'https://my.matterport.com/show/?m=rwJ3SwhYaa2'
   }
 };
 
