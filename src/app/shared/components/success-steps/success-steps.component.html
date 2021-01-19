@@ -7,15 +7,15 @@
                     <button class="btn btn-link" type="button" data-toggle="collapse"
                         [attr.data-target]="setStepAriaControl(stepsId, index)" aria-expanded="false"
                         [attr.aria-controls]="setStepAriaControl(stepsId, index)">
-                        <h4 class="mb-0">
+                        <h4 class="mb-0" >
                             {{step.step}}
                         </h4>
                     </button>
                 </div>
                 <div id="{{ setDetailId(stepsId, index) }}" class="collapse multi-collapse" [ngClass]="{'show': first}"
                     aria-labelledby="headingOne">
-                    <div class="card-body">
-                        <p style="color: #242528;">{{step.detail}}</p>
+                    <div class="card-body" >
+                        <p style="color: #242528;" [innerHTML]="step.detail"></p>
                     </div>
                 </div>
             </div>
