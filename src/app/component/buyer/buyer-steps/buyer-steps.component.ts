@@ -28,7 +28,7 @@ export class BuyerStepsComponent implements OnInit {
       {
         step: 'Get Pre-Approved...',
         // tslint:disable-next-line:max-line-length
-        detail: `If you are paying cash, skip to step three(3). If you are already Pre-Approved, great! However, if not, we will recommend one of our awesome lending partners to let you know your BUYING POWER! Either way, your techAGENT will request a copy of your proof-of-funds to go in your file.`
+        detail: `If you are paying cash, skip to step three(3). If you are already pre-approved, congratulations! However, if not, click this link to get pre-approved by our in-house mortgage company: <a href="https://www.dosshomeloans.com/" target="_blank">DOSS Home Loans.</a> Either way, your techAGENT will need and request a copy of your proof-of-funds to go in your file.`
       },
       // tslint:disable-next-line: max-line-length
       {

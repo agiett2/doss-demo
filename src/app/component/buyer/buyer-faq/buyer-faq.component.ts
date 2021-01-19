@@ -16,13 +16,13 @@ export class BuyerFaqComponent implements OnInit {
     // tslint:disable-next-line: max-line-length
     this.faqs = [{
       // tslint:disable-next-line: max-line-length
-      question: `What is a Buyer Rebate?`, answer: `A Buyer Rebate is a portion of a REALTORS® commission that’s provided to a Buyer as a credit to reduce their closing cost and/or to cover other expenses. Read what the <a href="https://www.justice.gov/atr/rebates-make-buying-home-less-expensive" target="_blank" class="hot-link">Department of Justice(DOJ)</a> has to say about Buyer Rebates.
+      question: `What is a Buyer Rebate?`, answer: `A Buyer Rebate is a portion of a REALTORS® commission that’s provided to a Buyer as a credit to reduce their closing cost and/or to cover other expenses. Read what the <a href="https://www.justice.gov/atr/competition-real-estate-questions-and-answers" target="_blank" class="hot-link">Department of Justice(DOJ)</a> has to say about Buyer Rebates.
     `},
     // tslint:disable-next-line: max-line-length
-    { question: `How do I qualify to receive a Buyer Rebate?`, answer: `To qualify for a Buyer Rebate, you simply must purchase a property that is priced over $100k with one of our DOSS, techAGENT. It’s just that easy…` },
+    { question: `How do I qualify to receive a Buyer Rebate?`, answer: `To qualify for a Buyer Rebate, you simply must purchase a property that is priced over $100k with one of our DOSS, techAGENT. It’s just that easy… <br> <br> *Currently, the following states DOES NOT allow Buyer Rebates: Alabama, Alaska, Iowa, Kansas, Louisiana, Mississippi, Missouri, Oklahoma, Oregon, and Tennessee.` },
     {
       // tslint:disable-next-line: max-line-length
-      question: 'Do I have to use a DOSS(techAGENT) REALTOR® to receive a Buyer Rebate?', answer: `Yes! Our Mission is to make homeownership in America more affordable. Contact one of our techAGENT today at 1-877-770-3677.`
+      question: 'Do I have to use a DOSS(techAGENT) REALTOR® to receive a Buyer Rebate?', answer: `No! Our Mission is to make homeownership in more affordable. We have our own DOSS techAGENTS and we also work with DOSS Partner Agents throughout the country. Either way, to receive a Buyer Rebate, you must create an account and submit your contact information through this platform.`
     },
   // tslint:disable-next-line: max-line-length
   {question: 'What will be the amount of my Buyer Rebate?', answer: `DOSS gives a Buyer Rebate up to $5,000. Our Buyer Rebate is 1% of the sales price of the home you purchase. Example: If you buy a $200,000 home, we will give you a $2,000(1%) Buyer Rebate at closing.`},
