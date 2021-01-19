@@ -24,13 +24,13 @@ export class SellerStepsComponent implements OnInit {
       {
         step: 'In-House Seller Consultation',
         // tslint:disable-next-line:max-line-length
-        detail: `This is when our tech AGENT comes to your home. As soon as they walk in the door, give them the GRAND TOUR of your property as if they are a buyer. Your tech AGENT will take a mental note of everything you describe and show them. Remember, we are BETTER. FASTER. SMARTER. than the average Agent. After the tour, have a place for everybody to sit down and discuss the tour. Your tech AGENT will share their thoughts about the property and the highlights you shared. Immediately after that, your tech AGENT will begin sharing with you the data surrounding your property, recent SOLDS, review your number, suggest a listing price, and execute a Listing Agreement. In addition, they are going to give you some recommended homework about how to maximize the value of your home. And, what to do to help it sell fast!`
+        detail: `This is when our techAGENT comes to your home. As soon as they walk in the door, give them the GRAND TOUR of your property as if they are a buyer. Your tech AGENT will take a mental note of everything you describe and show them. Remember, we are BETTER. FASTER. SMARTER. than the average Agent. After the tour, have a place for everybody to sit down and discuss the tour. Your tech AGENT will share their thoughts about the property and the highlights you shared. Immediately after that, your tech AGENT will begin sharing with you the data surrounding your property, recent SOLDS, review the numbers, suggest a listing price, and execute a Listing Agreement. In addition, they are going to give you some recommended homework about how to maximize the value of your home. And, what to do to help it sell fast!`
       },
       // tslint:disable-next-line: max-line-length
       {
         step: 'Freshen up the place/Make repairs',
         // tslint:disable-next-line:max-line-length
-        detail: `Your tech AGENT will give you some recommended homework with a list of things they suggest you do to help improve the aesthetics of your home. Like they say, you have once at making a good first impression. To be more clear, a buyer knows within the first 10 seconds of walking through your front door if they are going to consider buying your home. Does your home smell good? Is it clean? Is it inviting and warm? Is it decluttered? Have you made repairs? All of this matters when selling a home. Don’t worry, we are here to help!`
+        detail: `Your techAGENT will give you some recommended homework with a list of things they suggest you do to help improve the aesthetics of your home. You have one chance at making a first impression. To be more clear, a buyer knows within the first 10 seconds of walking through your front door if they are going to consider buying your home. Does your home smell good? Is it clean? Is it inviting and warm? Is it decluttered? Have you made repairs? All of this matters when selling a home. Don’t worry, we are here to help!`
       },
       // tslint:disable-next-line: max-line-length
       {
