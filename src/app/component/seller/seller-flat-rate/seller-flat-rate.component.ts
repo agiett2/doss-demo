@@ -23,7 +23,7 @@ export class SellerFlatRateComponent implements OnInit {
   ngOnInit(): void {
     this.isCheckingOut = false;
     this.heading = 'You get what you pay for!';
-    this.subHeading = 'Total Control. Maximum Exposure. Save Thousands.';
+    this.subHeading = 'YOU SELL IT, we can help!';
     this.whatYouGetList = [
       'List property on the MLS',
       'Property listed on Realtor.com, Zillow, etc…',
@@ -38,7 +38,7 @@ export class SellerFlatRateComponent implements OnInit {
     ];
     this.tableHeadingData = ['Menu of Services', 'Price'];
     this.tableRowData = [
-      { selected: true, name: 'Base Fee', price: 395, isRequired: true },
+      { selected: true, name: 'Base Fee', price: 595, isRequired: true },
       { selected: false, name: 'Pricing Support', price: 100, isRequired: false },
       { selected: false, name: 'Supra Lockbox Rental', price: 100, isRequired: false },
       { selected: false, name: 'Open Houses(2 hours)', price: 100, isRequired: false },
