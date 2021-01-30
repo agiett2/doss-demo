@@ -53,27 +53,27 @@
 .matterport-showcase {
     margin-bottom: 50px;
     display: none;
-    
+
 }
 .matterport-showcase iframe{
     min-height: 240px;
     margin: 16px 0;
-    width: 100%; 
+    width: 100%;
 
     border: none;
     border-radius: 5px;
 }
-  
+
   @media screen and (min-width: 768px) {
   .matterport-showcase iframe {
     min-height: 360px; }}
-  
+
   @media screen and (min-width: 992px) {
   .matterport-showcase iframe {
     height: 600px;
     max-width: 1068px;
     margin: 0 auto 15px; }}
-  
+
   .matterport-showcase {
     text-align: center;
   }
@@ -163,7 +163,8 @@
     padding: 0 30px;
     display: flex;
     align-items: center;
-    
+    flex-direction: column;
+
 }
 .price-card-body {
     height: 80%;
@@ -213,10 +214,10 @@
 }
 .card-button:hover {
     background: #13457e;
-} 
+}
 
 .footnote {
-    color: #9E9E9E; 
+    color: #9E9E9E;
     line-height: 2;
 }
 
@@ -258,11 +259,11 @@
 }
 .doss-table {
     /* border: 1px solid black; */
-    
+
     border-radius: 10px;
     width: 100%;
-    
-    
+
+
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
 }
 
@@ -340,7 +341,7 @@
 
 }
 @media only screen and (max-width: 767px) {
-    
+
     .folder {padding: 0 30px;}
     .table-left-padding {
         padding-left: 20px;
